@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="ui/assets/favicon/favicon-32x32.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Bortex AI">
+    <link rel="apple-touch-icon" href="/pwa-icons/android/android-launchericon-192-192-new.png">
+    <script src="/pwa-redirect.js"></script>
+    <title>Dentro la tab Agents di Bortex Desktop</title>
+    <meta name="description" content="La tab Agents di Bortex Desktop trasforma richieste in agenti operativi con contesto, documenti, task runner, export e runtime." />
+    <meta name="keywords" content="Bortex Desktop, tab Agents, agenti Bortex, automazioni operative, workflow AI, export agenti, runtime autonomi, Claude Code, Codex, Bortex responders" />
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bortex.site/blog-bortex-workflow-automazioni-operative.html">
+    <link rel="alternate" hreflang="it" href="https://www.bortex.site/blog-bortex-workflow-automazioni-operative.html">
+    <link rel="alternate" hreflang="en" href="https://www.bortex.site/en/blog-bortex-workflow-operational-automations.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.bortex.site/blog-bortex-workflow-automazioni-operative.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.bortex.site/blog-bortex-workflow-automazioni-operative.html">
+    <meta property="og:title" content="Dentro la tab Agents di Bortex Desktop">
+    <meta property="og:description" content="La control room di Bortex Desktop dove un'idea diventa agente operativo con contesto, documenti, task runner, export e runtime nello stesso flusso.">
+    <meta property="og:image" content="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.bortex.site/blog-bortex-workflow-automazioni-operative.html">
+    <meta property="twitter:title" content="Dentro la tab Agents di Bortex Desktop">
+    <meta property="twitter:description" content="La control room di Bortex Desktop dove un'idea diventa agente operativo con contesto, documenti, task runner, export e runtime nello stesso flusso.">
+    <meta property="twitter:image" content="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Dentro la tab Agents di Bortex Desktop: workflow, export e un nuovo modo di creare automazioni operative",
+        "description": "La tab Agents di Bortex Desktop e la control room in cui un prompt diventa agente operativo: contesto, documenti, task runner, export, package e runtime pronti per il lavoro reale.",
+        "image": "https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg",
+        "author": {
+            "@type": "Organization",
+            "name": "BORTEX"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "BORTEX",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg"
+            }
+        },
+        "mainEntityOfPage": "https://www.bortex.site/blog-bortex-workflow-automazioni-operative",
+        "inLanguage": "it"
+    }
+    </script>
+
+    <style>
+        .article-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 320px;
+            gap: 2rem;
+            align-items: start;
+        }
+        .article-sidebar {
+            display: grid;
+            gap: 1.25rem;
+            position: sticky;
+            top: 110px;
+        }
+        .article-card {
+            padding: 2.5rem;
+        }
+        .article-screenshot-slot {
+            display: grid;
+            gap: 0.9rem;
+            margin: 2rem 0;
+            padding: 1.35rem;
+            border-radius: 22px;
+            border: 1px dashed rgba(249, 115, 22, 0.38);
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.08), rgba(139, 92, 246, 0.05));
+        }
+        .article-screenshot-label {
+            display: inline-flex;
+            width: fit-content;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.42rem 0.78rem;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.76);
+            font-size: 0.76rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .article-screenshot-frame {
+            min-height: 260px;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background:
+                linear-gradient(135deg, rgba(15, 23, 42, 0.72), rgba(30, 41, 59, 0.64)),
+                radial-gradient(circle at top left, rgba(249, 115, 22, 0.14), transparent 32%);
+            color: rgba(255,255,255,0.78);
+            overflow: hidden;
+        }
+        .article-screenshot-frame--compact {
+            min-height: 0;
+            padding: 1.2rem;
+        }
+        .article-screenshot-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.22);
+        }
+        .article-screenshot-image--compact {
+            width: min(100%, 220px);
+            margin: 0 auto;
+        }
+        .article-screenshot-frame strong {
+            display: block;
+            color: #ffffff;
+            font-size: 1.05rem;
+            margin-bottom: 0.45rem;
+        }
+        .article-screenshot-caption {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.75;
+        }
+        @media (max-width: 960px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .article-sidebar {
+                position: static;
+                top: auto;
+                order: 2;
+            }
+            .article-card {
+                padding: 1.35rem;
+            }
+        }
+        @media (max-width: 640px) {
+            .article-layout {
+                gap: 1rem;
+            }
+            .article-card {
+                padding: 1.1rem;
+            }
+        }
+
+        /* ── Waitlist GDPR consent ── */
+        .waitlist-consents { display: grid; gap: 0.55rem; }
+        .consent-label { display: flex; align-items: flex-start; gap: 0.55rem; cursor: pointer; }
+        .consent-checkbox {
+            width: 15px; height: 15px; min-width: 15px;
+            border-radius: 4px; margin-top: 2px; cursor: pointer;
+            accent-color: #f97316;
+        }
+        .consent-text {
+            font-size: 0.77rem; color: rgba(255,255,255,.58); line-height: 1.55;
+        }
+        .consent-text a { color: #f97316; text-decoration: none; }
+        .consent-text a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="https://www.bortex.site/" class="logo">
+                <img id="theme-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo" style="height: 40px;" loading="eager">
+            </a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="https://www.bortex.site/" class="nav-link">Home</a></li>
+                    <li><a href="features.html" class="nav-link">Funzionalità</a></li>
+                    <li><a href="pricing.html" class="nav-link">Prezzi</a></li>
+                    <li><a href="index.html#waitlist" class="nav-link">Lista Attesa</a></li>
+                    <li><a href="blog.html" class="nav-link" style="color: var(--primary-color);">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="lang-toggle" id="lang-toggle" aria-label="Cambia lingua"><span class="lang-code">IT</span></button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambia tema">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="https://www.bortex.site/login" class="btn btn-text">Login</a>
+                <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header"><img id="sidebar-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo"></div>
+        <ul class="mobile-menu-list">
+            <li><a href="https://www.bortex.site/">Home</a></li>
+            <li><a href="features.html">Funzionalità</a></li>
+            <li><a href="pricing.html">Prezzi</a></li>
+            <li><a href="about.html">Chi Siamo</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+        </ul>
+        <div class="mobile-menu-divider"></div>
+        <div class="mobile-menu-cta">
+            <a href="index.html#waitlist" class="btn btn-primary">Iscriviti in lista</a>
+            <a href="https://www.bortex.site/login" class="btn btn-outline">Login</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero" style="min-height: 60vh; padding-bottom: 4rem; background:
+            radial-gradient(circle at top left, rgba(249, 115, 22, 0.18), transparent 34%),
+            radial-gradient(circle at top right, rgba(139, 92, 246, 0.14), transparent 32%),
+            linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);">
+            <div class="container hero-container">
+                <div class="hero-content" style="max-width: 980px;">
+                    <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                        <span style="letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); font-size: 0.82rem;">BORTEX Journal</span>
+                        <span style="width: 56px; height: 1px; background: rgba(255,255,255,0.16);"></span>
+                        <span style="letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); font-size: 0.82rem;">Bortex Desktop</span>
+                    </div>
+                    <h1 class="hero-title" style="max-width: 920px; margin-bottom: 1rem;">Dentro la tab <span class="text-gradient">Agents</span> di Bortex Desktop</h1>
+                    <p class="hero-description" style="max-width: 860px; margin-bottom: 2.25rem;">La tab Agents e il punto in cui un'idea smette di essere una richiesta testuale e diventa un operatore digitale: contesto, documenti, task runner, runtime ed export nello stesso ambiente di lavoro.</p>
+                    <div style="max-width: 760px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.25rem; color: var(--text-muted); font-size: 0.95rem; line-height: 1.8;">
+                        Non e una semplice schermata di configurazione. E la control room in cui Bortex Desktop concentra creazione, test, supervisione e distribuzione di agenti pronti a lavorare davvero.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container article-layout" style="max-width: 1180px;">
+                <article class="glass-card article-card">                    <div style="padding-bottom: 1.5rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                        <p style="font-size: 1.1rem; line-height: 1.9; color: var(--text-color); margin: 0;">Nel mercato AI si vedono molte demo capaci di rispondere, pochissimi strumenti capaci di trasformare una richiesta in un agente operativo completo. La tab Agents di Bortex Desktop nasce per coprire proprio quel vuoto: prendere un obiettivo, costruire il contesto giusto, scegliere come l'agente deve agire e renderlo pronto per lavorare dentro flussi reali.</p>
+                    </div>
+
+                    <h2 style="margin-bottom: 1rem; color: var(--heading-color);">La control room degli agenti Bortex</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">La forza della tab Agents non sta solo nel fatto che permette di creare agenti. Sta nel fatto che mette nello stesso spazio tutto cio che normalmente e sparso tra documenti, configurazioni, script, prompt e pannelli tecnici. Missione, provider, documenti, input, output, widget, task, export, launcher e log convivono in un'unica superficie operativa.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Questo cambia il modo in cui un team immagina l'automazione. Non si parte piu da componenti isolate, ma da un operatore digitale con un ruolo preciso, una memoria contestuale, un modo di rispondere e un percorso di esecuzione controllabile.</p>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Dal linguaggio naturale a un agente eseguibile</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Uno degli elementi piu interessanti della tab Agents e il passaggio dal linguaggio naturale alla struttura operativa. L'utente descrive cosa vuole ottenere, il contesto in cui l'agente deve muoversi e il tipo di comportamento atteso. Da li Bortex Desktop organizza la base operativa: blueprint, istruzioni, sessione, componenti di autonomia e materiali di supporto.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Il risultato non e solo un prompt piu lungo. E un agente che puo essere provato, corretto, rilanciato e gestito come un asset operativo. Questo e il passaggio che rende la tab Agents rilevante per professionisti, team interni e aziende che vogliono standardizzare automazioni senza trasformarle in un progetto tecnico ingestibile.</p>
+
+                    <div class="article-screenshot-slot">
+                        <span class="article-screenshot-label">Screenshot 01</span>
+                        <div class="article-screenshot-frame">
+                            <img class="article-screenshot-image" src="ui/assets/blog/bortex-desktop-agents-overview-20260416.webp" alt="Bortex Desktop aperto sulla tab Agents" loading="eager" width="1919" height="1018" decoding="async">
+                        </div>
+                        <p class="article-screenshot-caption">Bortex Desktop nella tab <strong>Agents</strong>: i responder locali possono essere configurati, lanciati e gestiti nello stesso ambiente operativo, mentre il widget desktop rende il sistema sempre pronto all'interazione.</p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem; margin: 2rem 0; background: linear-gradient(135deg, rgba(249, 115, 22, 0.09), rgba(139, 92, 246, 0.06)); border: 1px solid rgba(255,255,255,0.08);">
+                        <h3 style="margin: 0 0 0.75rem; color: var(--heading-color);">Il punto chiave</h3>
+                        <p style="margin: 0; color: var(--text-color); line-height: 1.8;">Bortex Desktop non aggiunge un'altra chat all'ecosistema AI. Costruisce un layer operativo in cui un agente puo nascere, essere istruito, testato, distribuito e poi gestito con continuita.</p>
+                    </div>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Contesto, documenti e output nello stesso pannello</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">La tab Agents e forte anche perche non separa il motore dell'agente dal suo contesto. Documenti, note operative, output attesi, fonti e materiali di supporto diventano parte del setup. Questo permette di costruire agenti che non rispondono in modo generico, ma parlano e agiscono con una base informativa coerente con il brand, con il team o con il caso d'uso che devono coprire.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Per chi vende, supporta clienti, crea contenuti o automatizza task interni, questa e una differenza sostanziale. Il valore non e solo nell'intelligenza del modello, ma nella qualita del contesto che l'agente porta con se quando entra in produzione.</p>
+
+                    <div class="article-screenshot-slot">
+                        <span class="article-screenshot-label">Screenshot 02</span>
+                        <div class="article-screenshot-frame">
+                            <img class="article-screenshot-image" src="ui/assets/blog/bortex-desktop-agents-edit-quick-setup-20260416.webp" alt="Editor Agents con descrizione, connessioni e template" loading="lazy" width="1580" height="847" decoding="async">
+                        </div>
+                        <p class="article-screenshot-caption">La fase di creazione non e una form statica: descrizione, <strong>connections</strong>, quick setup, template e struttura runtime convivono nello stesso builder e riducono la distanza tra idea e operativita.</p>
+                    </div>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Test, task runner e controllo operativo</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Molti strumenti AI fermano tutto al momento della creazione. Bortex Desktop, invece, spinge sulla fase che conta davvero: vedere l'agente in azione. Nella tab Agents si puo testare, rilanciare, osservare lo stato, controllare i log, misurare il comportamento del task runner e capire in fretta se il workflow e pronto oppure no.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Per il marketing questo significa una cosa semplice: meno distanza tra idea e risultato. Per l'operativita significa ridurre attrito, errori e dipendenza da passaggi manuali. Un agente che puoi osservare bene e un agente che puoi fidarti a distribuire.</p>
+
+                    <div class="article-screenshot-slot">
+                        <span class="article-screenshot-label">Screenshot 03</span>
+                        <div class="article-screenshot-frame">
+                            <img class="article-screenshot-image" src="ui/assets/blog/bortex-desktop-agents-documents-notifications-20260416.webp" alt="Editor agente con documenti, notifiche e widget" loading="lazy" width="1575" height="843" decoding="async">
+                        </div>
+                        <p class="article-screenshot-caption">Aree di utilizzo, documenti, notifiche e widget mostrano il livello di controllo operativo disponibile: l'agente non e solo definito, ma contestualizzato e pronto a restituire valore dove serve davvero.</p>
+                    </div>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Export, package e launcher: quando l'agente esce dal desktop</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Il passaggio piu interessante arriva quando l'agente non resta piu confinato dentro il builder. Nella tab Agents compaiono export, package e launcher: elementi che trasformano l'agente in un componente pronto a essere eseguito, condiviso o portato in runtime specifici. E qui che Bortex Desktop smette di sembrare soltanto un ambiente di progettazione e inizia a comportarsi come una vera piattaforma di distribuzione operativa. Nello screenshot panoramico iniziale, questa promessa e gia visibile nei comandi <strong>Export</strong>, <strong>Package</strong> e <strong>CMD Launcher</strong> esposti direttamente nella parte alta della vista.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Per aziende e power user questo vuol dire una cosa precisa: separare il momento della progettazione da quello della messa in esecuzione. E una distinzione fondamentale, perche apre a standard interni, agenti replicabili e processi che non dipendono sempre dalla stessa persona o dalla stessa macchina di lavoro.</p>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Claude, Codex e Bortex nello stesso ecosistema operativo</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Un altro aspetto strategico e che la tab Agents non ragiona in modo isolato. Dentro Bortex Desktop il programma puo dialogare con responder locali, motori premium e configurazioni LLM selezionabili, lasciando all'utente il controllo sul motore operativo piu adatto al proprio scenario. Questo rende l'agente piu vicino a una figura di lavoro che a un semplice preset.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">In pratica, la promessa e chiara: non chiedere a un team di adattarsi allo strumento, ma costruire uno strumento che permetta all'agente di adattarsi al team, al brand e al flusso reale in cui deve produrre valore.</p>
+
+                    <div class="article-screenshot-slot">
+                        <span class="article-screenshot-label">Screenshot 04</span>
+                        <div class="article-screenshot-frame article-screenshot-frame--compact">
+                            <img class="article-screenshot-image article-screenshot-image--compact" src="ui/assets/blog/bortex-desktop-widget-agent-active-20260416.webp" alt="Widget di Bortex Desktop con agente attivo" loading="lazy" width="194" height="192" decoding="async">
+                        </div>
+                        <p class="article-screenshot-caption">Quando un agente e in esecuzione, Bortex Desktop estende l'esperienza anche nel widget locale: un dettaglio piccolo in apparenza, ma potente per comunicare che l'operativita non resta chiusa dentro una singola schermata.</p>
+                    </div>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Perche questa tab conta davvero</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 0;">La tab Agents racconta meglio di qualunque slogan dove vuole andare Bortex Desktop: verso un software in cui l'AI non si limita a rispondere, ma viene messa in condizione di operare. E la differenza tra una demo interessante e un'infrastruttura utile. Per chi cerca produttivita, governance e automazioni che restano leggibili nel tempo, e un passaggio decisivo.</p>
+
+                    <div class="glass-card" style="padding: 1.6rem; margin-top: 2rem; background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(249, 115, 22, 0.08)); border: 1px solid rgba(255,255,255,0.08);">
+                        <span class="article-screenshot-label">Next Reveal?</span>
+                        <h3 style="margin: 0.9rem 0 0.75rem; color: var(--heading-color);">Quale prossimo articolo vorreste vedere?</h3>
+                        <p style="margin: 0 0 0.9rem; color: var(--text-color); line-height: 1.85;">La app iOS di Bortex, con la sua estensione naturale del desktop? Oppure vogliamo alzare ancora di piu l'asticella e raccontare <strong>Bortex Watch</strong>? Si, proprio cosi: l'idea di portare Bortex anche su Apple Watch e uno di quei temi che fanno dire subito "no, davvero?".</p>
+                        <p style="margin: 0 0 1rem; color: var(--text-color); line-height: 1.85;">Se vuoi scoprire per primo quali direzioni diventano prodotto, entra nella waitlist: e il modo migliore per ricevere aggiornamenti, anticipazioni e i prossimi approfondimenti del Journal.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                            <a href="index.html#waitlist" class="btn btn-primary">Iscriviti alla waitlist</a>
+                            <a href="blog.html" class="btn btn-outline">Leggi altri articoli</a>
+                        </div>
+                    </div>
+                </article>
+
+                <aside class="article-sidebar">
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h3 style="margin: 0 0 1rem; color: var(--heading-color);">In questo articolo</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.85rem;">
+                            <li><span style="color: var(--primary-color); font-weight: 700;">01</span> <span style="color: var(--text-color);">La control room degli agenti</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">02</span> <span style="color: var(--text-color);">Dal linguaggio naturale all'operativita</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">03</span> <span style="color: var(--text-color);">Contesto, documenti e output</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">04</span> <span style="color: var(--text-color);">Task runner e controllo</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">05</span> <span style="color: var(--text-color);">Export e distribuzione</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">06</span> <span style="color: var(--text-color);">Claude, Codex e Bortex</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h3 style="margin: 0 0 1rem; color: var(--heading-color);">Perche conta</h3>
+                        <p style="margin: 0; color: var(--text-color); line-height: 1.8;">Perche mostra in modo concreto cosa significa trasformare l'AI in operativita: meno demo isolate, piu agenti leggibili, controllabili e pronti a essere distribuiti nel lavoro reale.</p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem; background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(139, 92, 246, 0.08)); border: 1px solid rgba(255,255,255,0.08);">
+                        <h3 style="margin: 0 0 0.85rem; color: var(--heading-color);">Vuoi provarlo?</h3>
+                        <p style="margin: 0 0 1rem; color: var(--text-color); line-height: 1.8;">Entra nella waitlist e scopri come Bortex Desktop sta trasformando la creazione di agenti in un flusso operativo completo, dalla configurazione alla distribuzione.</p>
+                        <div style="display: grid; gap: 0.75rem;">
+                            <a href="index.html#waitlist" class="btn btn-primary">Iscriviti in lista</a>
+                            <a href="blog.html" class="btn btn-outline">Torna al blog</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+
+        <section class="section-padding" style="padding-top: 0;">
+            <div class="container" style="max-width: 1180px;">
+                <div style="position: relative; overflow: hidden; border-radius: clamp(20px, 4vw, 28px); border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(135deg, rgba(10, 14, 24, 0.96) 0%, rgba(20, 27, 45, 0.94) 60%, rgba(39, 17, 10, 0.92) 100%); box-shadow: 0 24px 60px rgba(0,0,0,0.22);">
+                    <div style="position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(249, 115, 22, 0.26), transparent 28%), radial-gradient(circle at bottom right, rgba(251, 146, 60, 0.18), transparent 34%);"></div>
+                    <div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center; padding: clamp(1.2rem, 3vw, 2.4rem);">
+                        <div style="display: grid; gap: 0.9rem; max-width: 720px;">
+                            <span style="display: inline-flex; width: fit-content; align-items: center; gap: 0.55rem; padding: 0.5rem 0.9rem; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.72); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;">BORTEX Early Access</span>
+                            <h2 style="margin: 0; color: #ffffff; font-size: clamp(1.9rem, 3vw, 2.6rem); line-height: 1.08; letter-spacing: -0.03em;">Entra nella waitlist BORTEX</h2>
+                            <p style="margin: 0; color: rgba(255,255,255,0.74); line-height: 1.9; font-size: 1rem; max-width: 640px;">Ricevi aggiornamenti su accesso anticipato, nuove feature AI, agent mode avanzato e le prossime evoluzioni operative della piattaforma.</p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.35rem;">
+                                <span style="padding: 0.5rem 0.78rem; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); color: rgba(255,255,255,0.78); font-size: 0.88rem;">Early feature drops</span>
+                                <span style="padding: 0.5rem 0.78rem; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); color: rgba(255,255,255,0.78); font-size: 0.88rem;">Voice & agent updates</span>
+                                <span style="padding: 0.5rem 0.78rem; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); color: rgba(255,255,255,0.78); font-size: 0.88rem;">Product releases</span>
+                            </div>
+                        </div>
+                        <div style="position: relative; border-radius: 22px; padding: clamp(1rem, 2.8vw, 1.2rem); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px);">
+                            <form class="waitlist-signup-form" data-lang="it" data-feature-code="bortex_early_access" data-feature-name="BORTEX Early Access" data-source-page="/blog-bortex-workflow-automazioni-operative.html" style="display: grid; gap: 0.95rem;">
+                                <div style="display: grid; gap: 0.5rem;">
+                                    <label for="waitlist-email-it" style="font-size: 0.9rem; color: rgba(255,255,255,0.72);">Indirizzo email</label>
+                                    <input id="waitlist-email-it" type="email" name="email" required placeholder="nome@azienda.com" style="width: 100%; min-height: 58px; border-radius: 16px; border: 1px solid rgba(249, 115, 22, 0.42); background: rgba(255,255,255,0.97); color: #111827; padding: 0 1rem; font-size: 1rem; outline: none; box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);">
+                                </div>
+
+                                <!-- GDPR Consent -->
+                                <div class="waitlist-consents">
+                                    <label class="consent-label">
+                                        <input type="checkbox" name="gdpr_consent" class="consent-checkbox" required>
+                                        <span class="consent-text">Ho letto e acconsento al trattamento dei miei dati personali per la gestione della lista di attesa, ai sensi del Reg. UE 2016/679 (GDPR). <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> *</span>
+                                    </label>
+                                    <label class="consent-label">
+                                        <input type="checkbox" name="marketing_consent" class="consent-checkbox">
+                                        <span class="consent-text">Desidero ricevere aggiornamenti, novità e comunicazioni commerciali da BORTEX (facoltativo).</span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="min-height: 56px; justify-content: center; font-size: 0.98rem;">Iscriviti alla lista di attesa</button>
+                                <p style="margin: 0; color: rgba(255,255,255,0.54); font-size: 0.83rem; line-height: 1.6;">Ti scriveremo solo per aggiornamenti rilevanti su BORTEX e nuove funzionalita.</p>
+                            </form>
+                            <p class="waitlist-feedback" style="margin: 0.85rem 0 0; color: rgba(255,255,255,0.72); font-size: 0.95rem; min-height: 1.5rem;"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="https://www.bortex.site/" class="logo"><img id="footer-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo" style="height: 38px;" loading="lazy" width="1366" height="768" decoding="async"></a>
+                    <p class="footer-description">L'intelligenza artificiale al servizio delle persone. Chat in tempo reale, assistente AI e analisi avanzate.</p>
+                </div>
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Prodotto</h4>
+                        <ul class="footer-links">
+                            <li><a href="/features.html">Funzionalita</a></li>
+                            <li><a href="/pricing.html">Prezzi</a></li>
+                            <li><a href="https://www.bortex.site/login">Dashboard</a></li>
+                            <li><a href="/#waitlist">Early Access</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Azienda</h4>
+                        <ul class="footer-links">
+                            <li><a href="/about.html">Chi Siamo</a></li>
+                            <li><a href="/blog.html">Blog</a></li>
+                            <li><a href="/register.html">Registrazione</a></li>
+                            <li><a href="/">Home</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Supporto</h4>
+                        <ul class="footer-links">
+                            <li><a href="/contact.html">Contatti</a></li>
+                            <li><a href="/blog.html">Centro Risorse</a></li>
+                            <li><a href="/register.html">Richiedi una Demo</a></li>
+                            <li><a href="/privacy.html">Privacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Legale</h4>
+                        <ul class="footer-links">
+                            <li><a href="/cookies.html">Cookie Policy</a></li>
+                            <li><a href="/privacy.html">Privacy Policy</a></li>
+                            <li><a href="/terms.html">Termini</a></li>
+                            <li><a href="/gdpr.html">GDPR</a></li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="footer-bottom"><div class="footer-bottom-left"><p>&copy; <span id="current-year"></span> BORTEX. Tutti i diritti riservati.</p></div></div>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.waitlist-signup-form').forEach((form) => {
+                const feedback = form.parentElement.querySelector('.waitlist-feedback');
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    const button = form.querySelector('button[type="submit"]');
+                    const emailInput = form.querySelector('input[name="email"]');
+                    const originalLabel = button.textContent;
+                    const isEnglish = form.dataset.lang === 'en';
+                    feedback.textContent = '';
+                    button.disabled = true;
+                    button.textContent = isEnglish ? 'Sending...' : 'Invio...';
+
+                    try {
+                        const response = await fetch('/api/waitlist/signup', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                email: emailInput.value,
+                                lang: form.dataset.lang,
+                                feature_code: form.dataset.featureCode,
+                                feature_name: form.dataset.featureName,
+                                source_page: form.dataset.sourcePage,
+                                gdpr_consent: !!(form.querySelector('[name="gdpr_consent"]') && form.querySelector('[name="gdpr_consent"]').checked),
+                                marketing_consent: !!(form.querySelector('[name="marketing_consent"]') && form.querySelector('[name="marketing_consent"]').checked)
+                            })
+                        });
+
+                        const data = await response.json().catch(() => ({}));
+                        if (!response.ok || !data.success) {
+                            throw new Error(data.message || (isEnglish ? "Unable to complete your signup." : "Impossibile completare l'iscrizione."));
+                        }
+
+                        feedback.textContent = data.message;
+                        feedback.style.color = 'var(--primary-color)';
+                        form.reset();
+                    } catch (error) {
+                        feedback.textContent = error.message;
+                        feedback.style.color = '#f97316';
+                    } finally {
+                        button.disabled = false;
+                        button.textContent = originalLabel;
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script src="/js/main.min.js" defer></script>
+</body>
+</html>

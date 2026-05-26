@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../ui/assets/favicon/favicon-32x32.png">
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Bortex AI">
+    <link rel="apple-touch-icon" href="/pwa-icons/android/android-launchericon-192-192-new.png">
+    <script src="/pwa-redirect.js"></script>
+    <title>BORTEX | AI for support, widgets and automation</title>
+    <meta name="description"
+        content="BORTEX combines AI widgets, live chat, calls, notifications and automation for customer support, sales and productivity.">
+    <meta name="keywords"
+        content="AI live chat, virtual assistant, chatbot, customer support software, website chat widget, web push notifications, BORTEX AI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bortex.site/en/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bortex.site/en/">
+    <meta property="og:title" content="BORTEX | AI for support, widgets and automation">
+    <meta property="og:description"
+        content="AI widgets, live chat, notifications and automation for support, sales and daily execution.">
+    <meta property="og:image" content="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.bortex.site/en/">
+    <meta property="twitter:title" content="BORTEX | AI for support, widgets and automation">
+    <meta property="twitter:description"
+        content="AI widgets, live chat, notifications and automation for support, sales and daily execution.">
+    <meta property="twitter:image" content="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "BORTEX IA",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "description": "All-in-one platform for customer conversations, AI support and personal productivity with full control over your workflow.",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "150"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BORTEX IA",
+      "url": "https://www.bortex.site/",
+      "logo": "https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg",
+      "sameAs": [
+        "https://www.facebook.com/bortexia",
+        "https://www.linkedin.com/company/bortexia"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+39-000-0000000",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="https://www.bortex.site/en/" class="logo">
+                <img id="theme-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg"
+                    alt="BORTEX Logo" style="height: 40px;" loading="eager">
+            </a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="https://www.bortex.site/en/" class="nav-link" style="color: var(--primary-color);">Home</a></li>
+                    <li><a href="/en/features.html" class="nav-link">Features</a></li>
+                    <li><a href="/en/pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="/en/#waitlist" class="nav-link">Join Waitlist</a></li>
+                    <li><a href="/en/blog.html" class="nav-link">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+
+                <button class="lang-toggle" id="lang-toggle" aria-label="Change language">
+                    <span class="lang-code">EN</span>
+                </button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambia tema">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="https://www.bortex.site/en/login" class="btn btn-text">Login</a>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Menu Sidebar -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <img id="sidebar-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg"
+                alt="BORTEX Logo">
+        </div>
+        <ul class="mobile-menu-list">
+            <li><a href="/en/" class="active">Home</a></li>
+            <li><a href="/en/features.html">Features</a></li>
+            <li><a href="/en/pricing.html">Pricing</a></li>
+            <li><a href="/en/about.html">About</a></li>
+            <li><a href="/en/blog.html">Blog</a></li>
+        </ul>
+        <div class="mobile-menu-divider"></div>
+        <div class="mobile-menu-cta">
+            <a href="/en/#waitlist" class="btn btn-primary">Join Waitlist</a>
+            <a href="#" class="btn btn-outline">Login</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg-canvas" id="canvas-container"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <!-- Toggle Switch -->
+                    <div class="hero-toggle-container">
+                        <span class="toggle-label active" id="label-business">Business</span>
+                        <div class="toggle-switch" id="hero-toggle">
+                            <div class="toggle-knob"></div>
+                        </div>
+                        <span class="toggle-label" id="label-user">Personal</span>
+                    </div>
+
+                    <!-- Business Content (Default) -->
+                    <div id="hero-business" class="hero-content-block active">
+                        <span class="badge">BETA</span>
+                        <h1 class="hero-title">Live chat widget powered by <span class="text-gradient">autonomous artificial intelligence</span></h1>
+                        <p class="hero-description">
+                            An all-in-one platform to manage customer conversations, automate first-line support and keep full control over your operations.
+                        </p>
+                        <div class="hero-btns">
+                            <a href="index.html#waitlist" class="btn btn-primary btn-lg">Join Waitlist</a>
+                            <a href="#how-it-works" class="btn btn-outline btn-lg">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                How It Works
+                            </a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Workflow AI</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">24/7</span>
+                                <span class="stat-label">Smart Automation</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">Real-time</span>
+                                <span class="stat-label">Assistant</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Content (Hidden by default) -->
+                    <div id="hero-user" class="hero-content-block">
+                        <span class="badge">Personal AI Assistant</span>
+                        <h2 class="hero-title">Your time, managed better with <span class="text-gradient">BORTEX</span></h2>
+                        <p class="hero-description">
+                            A personal assistant that helps you stay focused, organize your days and turn ideas into concrete actions. Private, personal and always under your control.
+                        </p>
+                        <div class="hero-btns">
+                            <a href="index.html#waitlist" class="btn btn-primary btn-lg">Join Waitlist</a>
+                            <a href="#demo" class="btn btn-outline btn-lg">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                                Watch Demo
+                            </a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Workflow AI</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">Always-on</span>
+                                <span class="stat-label">Personal Assistant</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">Smart</span>
+                                <span class="stat-label">Vita Semplice</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BORTEX News Banner Section -->
+        <section id="ai-features-banner" class="ai-features-banner" data-auto-advance="true" data-interval="5000">
+            <div class="container">
+                <div class="ai-features-banner__intro">
+                    <span class="ai-feature-kicker">
+                        <span></span>
+                        BORTEX News
+                    </span>
+                    <h2 class="ai-features-banner__title">
+                        Latest platform updates
+                        <span>coming to BORTEX</span>
+                    </h2>
+                </div>
+
+                <div class="ai-features-banner__panel">
+                    <div class="ai-feature-tabs" role="tablist" aria-label="BORTEX news">
+                        <button id="ai-feature-tab-0" class="ai-feature-tab is-active" type="button" role="tab"
+                            aria-selected="true" aria-controls="ai-feature-slide-0" data-ai-feature-tab="0">
+                            <span class="ai-feature-tab__number">01</span>
+                            <span>
+                                <span class="ai-feature-tab__tag">BORTEX Release</span>
+                                <span class="ai-feature-tab__title">The platform enters release</span>
+                            </span>
+                        </button>
+                        <button id="ai-feature-tab-1" class="ai-feature-tab" type="button" role="tab"
+                            aria-selected="false" aria-controls="ai-feature-slide-1" data-ai-feature-tab="1">
+                            <span class="ai-feature-tab__number">02</span>
+                            <span>
+                                <span class="ai-feature-tab__tag">Chat Widget</span>
+                                <span class="ai-feature-tab__title">The first operational module</span>
+                            </span>
+                        </button>
+                        <button id="ai-feature-tab-2" class="ai-feature-tab" type="button" role="tab"
+                            aria-selected="false" aria-controls="ai-feature-slide-2" data-ai-feature-tab="2">
+                            <span class="ai-feature-tab__number">03</span>
+                            <span>
+                                <span class="ai-feature-tab__tag">Virtual Try-On</span>
+                                <span class="ai-feature-tab__title">Personal previews in seconds</span>
+                            </span>
+                        </button>
+                        <div class="ai-feature-progress" aria-hidden="true">
+                            <span class="ai-feature-progress__bar"></span>
+                        </div>
+                    </div>
+
+                    <div class="ai-features-banner__preview">
+                        <span class="ai-feature-watermark" aria-hidden="true">01</span>
+
+                        <article id="ai-feature-slide-0" class="ai-feature-slide is-active" role="tabpanel"
+                            aria-labelledby="ai-feature-tab-0" data-ai-feature-slide="0">
+                            <div class="ai-feature-visual ai-feature-visual--release" aria-hidden="true">
+                                <span class="ai-release-radar"></span>
+                                <span class="ai-release-card">
+                                    <span>BORTEX</span>
+                                    <span>AI platform</span>
+                                    <span></span>
+                                </span>
+                                <span class="ai-release-node ai-release-node--one"></span>
+                                <span class="ai-release-node ai-release-node--two"></span>
+                                <span class="ai-release-node ai-release-node--three"></span>
+                            </div>
+                            <span class="ai-feature-slide__tag">BORTEX Release</span>
+                            <h3>BORTEX is entering its first public release</h3>
+                            <p>The platform brings together the AI assistant, website widgets, analytics,
+                                notifications, dashboards and operational automations in one ecosystem. The release
+                                moves BORTEX beyond intelligent chat and into a concrete AI infrastructure for people,
+                                teams and businesses.</p>
+                            <a class="ai-feature-link" href="/en/blog-article.html">Read the BORTEX vision</a>
+                        </article>
+
+                        <article id="ai-feature-slide-1" class="ai-feature-slide" role="tabpanel"
+                            aria-labelledby="ai-feature-tab-1" data-ai-feature-slide="1">
+                            <div class="ai-feature-visual ai-feature-visual--widget" aria-hidden="true">
+                                <span class="ai-widget-window">
+                                    <span class="ai-widget-header">
+                                        <span></span>
+                                        <span>Bortex</span>
+                                    </span>
+                                    <span class="ai-widget-bubble ai-widget-bubble--bot">Hi, can I help?</span>
+                                    <span class="ai-widget-bubble ai-widget-bubble--user">I need to talk to you</span>
+                                    <span class="ai-widget-input"></span>
+                                </span>
+                                <span class="ai-widget-launcher">
+                                    <span></span>
+                                </span>
+                                <span class="ai-widget-pulse"></span>
+                            </div>
+                            <span class="ai-feature-slide__tag">Chat Widget</span>
+                            <h3>Turn your website into an always-on chat</h3>
+                            <p>The first operational Bortex release: one-line JavaScript installation, proactive invite
+                                bubble, live chat from the dashboard, AI replies when you are offline and audio/video
+                                calls directly from the browser.</p>
+                            <a class="ai-feature-link" href="/en/blog-widget-chat.html">Read the widget guide</a>
+                        </article>
+
+                        <article id="ai-feature-slide-2" class="ai-feature-slide" role="tabpanel"
+                            aria-labelledby="ai-feature-tab-2" data-ai-feature-slide="2">
+                            <div class="ai-feature-visual ai-feature-visual--widget" aria-hidden="true">
+                                <span class="ai-widget-window">
+                                    <span class="ai-widget-header">
+                                        <span></span>
+                                        <span>Bortex Try-On</span>
+                                    </span>
+                                    <span class="ai-widget-bubble ai-widget-bubble--bot">Choose a product</span>
+                                    <span class="ai-widget-bubble ai-widget-bubble--user">Uploading my photo</span>
+                                    <span class="ai-widget-input"></span>
+                                </span>
+                                <span class="ai-widget-launcher">
+                                    <span></span>
+                                </span>
+                                <span class="ai-widget-pulse"></span>
+                            </div>
+                            <span class="ai-feature-slide__tag">Virtual Try-On</span>
+                            <h3>Try-On lets customers see products on themselves</h3>
+                            <p>Visitors choose a product, upload a clear front-facing photo and generate a personal
+                                preview directly inside the widget. A new ecommerce flow designed to combine AI,
+                                engagement and conversion in one experience.</p>
+                            <a class="ai-feature-link" href="/en/blog-virtual-try-on.html">Read the Try-On
+                                article</a>
+                        </article>
+
+                        <div class="ai-feature-controls">
+                            <button class="ai-feature-arrow" type="button" aria-label="Previous news"
+                                data-ai-feature-prev>&larr;</button>
+                            <span class="ai-feature-count">
+                                <strong data-ai-feature-current>01</strong> / <span data-ai-feature-total>03</span>
+                            </span>
+                            <button class="ai-feature-arrow ai-feature-arrow--next" type="button"
+                                aria-label="Next news" data-ai-feature-next>&rarr;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ai-feature-dots" aria-label="Select a news item">
+                    <button class="is-active" type="button" aria-label="BORTEX Release"
+                        data-ai-feature-dot="0"></button>
+                    <button type="button" aria-label="Chat Widget" data-ai-feature-dot="1"></button>
+                    <button type="button" aria-label="Virtual Try-On" data-ai-feature-dot="2"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features section-padding business-only">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Everything You Need in One Platform</h2>
+                    <p class="section-subtitle">Live chat, artificial intelligence, analytics and integrated push
+                        notifications.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-purple">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3>Widget Chat</h3>
+                        <p>Install it with a single line of code. Customize colors, position, style and widget
+                            behavior to match your brand perfectly.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-blue">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3"></path>
+                            </svg>
+                        </div>
+                        <h3>Integrated AI Assistant</h3>
+                        <p>Advanced artificial intelligence to answer customer questions automatically.
+                            An intelligent assistant designed to reply faster and support real customer interactions.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-green">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Real-Time Analytics</h3>
+                        <p>Track behavior, events and complete visitor journeys. Advanced dashboards with detailed
+                            metrics and percentage comparisons.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-purple">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                        </div>
+                        <h3>Push Notifications</h3>
+                        <p>Schedule web push notification campaigns. Engage your users with targeted messages, even
+                            when they are not on your site.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-blue">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                            </svg>
+                        </div>
+                        <h3>Video/Audio Calls</h3>
+                        <p>Peer-to-peer WebRTC video and audio calls. Support your customers with direct visual
+                            assistance straight from the dashboard.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-orange">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                                <path d="M8 14h.01"></path>
+                                <path d="M12 14h.01"></path>
+                                <path d="M16 14h.01"></path>
+                                <path d="M8 18h.01"></path>
+                                <path d="M12 18h.01"></path>
+                            </svg>
+                        </div>
+                        <h3>AI Workflow Management</h3>
+                        <p>The AI assistant helps you organize your day, plan activities, manage priorities and
+                            optimize your workflow. Intelligent automation built to maximize productivity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="section-padding business-only" style="background: var(--bg-alt);">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">How to Launch BORTEX on Your Site</h2>
+                    <p class="section-subtitle">Three clear steps to launch your widget and start replying to customers.</p>
+                </div>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto;">
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-purple">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <h3>1. Add the Widget</h3>
+                        <p>Place the widget on your site and customize its look, position and style from the dashboard in minutes.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-blue">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3>2. Configure Replies</h3>
+                        <p>Decide how BORTEX should reply, which information it can use and when it should step in automatically.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-green">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3>3. Follow Conversations</h3>
+                        <p>Manage chats, requests and contacts from one dashboard, with the option to jump in whenever needed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section id="demo" class="section-padding demo-section business-only">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Where BORTEX Helps the Most</h2>
+                    <p class="section-subtitle">Practical use cases to help you sell more, reply faster and avoid losing qualified contacts.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-purple">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                        </div>
+                        <h3>Online Sales</h3>
+                        <p>Help customers while they are buying, answer common questions and guide them toward conversion.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-blue">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3>Support and Assistance</h3>
+                        <p>Handle frequent requests, route contacts better and step in when human support is needed.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-green">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="8.5" cy="7" r="4"></circle>
+                                <polyline points="17 11 19 13 23 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Lead Capture</h3>
+                        <p>Capture new contacts from your site, qualify them better and avoid leaving interested visitors unanswered.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coming Soon Section -->
+        <section id="integrations" class="section-padding business-only" style="background: var(--bg-color); overflow: hidden; position: relative;">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="badge"
+                        style="background: rgba(249, 115, 22, 0.1); color: var(--primary-color); margin-bottom: 1rem;">Coming Soon</span>
+                    <h2 class="section-title">Coming Soon to Your Favorite Platforms</h2>
+                    <p class="section-subtitle">Connect BORTEX with the platforms you use most</p>
+                </div>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 900px; margin: 3rem auto 0;">
+                    <!-- Shopify Card -->
+                    <div class="glass-card" style="padding: 2.5rem; text-align: center; transition: all 0.3s ease;">
+                        <div
+                            style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: rgba(150, 191, 72, 0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center;">
+                            <!-- Official Shopify Icon -->
+                            <img src="image/svg/shopify-logo.svg" alt="Shopify" width="48" height="48" decoding="async">
+                        </div>
+                        <h3
+                            style="color: var(--heading-color); font-size: 1.75rem; margin-bottom: 0.75rem; font-weight: 700;">
+                            Shopify</h3>
+                        <p style="color: var(--text-color); margin-bottom: 1.5rem; line-height: 1.6;">
+                            Install the BORTEX app directly in your Shopify store and start offering AI support to your customers in seconds.
+                        </p>
+                        <div
+                            style="display: flex; flex-direction: column; gap: 0.5rem; text-align: left; color: var(--text-color); font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                One-click installation
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Automatic product sync
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Built-in order support
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WordPress Card -->
+                    <div class="glass-card"
+                        style="padding: 2.5rem; text-align: center; position: relative; overflow: hidden; transition: all 0.3s ease;">
+                        <div
+                            style="position: absolute; top: 1rem; right: 1rem; background: linear-gradient(135deg, var(--primary-color), var(--primary-light)); color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Coming Soon
+                        </div>
+                        <div
+                            style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: rgba(33, 117, 155, 0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center;">
+                            <!-- Official WordPress Icon -->
+                            <img src="image/svg/wordpress-logo.svg" alt="WordPress" width="48" height="48" decoding="async">
+                        </div>
+                        <h3
+                            style="color: var(--heading-color); font-size: 1.75rem; margin-bottom: 0.75rem; font-weight: 700;">
+                            WordPress</h3>
+                        <p style="color: var(--text-color); margin-bottom: 1.5rem; line-height: 1.6;">
+                            Download the BORTEX WordPress plugin and integrate the AI chatbot into your site with
+                            guided setup and full customization.
+                        </p>
+                        <div
+                            style="display: flex; flex-direction: column; gap: 0.5rem; text-align: left; color: var(--text-color); font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Lightweight, optimized plugin
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Works with all themes
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                WooCommerce support
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <p style="color: var(--text-color); margin-bottom: 1.5rem; font-size: 1.1rem;">
+                        Want to be notified when it launches?
+                    </p>
+                    <a href="index.html#waitlist" class="btn btn-primary btn-lg"
+                        style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        Join Waitlist
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- User Features Section -->
+        <section id="user-features" class="section-padding user-only" style="background: var(--bg-alt);">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Your Personal Space, More Organized and More Useful</h2>
+                    <p class="section-subtitle">When you switch to Personal, BORTEX brings forward the tools that matter most: chat, agenda, reminders, notifications and settings built around your routine.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-purple">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3>Talk to BORTEX Instantly</h3>
+                        <p>Real-time conversations with your personal AI assistant from one central chat.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-blue">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                        </div>
+                        <h3>An Agenda That Organizes With You</h3>
+                        <p>Manage appointments and daily planning with AI suggestions from your personal calendar.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-green">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                        </div>
+                        <h3>Only the Notifications That Matter</h3>
+                        <p>Receive relevant alerts at the right time: tasks, appointments and reminders that are actually useful.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-orange">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v4"></path>
+                                <path d="M12 18v4"></path>
+                                <path d="M2 12h4"></path>
+                                <path d="M18 12h4"></path>
+                            </svg>
+                        </div>
+                        <h3>Instant Answers, No Friction</h3>
+                        <p>Ask quick questions and get immediate practical answers for personal organization and fast decisions.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-purple">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83"></path>
+                                <path d="M4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83"></path>
+                            </svg>
+                        </div>
+                        <h3>Assistant Customizer: Make It Yours</h3>
+                        <p>Define your assistant’s tone, behavior and style so it feels closer to the way you communicate.</p>
+                        <a href="assistant-customizer.html" class="btn btn-outline" style="margin-top: 1rem;">Open Assistant Customizer</a>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-blue">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3>Full Control of Your Account</h3>
+                        <p>Manage account, preferences, security and personal settings from one place.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-green">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3>The More It Knows You, the Better It Helps</h3>
+                        <p>The more you use it, the better it understands you: BORTEX anticipates needs, suggests concrete actions and helps you stay on track every day.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-orange">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 3h18v4H3z"></path>
+                                <path d="M8 11h8"></path>
+                                <path d="M8 15h8"></path>
+                                <path d="M8 19h5"></path>
+                            </svg>
+                        </div>
+                        <h3>From Personal Use to Selling with Shopify</h3>
+                        <p>If you start with personal use but sell online, you can activate Shopify integration and turn your assistant into a sales support layer.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon icon-glow-blue">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 12h-4"></path>
+                                <path d="M6 12H2"></path>
+                                <path d="M12 6V2"></path>
+                                <path d="M12 22v-4"></path>
+                                <circle cx="12" cy="12" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3>Stay Focused on Priorities</h3>
+                        <p>BORTEX helps you structure your day, reduce distractions and stay focused on what really matters.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- Desktop & iOS Experience Section -->
+        <section id="apps-ecosystem" class="section-padding" style="background: var(--bg-color);">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Desktop and iOS, One Continuous Conversation</h2>
+                    <p class="section-subtitle">Use BORTEX on desktop and mobile while keeping continuity across assistant chat and daily tasks.</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+                    <div class="glass-card" style="padding: 2rem;">
+                        <div class="feature-icon icon-glow-purple" style="margin-bottom: 1rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="12" rx="2"></rect>
+                                <path d="M8 20h8"></path>
+                                <path d="M12 16v4"></path>
+                            </svg>
+                        </div>
+                        <h3 style="color: var(--heading-color); margin-bottom: 0.75rem;">BORTEX Desktop App</h3>
+                        <p style="color: var(--text-color); margin-bottom: 1rem;">Work from desktop with a dedicated app and open the assistant instantly for quick tasks, automations and real-time control.</p>
+                        <a href="/bortex.html" class="btn btn-outline">Open Desktop Chat</a>
+                    </div>
+                    <div class="glass-card" style="padding: 2rem;">
+                        <div class="feature-icon icon-glow-blue" style="margin-bottom: 1rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="7" y="2" width="10" height="20" rx="2"></rect>
+                                <path d="M11 18h2"></path>
+                            </svg>
+                        </div>
+                        <h3 style="color: var(--heading-color); margin-bottom: 0.75rem;">iOS App and Companion</h3>
+                        <p style="color: var(--text-color); margin-bottom: 1rem;">Bring BORTEX to iPhone with a native experience and operational continuity: calendar, notifications and assistant always in sync.</p>
+                        <a href="index.html#waitlist" class="btn btn-primary">Request iOS Access</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="section-padding" style="background: var(--bg-alt);">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Plans Built for Your Growth</h2>
+                    <p class="section-subtitle">Transparent, scalable pricing. Join the waitlist to receive launch and plan updates.</p>
+                </div>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+                    <div class="glass-card" style="text-align: center; position: relative; padding: 2rem;">
+                        <h3
+                            style="color: var(--heading-color); font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">
+                            Starter</h3>
+                        <div style="margin-bottom: 1.5rem;">
+                            <span
+                                style="font-size: 2.5rem; font-weight: 700; color: var(--primary-color);">Free</span>
+                        </div>
+                        <p style="color: var(--text-color); margin-bottom: 1.5rem; min-height: 3em;">Perfect for
+                            exploring the platform</p>
+                        <ul
+                            style="text-align: left; margin-bottom: 2rem; line-height: 2; list-style: none; padding: 0;">
+                            <li style="color: var(--text-color); display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Customizable chat widget
+                            </li>
+                            <li style="color: var(--text-color); display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                100 conversations/month
+                            </li>
+                            <li style="color: var(--text-color); display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Real-time chat
+                            </li>
+                            <li style="color: var(--text-color); display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Basic analytics
+                            </li>
+                        </ul>
+                        <a href="index.html#waitlist" class="btn btn-outline" style="width: 100%;">Start Now</a>
+                    </div>
+                    <div class="glass-card"
+                        style="text-align: center; border: 2px solid var(--primary-color); position: relative; padding: 2rem;">
+                        <div
+                            style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary-color); color: white; padding: 0.25rem 1rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600;">
+                            RECOMMENDED</div>
+                        <h3
+                            style="color: var(--heading-color); font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">
+                            Pro</h3>
+                        <div style="margin-bottom: 1.5rem;">
+                            <span style="font-size: 2.5rem; font-weight: 700; color: var(--primary-color);">€15</span>
+                            <span style="color: var(--text-color);">/month</span>
+                        </div>
+                        <p style="color: var(--text-color); margin-bottom: 1.5rem; min-height: 3em;">For teams that
+                            want the most from AI</p>
+                        <ul
+                            style="text-align: left; margin-bottom: 2rem; line-height: 2; list-style: none; padding: 0;">
+                            <li style="color: var(--text-color); display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Unlimited conversations
+                            </li>
+                            <li style="color: var(--text-color); display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Advanced AI assistant
+                            </li>
+                            <li style="color: var(--text-color); display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Video and audio calls
+                            </li>
+                            <li style="color: var(--text-color); display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Advanced analytics
+                            </li>
+                            <li style="color: var(--text-color); display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Push notifications
+                            </li>
+                            <li style="color: var(--text-color); display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Unlimited team members
+                            </li>
+                        </ul>
+                        <a href="index.html#waitlist" class="btn btn-primary glow-effect" style="width: 100%;">Join Waitlist</a>
+                    </div>
+                    <!-- <div class="glass-card" style="text-align: center; position: relative; padding: 2rem;">
+                        <h3
+                            style="color: var(--heading-color); font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">
+                            Enterprise</h3>
+                        <div style="margin-bottom: 1.5rem;">
+                            <span
+                                style="font-size: 2rem; font-weight: 700; color: var(--primary-color);">Custom</span>
+                        </div>
+                        <p style="color: var(--text-color); margin-bottom: 1.5rem; min-height: 3em;">Tailored
+                            solutions for large organizations</p>
+                        <ul
+                            style="text-align: left; margin-bottom: 2rem; line-height: 2; list-style: none; padding: 0;">
+                            <li style="color: var(--text-color); display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Dedicated deployment
+                            </li>
+                            <li style="color: var(--text-color); display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Guaranteed SLA
+                            </li>
+                            <li style="color: var(--text-color); display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                White label
+                            </li>
+                            <li style="color: var(--text-color); display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Custom integrations
+                            </li>
+                            <li style="color: var(--text-color); display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Dedicated 24/7 support
+                            </li>
+                        </ul>
+                        <a href="/en/contact.html" class="btn btn-outline" style="width: 100%;">Contact the Team</a>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CTA Section -->
+        <section class="cta-section section-padding">
+            <div class="container">
+                <div class="cta-box glass-panel-strong">
+                    <div class="cta-content">
+                        <h2 id="cta-title">Transform Your Customer Support Today</h2>
+                        <p id="cta-subtitle">Join the waitlist to receive launch updates and early access information.</p>
+                        <div
+                            style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                            <a id="cta-primary" href="index.html#waitlist" class="btn btn-primary btn-lg glow-effect">Join Waitlist</a>
+                            <a id="cta-secondary" href="/en/contact.html" class="btn btn-outline btn-lg"
+                                style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); color: white;">Book
+                                Demo</a>
+                        </div>
+                        <div
+                            style="margin-top: 1.5rem; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; font-size: 0.9rem;">
+                            <span
+                                style="display: flex; align-items: center; gap: 0.4rem; font-weight: 600; color: var(--pricing-highlight);">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Guided setup
+                            </span>
+                            <span
+                                style="display: flex; align-items: center; gap: 0.4rem; font-weight: 600; color: var(--pricing-highlight);">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                24/7 support
+                            </span>
+                            <span
+                                style="display: flex; align-items: center; gap: 0.4rem; font-weight: 600; color: var(--pricing-highlight);">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Easy cancellation
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="waitlist" class="section-padding" style="padding-top: 0;">
+            <div class="container" style="max-width: 1180px;">
+                <div style="position: relative; overflow: hidden; border-radius: clamp(20px, 4vw, 28px); border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(135deg, rgba(10, 14, 24, 0.96) 0%, rgba(20, 27, 45, 0.94) 60%, rgba(39, 17, 10, 0.92) 100%); box-shadow: 0 24px 60px rgba(0,0,0,0.22);">
+                    <div style="position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(249, 115, 22, 0.26), transparent 28%), radial-gradient(circle at bottom right, rgba(251, 146, 60, 0.18), transparent 34%);"></div>
+                    <div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center; padding: clamp(1.2rem, 3vw, 2.4rem);">
+                        <div style="display: grid; gap: 0.9rem; max-width: 700px;">
+                            <span style="display: inline-flex; width: fit-content; align-items: center; gap: 0.55rem; padding: 0.5rem 0.9rem; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.72); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;">BORTEX Early Access</span>
+                            <h2 style="margin: 0; color: #ffffff; font-size: clamp(1.9rem, 3vw, 2.6rem); line-height: 1.08; letter-spacing: -0.03em;">Stay updated on the next BORTEX releases</h2>
+                            <p style="margin: 0; color: rgba(255,255,255,0.74); line-height: 1.9; font-size: 1rem; max-width: 620px;">Join the waitlist to receive early access to new AI features, advanced agent mode, voice capabilities and future product releases.</p>
+                        </div>
+                        <div style="position: relative; border-radius: 22px; padding: clamp(1rem, 2.8vw, 1.2rem); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px);">
+                            <form class="waitlist-signup-form" data-lang="en" data-feature-code="bortex_early_access" data-feature-name="BORTEX Early Access" data-source-page="/en/" style="display: grid; gap: 0.95rem;">
+                                <div style="display: grid; gap: 0.5rem;">
+                                    <label for="homepage-waitlist-email-en" style="font-size: 0.9rem; color: rgba(255,255,255,0.72);">Email address</label>
+                                    <input id="homepage-waitlist-email-en" type="email" name="email" required placeholder="name@company.com" style="width: 100%; min-height: 58px; border-radius: 16px; border: 1px solid rgba(249, 115, 22, 0.42); background: rgba(255,255,255,0.97); color: #111827; padding: 0 1rem; font-size: 1rem; outline: none; box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);">
+                                </div>
+
+                                <!-- GDPR Consent -->
+                                <div class="waitlist-consents">
+                                    <label class="consent-label">
+                                        <input type="checkbox" name="gdpr_consent" class="consent-checkbox" required>
+                                        <span class="consent-text">I have read and consent to the processing of my personal data for waitlist management, pursuant to EU Reg. 2016/679 (GDPR). <a href="/en/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> *</span>
+                                    </label>
+                                    <label class="consent-label">
+                                        <input type="checkbox" name="marketing_consent" class="consent-checkbox">
+                                        <span class="consent-text">I would like to receive updates, news and commercial communications from BORTEX (optional).</span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="min-height: 56px; justify-content: center; font-size: 0.98rem;">Join the waitlist</button>
+                                <p style="margin: 0; color: rgba(255,255,255,0.54); font-size: 0.83rem; line-height: 1.6;">We will only email you for relevant BORTEX updates and new product releases.</p>
+                            </form>
+                            <p class="waitlist-feedback" style="margin: 0.85rem 0 0; color: rgba(255,255,255,0.72); font-size: 0.95rem; min-height: 1.5rem;"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <!-- Footer Main Content -->
+            <div class="footer-content">
+                <!-- Brand Column -->
+                <div class="footer-brand">
+                    <a href="https://www.bortex.site/en/" class="logo">
+                        <img id="footer-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg"
+                            alt="BORTEX Logo" style="height: 38px;" loading="lazy" width="1366" height="768" decoding="async">
+                    </a>
+                    <p class="footer-description">Artificial intelligence built to support people. Real-time chat, AI assistant and advanced analytics.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/alessandro-f-119b83270/" aria-label="LinkedIn" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61574265030730" aria-label="Facebook" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <span class="sr-only">Facebook</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"></path></svg>
+                        </a>
+                        <a href="https://x.com/BortexAssistant" aria-label="X" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <span class="sr-only">X</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.26l-4.9-6.99L5.93 22H2.8l7.24-8.27L.8 2h6.42l4.43 6.32L18.9 2zm-1.1 18h1.73L6.29 3.9H4.43L17.8 20z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links Columns -->
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Product</h4>
+                        <ul class="footer-links">
+                            <li><a href="/en/features.html">Features</a></li>
+                            <li><a href="/en/pricing.html">Pricing</a></li>
+                            <li><a href="https://www.bortex.site/en/login">Dashboard</a></li>
+                            <li><a href="/en/#waitlist">Early Access</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-title">Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="/en/about.html">About</a></li>
+                            <li><a href="/en/blog.html">Blog</a></li>
+                            <li><a href="/en/register.html">Sign Up</a></li>
+                            <li><a href="/en/">Home</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-title">Support</h4>
+                        <ul class="footer-links">
+                            <li><a href="/en/contact.html">Contact</a></li>
+                            <li><a href="/en/blog.html">Resources</a></li>
+                            <li><a href="/en/register.html">Request a Demo</a></li>
+                            <li><a href="/en/privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-title">Legal</h4>
+                        <ul class="footer-links">
+                            <li><a href="/en/cookies.html">Cookie Policy</a></li>
+                            <li><a href="/en/privacy.html">Privacy Policy</a></li>
+                            <li><a href="/en/terms.html">Terms</a></li>
+                            <li><a href="/en/gdpr.html">GDPR</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; <span id="current-year"></span> BORTEX. All rights reserved.</p>
+                </div>
+</div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.waitlist-signup-form').forEach((form) => {
+                const feedback = form.parentElement.querySelector('.waitlist-feedback');
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    const button = form.querySelector('button[type="submit"]');
+                    const emailInput = form.querySelector('input[name="email"]');
+                    const originalLabel = button.textContent;
+                    const isEnglish = form.dataset.lang === 'en';
+                    feedback.textContent = '';
+                    button.disabled = true;
+                    button.textContent = isEnglish ? 'Sending...' : 'Invio...';
+
+                    try {
+                        const response = await fetch('/api/waitlist/signup', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                email: emailInput.value,
+                                lang: form.dataset.lang,
+                                feature_code: form.dataset.featureCode,
+                                feature_name: form.dataset.featureName,
+                                source_page: form.dataset.sourcePage,
+                                gdpr_consent: !!(form.querySelector('[name="gdpr_consent"]') && form.querySelector('[name="gdpr_consent"]').checked),
+                                marketing_consent: !!(form.querySelector('[name="marketing_consent"]') && form.querySelector('[name="marketing_consent"]').checked)
+                            })
+                        });
+                        const data = await response.json().catch(() => ({}));
+                        if (!response.ok || !data.success) {
+                            throw new Error(data.message || (isEnglish ? "Unable to complete your signup." : "Impossibile completare l'iscrizione."));
+                        }
+                        feedback.textContent = data.message;
+                        feedback.style.color = 'var(--primary-color)';
+                        form.reset();
+                    } catch (error) {
+                        feedback.textContent = error.message;
+                        feedback.style.color = '#f97316';
+                    } finally {
+                        button.disabled = false;
+                        button.textContent = originalLabel;
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- QTrack Event Tracker - Pageviews homepage -->
+    <script>
+        (function (w, d) {
+            var l = w.location;
+            var Q = w.QTrack = {
+                id: 'qtrk_mkegk6908bgpi',
+                url: 'https://bortex.site',
+                vid: localStorage.getItem('qtrk_vid') || (function () {
+                    var id = 'v_' + Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
+                    localStorage.setItem('qtrk_vid', id);
+                    return id;
+                })(),
+                sid: sessionStorage.getItem('qtrk_sid') || (function () {
+                    var id = 's_' + Math.random().toString(36).substr(2, 9);
+                    sessionStorage.setItem('qtrk_sid', id);
+                    return id;
+                })()
+            };
+
+            function send(type, data) {
+                var payload = JSON.stringify({
+                    trackerId: Q.id, visitorId: Q.vid, sessionId: Q.sid, eventType: type,
+                    eventData: data || {},
+                    page: { url: l.href, title: d.title, referrer: d.referrer },
+                    device: { ua: navigator.userAgent, lang: navigator.language },
+                    ts: new Date().toISOString()
+                });
+                if (navigator.sendBeacon) {
+                    navigator.sendBeacon(Q.url + '/api/track', new Blob([payload], { type: 'application/json' }));
+                } else {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', Q.url + '/api/track', true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.send(payload);
+                }
+            }
+            w.qtrack = send;
+
+            send('pageview', { loadTime: Math.round(performance.now()) });
+
+            console.log('[QTrack] Initialized qtrk_mkegk6908bgpi');
+        })(window, document);
+    </script>
+    <!-- End QTrack -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="/js/main.min.js" defer></script>
+    <script src="/js/3d-scene.min.js" defer></script>
+
+</html>

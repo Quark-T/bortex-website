@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../ui/assets/favicon/favicon-32x32.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Bortex AI">
+    <link rel="apple-touch-icon" href="/pwa-icons/android/android-launchericon-192-192-new.png">
+    <script src="/pwa-redirect.js"></script>
+    <title>BORTEX: the new revolution in artificial intelligence</title>
+    <meta name="description" content="BORTEX and the new revolution in artificial intelligence: an intelligent assistant with chat, agent mode, widgets, analytics, notifications, business integrations and operational automations." />
+    <meta name="keywords" content="BORTEX, artificial intelligence, intelligent assistant, AI revolution, advanced chatbot, automations, AI widget, analytics, push notifications" />
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bortex.site/en/blog-article.html">
+    <link rel="alternate" hreflang="it" href="https://www.bortex.site/blog-article.html">
+    <link rel="alternate" hreflang="en" href="https://www.bortex.site/en/blog-article.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.bortex.site/blog-article.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.bortex.site/en/blog-article.html">
+    <meta property="og:title" content="BORTEX: the new revolution in artificial intelligence">
+    <meta property="og:description" content="Why BORTEX aims to turn AI into an operational assistant, customizable and integrated into real digital experiences.">
+    <meta property="og:image" content="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.bortex.site/en/blog-article.html">
+    <meta property="twitter:title" content="BORTEX: the new revolution in artificial intelligence">
+    <meta property="twitter:description" content="Why BORTEX aims to turn AI into an operational assistant, customizable and integrated into real digital experiences.">
+    <meta property="twitter:image" content="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <style>
+        .article-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 320px;
+            gap: 2rem;
+            align-items: start;
+        }
+        .article-sidebar {
+            display: grid;
+            gap: 1.25rem;
+            position: sticky;
+            top: 110px;
+        }
+        .article-card {
+            padding: 2.5rem;
+        }
+        @media (max-width: 960px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .article-sidebar {
+                position: static;
+                top: auto;
+                order: 2;
+            }
+            .article-card {
+                padding: 1.35rem;
+            }
+        }
+        @media (max-width: 640px) {
+            .article-layout {
+                gap: 1rem;
+            }
+            .article-card {
+                padding: 1.1rem;
+            }
+        }
+
+        /* ── Waitlist GDPR consent ── */
+        .waitlist-consents { display: grid; gap: 0.55rem; }
+        .consent-label { display: flex; align-items: flex-start; gap: 0.55rem; cursor: pointer; }
+        .consent-checkbox {
+            width: 15px; height: 15px; min-width: 15px;
+            border-radius: 4px; margin-top: 2px; cursor: pointer;
+            accent-color: #f97316;
+        }
+        .consent-text {
+            font-size: 0.77rem; color: rgba(255,255,255,.58); line-height: 1.55;
+        }
+        .consent-text a { color: #f97316; text-decoration: none; }
+        .consent-text a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="https://www.bortex.site/en/" class="logo">
+                <img id="theme-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo" style="height: 40px;" loading="eager">
+            </a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="https://www.bortex.site/en/" class="nav-link">Home</a></li>
+                    <li><a href="/en/features.html" class="nav-link">Features</a></li>
+                    <li><a href="/en/pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="/en/#waitlist" class="nav-link">Join Waitlist</a></li>
+                    <li><a href="/en/blog.html" class="nav-link" style="color: var(--primary-color);">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="lang-toggle" id="lang-toggle" aria-label="Change language"><span class="lang-code">EN</span></button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="https://www.bortex.site/en/login" class="btn btn-text">Login</a>
+                <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header"><img id="sidebar-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo"></div>
+        <ul class="mobile-menu-list">
+            <li><a href="/en/">Home</a></li>
+            <li><a href="/en/features.html">Features</a></li>
+            <li><a href="/en/pricing.html">Pricing</a></li>
+            <li><a href="/en/about.html">About</a></li>
+            <li><a href="/en/blog.html" class="active">Blog</a></li>
+        </ul>
+        <div class="mobile-menu-divider"></div>
+        <div class="mobile-menu-cta">
+            <a href="index.html#waitlist" class="btn btn-primary">Try for Free</a>
+            <a href="https://www.bortex.site/en/login" class="btn btn-outline">Login</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero" style="min-height: 60vh; padding-bottom: 4rem; background:
+            radial-gradient(circle at top left, rgba(249, 115, 22, 0.18), transparent 34%),
+            radial-gradient(circle at top right, rgba(139, 92, 246, 0.14), transparent 32%),
+            linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);">
+            <div class="container hero-container">
+                <div class="hero-content" style="max-width: 980px;">
+                    <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                        <span style="letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); font-size: 0.82rem;">BORTEX Journal</span>
+                        <span style="width: 56px; height: 1px; background: rgba(255,255,255,0.16);"></span>
+                        <span style="letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); font-size: 0.82rem;">AI Product Vision</span>
+                    </div>
+                    <h1 class="hero-title" style="max-width: 920px; margin-bottom: 1rem;">BORTEX: the new revolution in <span class="text-gradient">artificial intelligence</span></h1>
+                    <p class="hero-description" style="max-width: 860px; margin-bottom: 2.25rem;">An AI infrastructure designed to go beyond chat, enter real workflows, and transform digital assistance into a more useful, coherent and truly integrated operating layer.</p>
+                    <div style="max-width: 760px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.25rem; color: var(--text-muted); font-size: 0.95rem; line-height: 1.8;">
+                        This editorial examines how BORTEX combines conversation, automation, widgets, analytics, notifications and agent mode into a single vision built for people, teams and businesses that want to use AI in an operational way.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container article-layout" style="max-width: 1180px;">
+                <article class="glass-card article-card">
+                    <div style="padding-bottom: 1.5rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                        <p style="font-size: 1.1rem; line-height: 1.9; color: var(--text-color); margin: 0;">In a market full of tools that stop at generating text, BORTEX proposes a shift in perspective: an intelligence layer that goes beyond conversation, enters real workflows, integrates into domains, supports users and teams, and prepares the ground for more operational assistance.</p>
+                    </div>
+
+                    <h2 style="margin-bottom: 1rem; color: var(--heading-color);">An AI assistant that goes beyond answering</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Over the last few years, the market has seen the rise of many AI-based tools, but most of them stop at conversation. BORTEX introduces a different model: it does not only answer, it helps organize, assist, automate and accompany users inside real tasks. The goal is not to simulate dialogue, but to make AI a concrete presence inside a complete digital ecosystem.</p>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Why BORTEX represents a new AI revolution</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">BORTEX brings together intelligent chat, advanced customization, business tools, analytics, push notifications, reminders, domain management, and presence across web and app in a single platform. This approach creates a real leap in quality: the assistant is no longer an isolated feature, but the operating center of a coordinated digital experience.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">The revolution is not only in the language model itself, but in how artificial intelligence becomes useful in a real operating context. BORTEX can be configured, adapted to a brand, integrated into sites, connected to widgets, used to improve customer engagement and, progressively, transformed into an agent capable of handling increasingly concrete tasks.</p>
+
+                    <div class="glass-card" style="padding: 1.5rem; margin: 2rem 0; background: linear-gradient(135deg, rgba(249, 115, 22, 0.09), rgba(139, 92, 246, 0.06)); border: 1px solid rgba(255,255,255,0.08);">
+                        <h3 style="margin: 0 0 0.75rem; color: var(--heading-color);">Key point</h3>
+                        <p style="margin: 0; color: var(--text-color); line-height: 1.8;">BORTEX is not positioned as a simple bot that replies, but as an AI infrastructure able to converse, adapt to context, integrate into a brand and support more concrete tasks across web, app and business tools.</p>
+                    </div>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">The key capabilities of BORTEX</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">BORTEX combines multiple capabilities into a single coherent experience. It offers advanced AI chat, agent mode, assistant customization, widgets for domains and sites, integrations with external platforms, notification management, event analytics, operational dashboards, reminders and dedicated tools for both personal and business users.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">The assistant can be customized in tone, identity, appearance and behavior. It can support interactions with site visitors, help manage communications and workflows, surface useful signals and present information in a simple way. At the same time, the platform continues to evolve toward more advanced components such as assisted calls, user handoff and task orchestration.</p>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Widgets, domains and digital presence</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">One of BORTEX’s strongest points is the ability to bring the assistant into a real domain. The widget makes it possible to create a branded AI presence on websites and digital projects while keeping the experience aligned with the company identity. This means BORTEX does not remain confined inside a dashboard, but becomes a living touchpoint between a business and its audience.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Connected domain management, business integrations and widget behavior control make the assistant suitable not only for informational scenarios, but also for more advanced support, qualification, engagement and guided interaction flows.</p>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Analytics, notifications and intelligent automation</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">BORTEX is not limited to the conversational interface. The platform includes dashboards, event tracking, push notifications, campaigns, reminders and analytics tools that help understand what is happening across the digital ecosystem. In this way, AI is no longer separated from data: interaction and measurement support each other.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">This combination opens the door to a more useful and concrete form of automation: not isolated actions, but contextual assistance guided by user behavior, preferences and business goals.</p>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">From chat to operational agent</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 0;">The most interesting direction for BORTEX is its evolution into a truly operational intelligent agent. Not just answers, but context understanding, guided decisions, task handling, user escalation when needed, and continuity across web, app and external channels. In that sense, BORTEX represents a more ambitious view of AI: less showcase, more real utility.</p>
+                </article>
+
+                <aside class="article-sidebar">
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h3 style="margin: 0 0 1rem; color: var(--heading-color);">In this article</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.85rem;">
+                            <li><span style="color: var(--primary-color); font-weight: 700;">01</span> <span style="color: var(--text-color);">Operational AI assistant</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">02</span> <span style="color: var(--text-color);">Revolutionary vision</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">03</span> <span style="color: var(--text-color);">Core capabilities</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">04</span> <span style="color: var(--text-color);">Widgets and domains</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">05</span> <span style="color: var(--text-color);">Analytics and automation</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">06</span> <span style="color: var(--text-color);">Operational agent</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h3 style="margin: 0 0 1rem; color: var(--heading-color);">Why it matters</h3>
+                        <p style="margin: 0; color: var(--text-color); line-height: 1.8;">BORTEX attempts to connect AI, experience design, automation, analytics and digital presence inside one coherent platform. That is where its differentiation begins.</p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem; background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(139, 92, 246, 0.08)); border: 1px solid rgba(255,255,255,0.08);">
+                        <h3 style="margin: 0 0 0.85rem; color: var(--heading-color);">Want to try it?</h3>
+                        <p style="margin: 0 0 1rem; color: var(--text-color); line-height: 1.8;">Enter the platform and see how BORTEX can evolve from a simple chat interface into a real operational assistant.</p>
+                        <div style="display: grid; gap: 0.75rem;">
+                            <a href="index.html#waitlist" class="btn btn-primary">Try for Free</a>
+                            <a href="/en/blog.html" class="btn btn-outline">Back to blog</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+
+        <section class="section-padding" style="padding-top: 0;">
+            <div class="container" style="max-width: 1180px;">
+                <div style="position: relative; overflow: hidden; border-radius: clamp(20px, 4vw, 28px); border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(135deg, rgba(10, 14, 24, 0.96) 0%, rgba(20, 27, 45, 0.94) 60%, rgba(39, 17, 10, 0.92) 100%); box-shadow: 0 24px 60px rgba(0,0,0,0.22);">
+                    <div style="position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(249, 115, 22, 0.26), transparent 28%), radial-gradient(circle at bottom right, rgba(251, 146, 60, 0.18), transparent 34%);"></div>
+                    <div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center; padding: clamp(1.2rem, 3vw, 2.4rem);">
+                        <div style="display: grid; gap: 0.9rem; max-width: 720px;">
+                            <span style="display: inline-flex; width: fit-content; align-items: center; gap: 0.55rem; padding: 0.5rem 0.9rem; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.72); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;">BORTEX Early Access</span>
+                            <h2 style="margin: 0; color: #ffffff; font-size: clamp(1.9rem, 3vw, 2.6rem); line-height: 1.08; letter-spacing: -0.03em;">Join the waitlist for the next BORTEX capabilities</h2>
+                            <p style="margin: 0; color: rgba(255,255,255,0.74); line-height: 1.9; font-size: 1rem; max-width: 640px;">Receive updates on early access, new AI features, advanced agent mode and the next operational evolutions of the platform.</p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.35rem;">
+                                <span style="padding: 0.5rem 0.78rem; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); color: rgba(255,255,255,0.78); font-size: 0.88rem;">Early feature drops</span>
+                                <span style="padding: 0.5rem 0.78rem; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); color: rgba(255,255,255,0.78); font-size: 0.88rem;">Voice & agent updates</span>
+                                <span style="padding: 0.5rem 0.78rem; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); color: rgba(255,255,255,0.78); font-size: 0.88rem;">Product releases</span>
+                            </div>
+                        </div>
+                        <div style="position: relative; border-radius: 22px; padding: clamp(1rem, 2.8vw, 1.2rem); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px);">
+                            <form class="waitlist-signup-form" data-lang="en" data-feature-code="bortex_early_access" data-feature-name="BORTEX Early Access" data-source-page="/en/blog-article.html" style="display: grid; gap: 0.95rem;">
+                                <div style="display: grid; gap: 0.5rem;">
+                                    <label for="waitlist-email-en" style="font-size: 0.9rem; color: rgba(255,255,255,0.72);">Email address</label>
+                                    <input id="waitlist-email-en" type="email" name="email" required placeholder="name@company.com" style="width: 100%; min-height: 58px; border-radius: 16px; border: 1px solid rgba(249, 115, 22, 0.42); background: rgba(255,255,255,0.97); color: #111827; padding: 0 1rem; font-size: 1rem; outline: none; box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);">
+                                </div>
+
+                                <!-- GDPR Consent -->
+                                <div class="waitlist-consents">
+                                    <label class="consent-label">
+                                        <input type="checkbox" name="gdpr_consent" class="consent-checkbox" required>
+                                        <span class="consent-text">I have read and consent to the processing of my personal data for waitlist management, pursuant to EU Reg. 2016/679 (GDPR). <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> *</span>
+                                    </label>
+                                    <label class="consent-label">
+                                        <input type="checkbox" name="marketing_consent" class="consent-checkbox">
+                                        <span class="consent-text">I would like to receive updates, news and commercial communications from BORTEX (optional).</span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="min-height: 56px; justify-content: center; font-size: 0.98rem;">Join the waitlist</button>
+                                <p style="margin: 0; color: rgba(255,255,255,0.54); font-size: 0.83rem; line-height: 1.6;">We will only email you for relevant BORTEX updates and new feature releases.</p>
+                            </form>
+                            <p class="waitlist-feedback" style="margin: 0.85rem 0 0; color: rgba(255,255,255,0.72); font-size: 0.95rem; min-height: 1.5rem;"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="https://www.bortex.site/en/" class="logo"><img id="footer-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo" style="height: 38px;" loading="lazy" width="1366" height="768" decoding="async"></a>
+                    <p class="footer-description">Artificial intelligence built for people. Real-time chat, AI assistance and advanced analytics.</p>
+                </div>
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Product</h4>
+                        <ul class="footer-links">
+                            <li><a href="/en/features.html">Features</a></li>
+                            <li><a href="/en/pricing.html">Pricing</a></li>
+                            <li><a href="https://www.bortex.site/en/login">Dashboard</a></li>
+                            <li><a href="/en/#waitlist">Early Access</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="/en/about.html">About</a></li>
+                            <li><a href="/en/blog.html">Blog</a></li>
+                            <li><a href="/en/register.html">Sign Up</a></li>
+                            <li><a href="/en/">Home</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Support</h4>
+                        <ul class="footer-links">
+                            <li><a href="/en/contact.html">Contact</a></li>
+                            <li><a href="/en/blog.html">Resources</a></li>
+                            <li><a href="/en/register.html">Request a Demo</a></li>
+                            <li><a href="/en/privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Legal</h4>
+                        <ul class="footer-links">
+                            <li><a href="/en/cookies.html">Cookie Policy</a></li>
+                            <li><a href="/en/privacy.html">Privacy Policy</a></li>
+                            <li><a href="/en/terms.html">Terms</a></li>
+                            <li><a href="/en/gdpr.html">GDPR</a></li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="footer-bottom"><div class="footer-bottom-left"><p>&copy; <span id="current-year"></span> BORTEX. All rights reserved.</p></div></div>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.waitlist-signup-form').forEach((form) => {
+                const feedback = form.parentElement.querySelector('.waitlist-feedback');
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    const button = form.querySelector('button[type="submit"]');
+                    const emailInput = form.querySelector('input[name="email"]');
+                    const originalLabel = button.textContent;
+                    const isEnglish = form.dataset.lang === 'en';
+                    feedback.textContent = '';
+                    button.disabled = true;
+                    button.textContent = isEnglish ? 'Sending...' : 'Invio...';
+
+                    try {
+                        const response = await fetch('/api/waitlist/signup', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                email: emailInput.value,
+                                lang: form.dataset.lang,
+                                feature_code: form.dataset.featureCode,
+                                feature_name: form.dataset.featureName,
+                                source_page: form.dataset.sourcePage,
+                                gdpr_consent: !!(form.querySelector('[name="gdpr_consent"]') && form.querySelector('[name="gdpr_consent"]').checked),
+                                marketing_consent: !!(form.querySelector('[name="marketing_consent"]') && form.querySelector('[name="marketing_consent"]').checked)
+                            })
+                        });
+
+                        const data = await response.json().catch(() => ({}));
+                        if (!response.ok || !data.success) {
+                            throw new Error(data.message || (isEnglish ? "Unable to complete your signup." : "Impossibile completare l'iscrizione."));
+                        }
+
+                        feedback.textContent = data.message;
+                        feedback.style.color = 'var(--primary-color)';
+                        form.reset();
+                    } catch (error) {
+                        feedback.textContent = error.message;
+                        feedback.style.color = '#f97316';
+                    } finally {
+                        button.disabled = false;
+                        button.textContent = originalLabel;
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script src="/js/main.min.js" defer></script>
+</body>
+</html>

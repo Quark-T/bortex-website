@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="ui/assets/favicon/favicon-32x32.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Bortex AI">
+    <link rel="apple-touch-icon" href="/pwa-icons/android/android-launchericon-192-192-new.png">
+    <script src="/pwa-redirect.js"></script>
+    <title>Controllo remoto PC con Bortex | iOS, web e desktop</title>
+    <meta name="description" content="Scopri come controllare il tuo PC da remoto con Bortex su iPhone, web ed Electron: trackpad, tastiera e azioni AI.'app desktop. Trackpad, tastiera, azioni AI: il tuo PC sempre con te." />
+    <meta name="keywords" content="controllo remoto PC, controllare computer a distanza, app controllo PC iPhone, assistente AI remoto, Bortex controllo remoto, remote desktop intelligente, gestione PC da smartphone, Electron remote control, controllo PC iOS" />
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bortex.site/blog-remote-control.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.bortex.site/blog-remote-control.html">
+    <meta property="og:title" content="Controllo remoto PC con Bortex">
+    <meta property="og:description" content="Controllo remoto del PC con Bortex su iPhone, web ed Electron, con trackpad, tastiera e azioni AI.">
+    <meta property="og:image" content="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.bortex.site/blog-remote-control.html">
+    <meta property="twitter:title" content="Controllo remoto PC con Bortex">
+    <meta property="twitter:description" content="Controllo remoto del PC con Bortex su iPhone, web ed Electron, con trackpad, tastiera e azioni AI.">
+    <meta property="twitter:image" content="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <style>
+        .article-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 320px;
+            gap: 2rem;
+            align-items: start;
+        }
+        .article-sidebar {
+            display: grid;
+            gap: 1.25rem;
+            position: sticky;
+            top: 110px;
+        }
+        .article-card {
+            padding: 2.5rem;
+        }
+        @media (max-width: 960px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .article-sidebar {
+                position: static;
+                top: auto;
+                order: 2;
+            }
+            .article-card {
+                padding: 1.35rem;
+            }
+        }
+        @media (max-width: 640px) {
+            .article-layout {
+                gap: 1rem;
+            }
+            .article-card {
+                padding: 1.1rem;
+            }
+        }
+        .feature-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.45rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.09);
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .ecosystem-card {
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.03);
+            margin-bottom: 1rem;
+        }
+        .ecosystem-card h4 {
+            margin: 0 0 0.5rem;
+            color: var(--heading-color);
+            font-size: 1.05rem;
+        }
+        .ecosystem-card p {
+            margin: 0;
+            color: var(--text-color);
+            line-height: 1.75;
+            font-size: 0.95rem;
+        }
+
+        /* ── Waitlist GDPR consent ── */
+        .waitlist-consents { display: grid; gap: 0.55rem; }
+        .consent-label { display: flex; align-items: flex-start; gap: 0.55rem; cursor: pointer; }
+        .consent-checkbox {
+            width: 15px; height: 15px; min-width: 15px;
+            border-radius: 4px; margin-top: 2px; cursor: pointer;
+            accent-color: #f97316;
+        }
+        .consent-text {
+            font-size: 0.77rem; color: rgba(255,255,255,.58); line-height: 1.55;
+        }
+        .consent-text a { color: #f97316; text-decoration: none; }
+        .consent-text a:hover { text-decoration: underline; }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Controllo remoto PC con Bortex",
+      "description": "Scopri come Bortex ti permette di controllare il tuo computer a distanza dal tuo iPhone, dalla piattaforma web e dall'app desktop Electron. Trackpad, tastiera, azioni AI: il tuo PC sempre con te.",
+      "author": {
+        "@type": "Organization",
+        "name": "BORTEX"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "BORTEX",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg"
+        }
+      },
+      "datePublished": "2026-03-30",
+      "dateModified": "2026-03-30",
+      "url": "https://www.bortex.site/blog-remote-control.html",
+      "keywords": ["controllo remoto PC", "assistente AI remoto", "Bortex", "app iOS controllo PC", "Electron remote desktop"]
+    }
+    </script>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="https://www.bortex.site/" class="logo">
+                <img id="theme-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo" style="height: 40px;" loading="eager">
+            </a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="https://www.bortex.site/" class="nav-link">Home</a></li>
+                    <li><a href="features.html" class="nav-link">Funzionalità</a></li>
+                    <li><a href="pricing.html" class="nav-link">Prezzi</a></li>
+                    <li><a href="index.html#waitlist" class="nav-link">Lista Attesa</a></li>
+                    <li><a href="blog.html" class="nav-link" style="color: var(--primary-color);">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="lang-toggle" id="lang-toggle" aria-label="Cambia lingua"><span class="lang-code">IT</span></button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambia tema">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="https://www.bortex.site/login" class="btn btn-text">Login</a>
+                <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header"><img id="sidebar-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo"></div>
+        <ul class="mobile-menu-list">
+            <li><a href="https://www.bortex.site/">Home</a></li>
+            <li><a href="features.html">Funzionalità</a></li>
+            <li><a href="pricing.html">Prezzi</a></li>
+            <li><a href="about.html">Chi Siamo</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+        </ul>
+        <div class="mobile-menu-divider"></div>
+        <div class="mobile-menu-cta">
+            <a href="index.html#waitlist" class="btn btn-primary">Iscriviti in lista</a>
+            <a href="https://www.bortex.site/login" class="btn btn-outline">Login</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero" style="min-height: 60vh; padding-bottom: 4rem; background:
+            radial-gradient(circle at top left, rgba(249, 115, 22, 0.18), transparent 34%),
+            radial-gradient(circle at top right, rgba(139, 92, 246, 0.14), transparent 32%),
+            linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);">
+            <div class="container hero-container">
+                <div class="hero-content" style="max-width: 980px;">
+                    <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                        <span style="letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); font-size: 0.82rem;">BORTEX Journal</span>
+                        <span style="width: 56px; height: 1px; background: rgba(255,255,255,0.16);"></span>
+                        <span style="letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); font-size: 0.82rem;">Ecosistema &amp; Controllo Remoto</span>
+                    </div>
+                    <h1 class="hero-title" style="max-width: 920px; margin-bottom: 1rem;">Controllo remoto del PC con <span class="text-gradient">Bortex</span></h1>
+                    <p class="hero-description" style="max-width: 860px; margin-bottom: 2.25rem;">Con l'ecosistema Bortex puoi prendere il controllo del tuo computer da qualsiasi posto: dallo smartphone via app iOS, dalla dashboard web o dall'app desktop Electron. Un assistente AI che non ti lascia mai senza accesso a cio che ti serve.</p>
+                    <div style="display: flex; gap: 0.65rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                        <span class="feature-pill">📱 App iOS</span>
+                        <span class="feature-pill">🖥️ Electron Desktop</span>
+                        <span class="feature-pill">🌐 Piattaforma Web</span>
+                        <span class="feature-pill">🤖 Assistente AI</span>
+                    </div>
+                    <div style="max-width: 760px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.25rem; color: var(--text-muted); font-size: 0.95rem; line-height: 1.8;">
+                        <span style="color: rgba(255,255,255,0.45);">30 Marzo 2026</span>
+                        <span style="margin: 0 0.75rem; color: rgba(255,255,255,0.2);">·</span>
+                        <span style="color: rgba(255,255,255,0.45);">7 min di lettura</span>
+                        <span style="margin: 0 0.75rem; color: rgba(255,255,255,0.2);">·</span>
+                        <span style="background: var(--badge-bg); color: var(--primary-color); padding: 0.2rem 0.65rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600;">Prodotto</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container article-layout" style="max-width: 1180px;">
+                <article class="glass-card article-card">
+
+                    <div style="padding-bottom: 1.5rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                        <p style="font-size: 1.1rem; line-height: 1.9; color: var(--text-color); margin: 0;">Quante volte ti e capitato di essere fuori casa e aver bisogno di fare qualcosa sul tuo computer? Avviare un file, controllare uno stato, muovere il mouse su una presentazione? Con Bortex tutto questo diventa semplice: il tuo assistente AI e il ponte tra te e il tuo PC, ovunque tu sia.</p>
+                    </div>
+
+                    <h2 style="margin-bottom: 1rem; color: var(--heading-color);">Perche il controllo remoto cambia il modo di lavorare</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Il lavoro moderno non si svolge piu solo alla scrivania. Siamo in riunione, in viaggio, in un altro ufficio, e spesso il nostro computer e acceso ma non raggiungibile. Gli strumenti tradizionali di controllo remoto risolvono il problema in modo tecnico, ma restano rigidi, difficili da usare e privi di intelligenza.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Bortex affronta il problema in modo diverso: non ti da solo uno schermo da guardare da lontano, ma ti mette a disposizione un ecosistema connesso dove l'assistente AI capisce cosa vuoi fare e ti aiuta a farlo, dal dispositivo che hai in mano in quel momento.</p>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">L'ecosistema Bortex: tre livelli, un'unica esperienza</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.5rem;">Il controllo remoto in Bortex non dipende da un singolo componente. Funziona grazie alla collaborazione di tre livelli tecnologici che lavorano insieme in modo trasparente.</p>
+
+                    <div class="ecosystem-card" style="border-color: rgba(249, 115, 22, 0.25); background: linear-gradient(135deg, rgba(249, 115, 22, 0.07), rgba(249, 115, 22, 0.02));">
+                        <h4 style="color: #f97316;">📱 App iOS — Il telecomando intelligente sempre in tasca</h4>
+                        <p>L'app Bortex per iPhone include una schermata di mirroring e controllo che trasforma il tuo telefono in un trackpad e una tastiera wireless per il tuo PC. Puoi muovere il cursore con il dito, cliccare, fare pinch-to-zoom, scrivere testo e inviare comandi in tempo reale. Non serve nessuna configurazione complicata: apri l'app, connettiti al tuo dispositivo e sei gia operativo.</p>
+                    </div>
+
+                    <div class="ecosystem-card" style="border-color: rgba(139, 92, 246, 0.25); background: linear-gradient(135deg, rgba(139, 92, 246, 0.07), rgba(139, 92, 246, 0.02));">
+                        <h4 style="color: #8b5cf6;">🖥️ App Electron — L'agente locale che ascolta e risponde</h4>
+                        <p>Sul computer, Bortex funziona tramite un'applicazione desktop basata su Electron. Questa app agisce come un agente locale: resta in ascolto, riceve i comandi dall'app iOS o dalla piattaforma web, e li esegue direttamente sul sistema. Puo controllare le finestre aperte, gestire lo stato del computer, interagire con le applicazioni attive e rispondere ai comandi dell'assistente AI senza che tu debba toccare la tastiera fisica.</p>
+                    </div>
+
+                    <div class="ecosystem-card" style="border-color: rgba(34, 197, 94, 0.25); background: linear-gradient(135deg, rgba(34, 197, 94, 0.07), rgba(34, 197, 94, 0.02));">
+                        <h4 style="color: #22c55e;">🌐 Piattaforma Web — Il centro di comando che coordina tutto</h4>
+                        <p>La dashboard web di Bortex e il cuore dell'ecosistema. Da qui puoi monitorare lo stato del tuo PC, inviare comandi, chattare con l'assistente AI per delegare operazioni, visualizzare log di attivita e configurare le automazioni. Non hai bisogno di installare niente sul dispositivo da cui stai accedendo: basta un browser.</p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem; margin: 2rem 0; background: linear-gradient(135deg, rgba(249, 115, 22, 0.09), rgba(139, 92, 246, 0.06)); border: 1px solid rgba(255,255,255,0.08);">
+                        <h3 style="margin: 0 0 0.75rem; color: var(--heading-color);">Il vero vantaggio competitivo</h3>
+                        <p style="margin: 0; color: var(--text-color); line-height: 1.8;">A differenza degli strumenti di remote desktop classici, Bortex non ti mostra solo uno schermo: ti offre un assistente che capisce il contesto, esegue azioni per te e si adatta al dispositivo che stai usando. Questo e il salto di qualita che fa la differenza tra uno strumento e un vero assistente operativo.</p>
+                    </div>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Cosa puoi fare concretamente con il controllo remoto Bortex</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Il sistema di controllo remoto di Bortex non e pensato solo per chi lavora in IT o per utenti tecnici. E progettato per chiunque voglia rimanere produttivo anche lontano dalla propria postazione. Ecco alcuni scenari reali:</p>
+
+                    <ul style="color: var(--text-color); line-height: 2; padding-left: 1.5rem; margin-bottom: 1.5rem;">
+                        <li><strong style="color: var(--heading-color);">Sei in riunione</strong> e ti serve aprire un documento sul PC dell'ufficio: lo fai in trenta secondi dallo smartphone senza interrompere nessuno.</li>
+                        <li><strong style="color: var(--heading-color);">Stai facendo una presentazione</strong> in una sala conferenze: usi l'app iOS come telecomando per avanzare le slide e muovere il puntatore.</li>
+                        <li><strong style="color: var(--heading-color);">Sei fuori casa</strong> e il tuo computer sta eseguendo un processo: con la piattaforma web verifichi lo stato e, se necessario, lo interrompi o gestisci l'output.</li>
+                        <li><strong style="color: var(--heading-color);">Vuoi delegare un'azione</strong> all'assistente AI: scrivi in chat cosa fare, e Bortex lo esegue sul tuo PC senza che tu debba essere fisicamente presente.</li>
+                        <li><strong style="color: var(--heading-color);">Hai bisogno di inviare un testo</strong> al computer da telefono: usi la tastiera virtuale dell'app iOS per digitare direttamente nella finestra attiva sul desktop.</li>
+                    </ul>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Sicurezza e controllo: la tua privacy al primo posto</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Dare accesso remoto al proprio computer e una decisione importante. Bortex e progettato con la sicurezza come priorita: il collegamento tra i dispositivi avviene in modo cifrato, l'accesso e autenticato tramite il tuo account Bortex e puoi sempre vedere e revocare le sessioni attive dalla dashboard.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Non stai usando un servizio generico di third-party: stai usando la tua infrastruttura, con il tuo assistente, nel tuo ecosistema. Questo significa meno dipendenze esterne e piu controllo su cio che accade.</p>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">L'assistente AI che agisce per te, non solo che risponde</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Il punto piu potente del controllo remoto Bortex non e il trackpad o lo streaming dello schermo. E l'assistente AI che sta dietro. Invece di dover navigare manualmente tra finestre e applicazioni, puoi semplicemente dire a Bortex cosa vuoi ottenere, e lui troverà il modo per farlo.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Questa e la differenza tra uno strumento passivo e un agente attivo. Bortex non aspetta che tu faccia tutto da solo: capisce il contesto, suggerisce azioni, esegue compiti e ti avvisa quando qualcosa richiede la tua attenzione. Il controllo remoto diventa cosi non un'estensione della tastiera, ma un'estensione della tua capacita operativa.</p>
+
+                    <div class="glass-card" style="padding: 1.75rem; margin: 2rem 0; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02);">
+                        <h3 style="margin: 0 0 1rem; color: var(--heading-color); font-size: 1.1rem;">In sintesi: perche scegliere Bortex per il controllo remoto</h3>
+                        <div style="display: grid; gap: 0.75rem;">
+                            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                                <span style="color: var(--primary-color); font-weight: 700; flex-shrink: 0;">✓</span>
+                                <span style="color: var(--text-color); line-height: 1.7;">Un ecosistema unico che collega iOS, desktop Electron e piattaforma web senza configurazioni complesse</span>
+                            </div>
+                            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                                <span style="color: var(--primary-color); font-weight: 700; flex-shrink: 0;">✓</span>
+                                <span style="color: var(--text-color); line-height: 1.7;">Assistente AI integrato che esegue azioni per te, non solo le suggerisce</span>
+                            </div>
+                            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                                <span style="color: var(--primary-color); font-weight: 700; flex-shrink: 0;">✓</span>
+                                <span style="color: var(--text-color); line-height: 1.7;">Trackpad e tastiera wireless via iPhone per un controllo preciso e naturale</span>
+                            </div>
+                            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                                <span style="color: var(--primary-color); font-weight: 700; flex-shrink: 0;">✓</span>
+                                <span style="color: var(--text-color); line-height: 1.7;">Dashboard web accessibile da qualsiasi browser, senza installazioni aggiuntive</span>
+                            </div>
+                            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                                <span style="color: var(--primary-color); font-weight: 700; flex-shrink: 0;">✓</span>
+                                <span style="color: var(--text-color); line-height: 1.7;">Connessioni sicure e autenticate, con pieno controllo sulle sessioni attive</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Il futuro: un assistente che prende iniziativa</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 0;">La roadmap di Bortex prevede un ulteriore salto evolutivo nel controllo remoto: automazioni proattive, notifiche intelligenti quando qualcosa sul tuo PC richiede attenzione, esecuzione pianificata di task e integrazione con altri dispositivi dell'ecosistema. Il controllo remoto non sara piu una feature da usare in emergenza, ma una modalita operativa quotidiana, naturale e potente. Con Bortex, il tuo PC diventa finalmente il tuo assistente operativo a 360 gradi — anche quando non sei davanti allo schermo.</p>
+
+                </article>
+
+                <aside class="article-sidebar">
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h3 style="margin: 0 0 1rem; color: var(--heading-color);">In questo articolo</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.85rem;">
+                            <li><span style="color: var(--primary-color); font-weight: 700;">01</span> <span style="color: var(--text-color);">Perche serve il controllo remoto</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">02</span> <span style="color: var(--text-color);">L'ecosistema in tre livelli</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">03</span> <span style="color: var(--text-color);">App iOS: trackpad e tastiera</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">04</span> <span style="color: var(--text-color);">Electron: l'agente locale</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">05</span> <span style="color: var(--text-color);">Casi d'uso pratici</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">06</span> <span style="color: var(--text-color);">Sicurezza e privacy</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">07</span> <span style="color: var(--text-color);">AI che agisce per te</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h3 style="margin: 0 0 0.75rem; color: var(--heading-color);">Di cosa si tratta</h3>
+                        <p style="margin: 0; color: var(--text-color); line-height: 1.8; font-size: 0.95rem;">Bortex unisce app iOS, desktop Electron e piattaforma web in un sistema di controllo remoto guidato dall'AI. Non solo schermo remoto, ma un agente che agisce per te.</p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h3 style="margin: 0 0 0.75rem; color: var(--heading-color);">Leggi anche</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.75rem;">
+                            <li><a href="blog-article.html" style="color: var(--primary-color); text-decoration: none; font-size: 0.92rem; line-height: 1.6; display: flex; align-items: flex-start; gap: 0.5rem;"><span style="flex-shrink: 0; margin-top: 0.15rem;">→</span> BORTEX: la nuova rivoluzione dell'intelligenza artificiale</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem; background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(139, 92, 246, 0.08)); border: 1px solid rgba(255,255,255,0.08);">
+                        <h3 style="margin: 0 0 0.85rem; color: var(--heading-color);">Vuoi provarlo?</h3>
+                        <p style="margin: 0 0 1rem; color: var(--text-color); line-height: 1.8;">Entra in Bortex e scopri come puoi controllare il tuo computer da ovunque con il tuo assistente AI.</p>
+                        <div style="display: grid; gap: 0.75rem;">
+                            <a href="index.html#waitlist" class="btn btn-primary">Iscriviti in lista</a>
+                            <a href="blog.html" class="btn btn-outline">Torna al blog</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section-padding" style="padding-top: 0;">
+            <div class="container" style="max-width: 1180px;">
+                <div style="position: relative; overflow: hidden; border-radius: clamp(20px, 4vw, 28px); border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(135deg, rgba(10, 14, 24, 0.96) 0%, rgba(20, 27, 45, 0.94) 60%, rgba(39, 17, 10, 0.92) 100%); box-shadow: 0 24px 60px rgba(0,0,0,0.22);">
+                    <div style="position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(249, 115, 22, 0.26), transparent 28%), radial-gradient(circle at bottom right, rgba(251, 146, 60, 0.18), transparent 34%);"></div>
+                    <div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center; padding: clamp(1.2rem, 3vw, 2.4rem);">
+                        <div style="display: grid; gap: 0.9rem; max-width: 720px;">
+                            <span style="display: inline-flex; width: fit-content; align-items: center; gap: 0.55rem; padding: 0.5rem 0.9rem; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.72); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;">BORTEX Early Access</span>
+                            <h2 style="margin: 0; color: #ffffff; font-size: clamp(1.9rem, 3vw, 2.6rem); line-height: 1.08; letter-spacing: -0.03em;">Prendi il controllo del tuo PC da ovunque</h2>
+                            <p style="margin: 0; color: rgba(255,255,255,0.74); line-height: 1.9; font-size: 1rem; max-width: 640px;">Entra in lista per accedere prima a tutte le funzioni di controllo remoto AI di Bortex, incluse le prossime evoluzioni di agent mode e automazioni proattive.</p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.35rem;">
+                                <span style="padding: 0.5rem 0.78rem; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); color: rgba(255,255,255,0.78); font-size: 0.88rem;">Controllo remoto AI</span>
+                                <span style="padding: 0.5rem 0.78rem; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); color: rgba(255,255,255,0.78); font-size: 0.88rem;">App iOS + Electron</span>
+                                <span style="padding: 0.5rem 0.78rem; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); color: rgba(255,255,255,0.78); font-size: 0.88rem;">Agent mode avanzato</span>
+                            </div>
+                        </div>
+                        <div style="position: relative; border-radius: 22px; padding: clamp(1rem, 2.8vw, 1.2rem); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px);">
+                            <form class="waitlist-signup-form" data-lang="it" data-feature-code="remote_control_access" data-feature-name="Controllo Remoto Bortex" data-source-page="/blog-remote-control" style="display: grid; gap: 0.95rem;">
+                                <div style="display: grid; gap: 0.5rem;">
+                                    <label for="waitlist-email-rc" style="font-size: 0.9rem; color: rgba(255,255,255,0.72);">Indirizzo email</label>
+                                    <input id="waitlist-email-rc" type="email" name="email" required placeholder="nome@azienda.com" style="width: 100%; min-height: 58px; border-radius: 16px; border: 1px solid rgba(249, 115, 22, 0.42); background: rgba(255,255,255,0.97); color: #111827; padding: 0 1rem; font-size: 1rem; outline: none; box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);">
+                                </div>
+
+                                <!-- GDPR Consent -->
+                                <div class="waitlist-consents">
+                                    <label class="consent-label">
+                                        <input type="checkbox" name="gdpr_consent" class="consent-checkbox" required>
+                                        <span class="consent-text">Ho letto e acconsento al trattamento dei miei dati personali per la gestione della lista di attesa, ai sensi del Reg. UE 2016/679 (GDPR). <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> *</span>
+                                    </label>
+                                    <label class="consent-label">
+                                        <input type="checkbox" name="marketing_consent" class="consent-checkbox">
+                                        <span class="consent-text">Desidero ricevere aggiornamenti, novità e comunicazioni commerciali da BORTEX (facoltativo).</span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="min-height: 56px; justify-content: center; font-size: 0.98rem;">Iscriviti alla lista di attesa</button>
+                                <p style="margin: 0; color: rgba(255,255,255,0.54); font-size: 0.83rem; line-height: 1.6;">Ti scriveremo solo per aggiornamenti rilevanti su Bortex e nuove funzionalita.</p>
+                            </form>
+                            <p class="waitlist-feedback" style="margin: 0.85rem 0 0; color: rgba(255,255,255,0.72); font-size: 0.95rem; min-height: 1.5rem;"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="https://www.bortex.site/" class="logo"><img id="footer-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo" style="height: 38px;" loading="lazy" width="1366" height="768" decoding="async"></a>
+                    <p class="footer-description">L'intelligenza artificiale al servizio delle persone. Chat in tempo reale, assistente AI e analisi avanzate.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/alessandro-f-119b83270/" aria-label="LinkedIn" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61574265030730" aria-label="Facebook" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <span class="sr-only">Facebook</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"></path></svg>
+                        </a>
+                        <a href="https://x.com/BortexAssistant" aria-label="X" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <span class="sr-only">X</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.26l-4.9-6.99L5.93 22H2.8l7.24-8.27L.8 2h6.42l4.43 6.32L18.9 2zm-1.1 18h1.73L6.29 3.9H4.43L17.8 20z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Prodotto</h4>
+                        <ul class="footer-links">
+                            <li><a href="/features.html">Funzionalita</a></li>
+                            <li><a href="/pricing.html">Prezzi</a></li>
+                            <li><a href="https://www.bortex.site/login">Dashboard</a></li>
+                            <li><a href="/#waitlist">Early Access</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Azienda</h4>
+                        <ul class="footer-links">
+                            <li><a href="/about.html">Chi Siamo</a></li>
+                            <li><a href="/blog.html">Blog</a></li>
+                            <li><a href="/register.html">Registrazione</a></li>
+                            <li><a href="/">Home</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Supporto</h4>
+                        <ul class="footer-links">
+                            <li><a href="/contact.html">Contatti</a></li>
+                            <li><a href="/blog.html">Centro Risorse</a></li>
+                            <li><a href="/register.html">Richiedi una Demo</a></li>
+                            <li><a href="/privacy.html">Privacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Legale</h4>
+                        <ul class="footer-links">
+                            <li><a href="/cookies.html">Cookie Policy</a></li>
+                            <li><a href="/privacy.html">Privacy Policy</a></li>
+                            <li><a href="/terms.html">Termini</a></li>
+                            <li><a href="/gdpr.html">GDPR</a></li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-left"><p>&copy; <span id="current-year"></span> BORTEX. Tutti i diritti riservati.</p></div>
+                <div class="footer-bottom-right"><p>Powered by <a href="https://www.quarkdev.agency" target="_blank" rel="noopener noreferrer">Quark Digital Agency</a></p></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.waitlist-signup-form').forEach((form) => {
+                const feedback = form.parentElement.querySelector('.waitlist-feedback');
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    const button = form.querySelector('button[type="submit"]');
+                    const emailInput = form.querySelector('input[name="email"]');
+                    const originalLabel = button.textContent;
+                    const isEnglish = form.dataset.lang === 'en';
+                    feedback.textContent = '';
+                    button.disabled = true;
+                    button.textContent = isEnglish ? 'Sending...' : 'Invio...';
+                    try {
+                        const response = await fetch('/api/waitlist/signup', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                email: emailInput.value,
+                                lang: form.dataset.lang,
+                                feature_code: form.dataset.featureCode,
+                                feature_name: form.dataset.featureName,
+                                source_page: form.dataset.sourcePage,
+                                gdpr_consent: !!(form.querySelector('[name="gdpr_consent"]') && form.querySelector('[name="gdpr_consent"]').checked),
+                                marketing_consent: !!(form.querySelector('[name="marketing_consent"]') && form.querySelector('[name="marketing_consent"]').checked)
+                            })
+                        });
+                        const data = await response.json().catch(() => ({}));
+                        if (!response.ok || !data.success) {
+                            throw new Error(data.message || (isEnglish ? "Unable to complete your signup." : "Impossibile completare l'iscrizione."));
+                        }
+                        feedback.textContent = data.message;
+                        feedback.style.color = 'var(--primary-color)';
+                        form.reset();
+                    } catch (error) {
+                        feedback.textContent = error.message;
+                        feedback.style.color = '#f97316';
+                    } finally {
+                        button.disabled = false;
+                        button.textContent = originalLabel;
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script src="/js/main.min.js" defer></script>
+</body>
+</html>

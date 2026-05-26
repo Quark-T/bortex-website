@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../ui/assets/favicon/favicon-32x32.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Bortex AI">
+    <link rel="apple-touch-icon" href="/pwa-icons/android/android-launchericon-192-192-new.png">
+    <script src="/pwa-redirect.js"></script>
+    <title>Virtual Try-On for ecommerce in the Bortex widget</title>
+    <meta name="description" content="Discover Bortex Virtual Try-On: product preview inside the widget, guided photo upload and personal output without leaving the site." />
+    <meta name="keywords" content="virtual try-on ecommerce, product preview widget, AI try-on, ecommerce widget try-on, Bortex virtual try-on, Shopify try-on widget" />
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bortex.site/en/blog-virtual-try-on.html">
+    <link rel="alternate" hreflang="it" href="https://www.bortex.site/blog-virtual-try-on.html">
+    <link rel="alternate" hreflang="en" href="https://www.bortex.site/en/blog-virtual-try-on.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.bortex.site/blog-virtual-try-on.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.bortex.site/en/blog-virtual-try-on.html">
+    <meta property="og:title" content="Virtual Try-On for ecommerce in the Bortex widget">
+    <meta property="og:description" content="Choose a product, upload a photo and generate a personal preview directly inside the Bortex widget.">
+    <meta property="og:image" content="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.bortex.site/en/blog-virtual-try-on.html">
+    <meta property="twitter:title" content="Virtual Try-On for ecommerce in the Bortex widget">
+    <meta property="twitter:description" content="Choose a product, upload a photo and generate a personal preview directly inside the Bortex widget.">
+    <meta property="twitter:image" content="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <style>
+        .article-layout { display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:2rem; align-items:start; }
+        .article-sidebar { display:grid; gap:1.25rem; position:sticky; top:110px; }
+        .article-card { padding:2.5rem; }
+        .flow-box, .metric-card, .step-card { border-radius:18px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); }
+        .flow-box { padding:1.2rem; margin:1.8rem 0 2rem; background:radial-gradient(circle at top left, rgba(14,165,233,.14), transparent 34%), radial-gradient(circle at bottom right, rgba(249,115,22,.14), transparent 38%), rgba(255,255,255,.03); }
+        .flow-grid, .metric-grid, .step-grid { display:grid; gap:1rem; }
+        .flow-grid { grid-template-columns:1.2fr .8fr; }
+        .metric-grid, .step-grid { grid-template-columns:repeat(3, minmax(0, 1fr)); margin:1.5rem 0 2rem; }
+        .flow-panel { padding:1rem; }
+        .flow-row { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.9rem 1rem; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.06); }
+        .flow-row strong { color:var(--heading-color); font-size:.96rem; }
+        .flow-row span { color:var(--text-muted); font-size:.84rem; }
+        .metric-card, .step-card { padding:1.1rem; }
+        .metric-card span, .step-card span { display:inline-block; margin-bottom:.7rem; color:var(--primary-color); font-weight:700; font-size:.82rem; letter-spacing:.06em; text-transform:uppercase; }
+        .metric-card h3, .step-card h3 { margin:0 0 .55rem; color:var(--heading-color); font-size:1.02rem; line-height:1.35; }
+        .metric-card p, .step-card p { margin:0; color:var(--text-color); line-height:1.7; font-size:.92rem; }
+        .article-note { padding:1.1rem 1.2rem; border-radius:16px; background:rgba(56,189,248,.09); border:1px solid rgba(56,189,248,.18); color:var(--text-color); line-height:1.8; margin:1.4rem 0 1.8rem; }
+        .waitlist-consents { display:grid; gap:.55rem; }
+        .consent-label { display:flex; align-items:flex-start; gap:.55rem; cursor:pointer; }
+        .consent-checkbox { width:15px; height:15px; min-width:15px; border-radius:4px; margin-top:2px; cursor:pointer; accent-color:#f97316; }
+        .consent-text { font-size:.77rem; color:rgba(255,255,255,.58); line-height:1.55; }
+        .consent-text a { color:#f97316; text-decoration:none; }
+        .consent-text a:hover { text-decoration:underline; }
+        .bullet-list { margin:1rem 0 0; padding-left:1.2rem; color:var(--text-color); line-height:1.9; }
+        .bullet-list li + li { margin-top:.55rem; }
+        @media (max-width: 960px) {
+            .article-layout, .flow-grid, .metric-grid, .step-grid { grid-template-columns:1fr; }
+            .article-sidebar { position:static; top:auto; order:2; }
+            .article-card { padding:1.35rem; }
+        }
+        @media (max-width: 640px) {
+            .article-card { padding:1.1rem; }
+            .flow-box { padding:1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="https://www.bortex.site/en/" class="logo"><img id="theme-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo" style="height: 40px;" loading="eager"></a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="https://www.bortex.site/en/" class="nav-link">Home</a></li>
+                    <li><a href="/en/features.html" class="nav-link">Features</a></li>
+                    <li><a href="/en/pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="/en/#waitlist" class="nav-link">Join Waitlist</a></li>
+                    <li><a href="/en/blog.html" class="nav-link" style="color: var(--primary-color);">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="lang-toggle" id="lang-toggle" aria-label="Change language"><span class="lang-code">EN</span></button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg><svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button>
+                <a href="https://www.bortex.site/en/login" class="btn btn-text">Login</a>
+                <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header"><img id="sidebar-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo"></div>
+        <ul class="mobile-menu-list">
+            <li><a href="/en/">Home</a></li>
+            <li><a href="/en/features.html">Features</a></li>
+            <li><a href="/en/pricing.html">Pricing</a></li>
+            <li><a href="/en/about.html">About</a></li>
+            <li><a href="/en/blog.html" class="active">Blog</a></li>
+        </ul>
+        <div class="mobile-menu-divider"></div>
+        <div class="mobile-menu-cta"><a href="/en/#waitlist" class="btn btn-primary">Join Waitlist</a><a href="https://www.bortex.site/en/login" class="btn btn-outline">Login</a></div>
+    </div>
+
+    <main>
+        <section class="hero" style="min-height: 60vh; padding-bottom: 4rem; background: radial-gradient(circle at top left, rgba(14, 165, 233, 0.16), transparent 34%), radial-gradient(circle at top right, rgba(249, 115, 22, 0.14), transparent 32%), linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(249, 115, 22, 0.05) 100%);">
+            <div class="container hero-container">
+                <div class="hero-content" style="max-width: 980px;">
+                    <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;"><span style="letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); font-size: 0.82rem;">BORTEX Journal</span><span style="width: 56px; height: 1px; background: rgba(255,255,255,0.16);"></span><span style="letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); font-size: 0.82rem;">Feature Preview</span></div>
+                    <h1 class="hero-title" style="max-width: 920px; margin-bottom: 1rem;">Virtual Try-On for ecommerce in the <span class="text-gradient">Bortex widget</span></h1>
+                    <p class="hero-description" style="max-width: 860px; margin-bottom: 2.25rem;">Visitors choose a product, upload a clear front-facing photo and generate a personal preview without leaving the site. Try-On brings the product closer to the purchase decision.</p>
+                    <div style="max-width: 760px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.25rem; color: var(--text-muted); font-size: 0.95rem; line-height: 1.8;">A new experience built for ecommerce and visual brands: less hesitation, more engagement and a flow that stays consistent with the rest of the Bortex widget.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container article-layout" style="max-width: 1180px;">
+                <article class="glass-card article-card">
+                    <div style="padding-bottom: 1.5rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                        <p style="font-size: 1.1rem; line-height: 1.9; color: var(--text-color); margin: 0;">For many ecommerce teams, the challenge is not attracting traffic. It is reducing doubt at the decisive moment. Bortex Virtual Try-On is built for that exact gap: helping visitors imagine the result on themselves while they are already interacting with the brand.</p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.4rem; margin: 0 0 2rem; background: rgba(14,165,233,0.08); border: 1px solid rgba(14,165,233,0.18);">
+                        <h2 style="margin: 0 0 0.75rem; color: var(--heading-color); font-size: 1.35rem;">Looking for the commercial widget page?</h2>
+                        <p style="margin: 0 0 1rem; color: var(--text-color); line-height: 1.8;">This article explains the new Try-On flow. For the full overview of the widget, AI, calls and integrations, visit the dedicated product page.</p>
+                        <a href="/en/features/widget-ai-siti-web.html" class="btn btn-primary">Explore the AI website widget</a>
+                    </div>
+
+                    <div class="flow-box">
+                        <div class="flow-grid">
+                            <div class="flow-box flow-panel" style="margin:0; padding:1rem;">
+                                <div class="flow-row"><div><strong>Step 1 · Choose product</strong><div style="color: var(--text-muted); font-size: .84rem;">Direct selection from the store catalog</div></div><span>Catalog</span></div>
+                                <div class="flow-row" style="margin-top:.8rem;"><div><strong>Step 2 · Upload photo</strong><div style="color: var(--text-muted); font-size: .84rem;">Clear, front-facing and well-lit photo</div></div><span>Guided upload</span></div>
+                                <div class="flow-row" style="margin-top:.8rem;"><div><strong>Step 3 · Generate preview</strong><div style="color: var(--text-muted); font-size: .84rem;">Personal preview directly in the widget</div></div><span>AI render</span></div>
+                            </div>
+                            <div class="flow-box flow-panel" style="margin:0; padding:1rem;">
+                                <div style="border-radius:14px; padding:.95rem; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.06); color:var(--text-color); line-height:1.75;">The key point is not just generating an image, but generating it inside the same place where the customer is already asking questions, comparing products and deciding whether to trust the brand.</div>
+                                <div style="border-radius:14px; padding:.95rem; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.06); color:var(--text-color); line-height:1.75; margin-top:.8rem;">Try-On uses the widget's conversational logic instead of forcing the visitor into a separate experience.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 style="margin-bottom: 1rem; color: var(--heading-color);">Why Try-On can move conversion</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">The distance between interest and purchase often comes from uncertainty. The visitor sees the product, but cannot yet picture the result. Putting guided preview inside the widget reduces that exact gap where the objection starts.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 0;">That is why Virtual Try-On is not designed as an isolated visual effect, but as a natural extension of the sales path: the visitor asks, explores and visualises within the same environment.</p>
+
+                    <div class="metric-grid">
+                        <div class="metric-card"><span>Less friction</span><h3>No context switching</h3><p>The customer stays on the site and inside the widget, without opening third-party tools or leaving the browsing path.</p></div>
+                        <div class="metric-card"><span>More confidence</span><h3>Personal preview</h3><p>A visual test helps the visitor understand the product better and turns curiosity into concrete intent.</p></div>
+                        <div class="metric-card"><span>More value</span><h3>Deeper interaction</h3><p>The visitor is not only reading a product page. They are taking an action that moves them closer to decision.</p></div>
+                    </div>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">How it works inside the Bortex widget</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">The experience is designed to stay readable even for first-time visitors. The widget opens a three-step path that follows the same clarity and guidance principles already present across Bortex interactions.</p>
+
+                    <div class="step-grid">
+                        <div class="step-card"><span>01</span><h3>Choose the product</h3><p>The customer selects a real store item, so the generation always starts from a precise commercial context.</p></div>
+                        <div class="step-card"><span>02</span><h3>Upload a front-facing photo</h3><p>The system encourages the visitor to use a clear, front-facing and well-lit image to improve perceived output quality.</p></div>
+                        <div class="step-card"><span>03</span><h3>Get the preview</h3><p>The AI generates a personal preview inside the widget, ready to be compared with the product and the ongoing conversation.</p></div>
+                    </div>
+
+                    <div class="article-note">For the best result, the uploaded image should be clear, front-facing and well lit. That is not a technical footnote. It is a core part of the final quality the customer perceives.</div>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Why this is not a detached demo</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Many visual solutions force users to leave the site or restart inside a dedicated interface. Bortex follows a different logic: Try-On lives in the same widget that already handles invite bubbles, live chat, AI replies and support.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 0;">That means the merchant is not adding a disconnected block, but extending a single touchpoint with a new high-impact commercial capability.</p>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Shopify, catalog and real context</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Bortex is already built to use store catalog data and visitor context as the base of the conversation. Try-On plugs into that same logic: the preview starts from a real store product, so it becomes a useful part of the buying path rather than an abstract example.</p>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Where it makes the most sense</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 0.75rem;">Virtual Try-On is especially valuable where visual confidence affects the decision. It does not replace the product page. It makes that page more tangible when the visitor needs help imagining the result.</p>
+                    <ul class="bullet-list">
+                        <li>Stores that want stronger engagement on visual, high-intent products.</li>
+                        <li>Brands already using the Bortex widget as a commercial touchpoint.</li>
+                        <li>Ecommerce teams that want to reduce hesitation and repetitive pre-checkout questions.</li>
+                        <li>Teams that want to test a new conversion layer without introducing a separate app flow.</li>
+                    </ul>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Initial rollout and access</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Virtual Try-On is part of the upcoming platform releases. Access will be introduced progressively, with availability and controls aligned with plan access and the measures needed to keep the flow sustainable for individual visitors.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 0;">In practice: this is not just a lab demo, but a real extension of the widget, designed for a selling context and a controlled rollout.</p>
+                </article>
+
+                <aside class="article-sidebar">
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h3 style="margin: 0 0 1rem; color: var(--heading-color);">In this article</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.85rem;">
+                            <li><span style="color: var(--primary-color); font-weight: 700;">01</span> <span style="color: var(--text-color);">Why Try-On converts</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">02</span> <span style="color: var(--text-color);">Flow inside the widget</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">03</span> <span style="color: var(--text-color);">Three-step preview</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">04</span> <span style="color: var(--text-color);">Catalog and Shopify</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">05</span> <span style="color: var(--text-color);">Use cases</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">06</span> <span style="color: var(--text-color);">Initial rollout</span></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h3 style="margin: 0 0 1rem; color: var(--heading-color);">In short</h3>
+                        <p style="margin: 0; color: var(--text-color); line-height: 1.8;">Virtual Try-On brings a personal preview into the exact moment where the visitor is deciding. It is not a separate module. It is a new capability inside the Bortex widget.</p>
+                    </div>
+                    <div class="glass-card" style="padding: 1.5rem; background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(249, 115, 22, 0.08)); border: 1px solid rgba(255,255,255,0.08);">
+                        <h3 style="margin: 0 0 0.85rem; color: var(--heading-color);">Request early access</h3>
+                        <p style="margin: 0 0 1rem; color: var(--text-color); line-height: 1.8;">Join the Try-On waitlist to receive rollout updates and activation details for your widget.</p>
+                        <div style="display: grid; gap: 0.75rem;"><a href="/en/#waitlist" class="btn btn-primary">Join the waitlist</a><a href="/en/blog.html" class="btn btn-outline">Back to blog</a></div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section-padding" style="padding-top: 0;">
+            <div class="container" style="max-width: 1180px;">
+                <div style="position: relative; overflow: hidden; border-radius: clamp(20px, 4vw, 28px); border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(135deg, rgba(10, 14, 24, 0.96) 0%, rgba(14, 35, 49, 0.94) 60%, rgba(39, 17, 10, 0.92) 100%); box-shadow: 0 24px 60px rgba(0,0,0,0.22);">
+                    <div style="position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(14, 165, 233, 0.24), transparent 28%), radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.18), transparent 34%);"></div>
+                    <div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center; padding: clamp(1.2rem, 3vw, 2.4rem);">
+                        <div style="display: grid; gap: 0.9rem; max-width: 720px;">
+                            <span style="display: inline-flex; width: fit-content; align-items: center; gap: 0.55rem; padding: 0.5rem 0.9rem; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.72); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;">BORTEX Try-On</span>
+                            <h2 style="margin: 0; color: #ffffff; font-size: clamp(1.9rem, 3vw, 2.6rem); line-height: 1.08; letter-spacing: -0.03em;">Join the Virtual Try-On waitlist</h2>
+                            <p style="margin: 0; color: rgba(255,255,255,0.74); line-height: 1.9; font-size: 1rem; max-width: 640px;">Get early access to the new flow that brings product preview directly into the Bortex widget, together with rollout and activation updates.</p>
+                        </div>
+                        <div style="position: relative; border-radius: 22px; padding: clamp(1rem, 2.8vw, 1.2rem); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px);">
+                            <form class="waitlist-signup-form" data-lang="en" data-feature-code="virtual_tryon" data-feature-name="BORTEX Virtual Try-On" data-source-page="/en/blog-virtual-try-on" style="display: grid; gap: 0.95rem;">
+                                <div style="display: grid; gap: 0.5rem;"><label for="waitlist-email-en" style="font-size: 0.9rem; color: rgba(255,255,255,0.72);">Email address</label><input id="waitlist-email-en" type="email" name="email" required placeholder="name@company.com" style="width: 100%; min-height: 58px; border-radius: 16px; border: 1px solid rgba(249, 115, 22, 0.42); background: rgba(255,255,255,0.97); color: #111827; padding: 0 1rem; font-size: 1rem; outline: none; box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);"></div>
+                                <div class="waitlist-consents">
+                                    <label class="consent-label"><input type="checkbox" name="gdpr_consent" class="consent-checkbox" required><span class="consent-text">I have read and consent to the processing of my personal data for waitlist management purposes, pursuant to EU Regulation 2016/679 (GDPR). <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> *</span></label>
+                                    <label class="consent-label"><input type="checkbox" name="marketing_consent" class="consent-checkbox"><span class="consent-text">I would like to receive updates, news and commercial communications from BORTEX (optional).</span></label>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="min-height: 56px; justify-content: center; font-size: 0.98rem;">Join the waitlist</button>
+                                <p style="margin: 0; color: rgba(255,255,255,0.54); font-size: 0.83rem; line-height: 1.6;">We will only contact you with relevant Try-On rollout updates and new BORTEX features.</p>
+                            </form>
+                            <p class="waitlist-feedback" style="margin: 0.85rem 0 0; color: rgba(255,255,255,0.72); font-size: 0.95rem; min-height: 1.5rem;"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand"><a href="https://www.bortex.site/en/" class="logo"><img id="footer-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo" style="height: 38px;" loading="lazy" width="1366" height="768" decoding="async"></a><p class="footer-description">Artificial intelligence at the service of people. Real-time chat, AI assistant and advanced analytics.</p></div>
+                <div class="footer-columns">
+                    <div class="footer-column"><h4 class="footer-title">Product</h4><ul class="footer-links"><li><a href="/en/features.html">Features</a></li><li><a href="/en/pricing.html">Pricing</a></li><li><a href="https://www.bortex.site/en/login">Dashboard</a></li><li><a href="/en/#waitlist">Early Access</a></li></ul></div>
+                    <div class="footer-column"><h4 class="footer-title">Company</h4><ul class="footer-links"><li><a href="/en/about.html">About</a></li><li><a href="/en/blog.html">Blog</a></li><li><a href="/en/register.html">Sign Up</a></li><li><a href="/en/">Home</a></li></ul></div>
+                    <div class="footer-column"><h4 class="footer-title">Support</h4><ul class="footer-links"><li><a href="/en/contact.html">Contact</a></li><li><a href="/en/blog.html">Resources</a></li><li><a href="/en/register.html">Request a Demo</a></li><li><a href="/en/privacy.html">Privacy Policy</a></li></ul></div>
+                    <div class="footer-column"><h4 class="footer-title">Legal</h4><ul class="footer-links"><li><a href="/en/cookies.html">Cookie Policy</a></li><li><a href="/en/privacy.html">Privacy Policy</a></li><li><a href="/en/terms.html">Terms</a></li><li><a href="/en/gdpr.html">GDPR</a></li></ul></div>
+                </div>
+            <div class="footer-bottom"><div class="footer-bottom-left"><p>&copy; <span id="current-year"></span> BORTEX. All rights reserved.</p></div></div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.waitlist-signup-form').forEach((form) => {
+                const feedback = form.parentElement.querySelector('.waitlist-feedback');
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    const button = form.querySelector('button[type="submit"]');
+                    const emailInput = form.querySelector('input[name="email"]');
+                    const originalLabel = button.textContent;
+                    feedback.textContent = '';
+                    button.disabled = true;
+                    button.textContent = 'Sending...';
+                    try {
+                        const response = await fetch('/api/waitlist/signup', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                email: emailInput.value,
+                                lang: form.dataset.lang,
+                                feature_code: form.dataset.featureCode,
+                                feature_name: form.dataset.featureName,
+                                source_page: form.dataset.sourcePage,
+                                gdpr_consent: !!(form.querySelector('[name="gdpr_consent"]') && form.querySelector('[name="gdpr_consent"]').checked),
+                                marketing_consent: !!(form.querySelector('[name="marketing_consent"]') && form.querySelector('[name="marketing_consent"]').checked)
+                            })
+                        });
+                        const data = await response.json().catch(() => ({}));
+                        if (!response.ok || !data.success) throw new Error(data.message || "Unable to complete your signup.");
+                        feedback.textContent = data.message;
+                        feedback.style.color = 'var(--primary-color)';
+                        form.reset();
+                    } catch (error) {
+                        feedback.textContent = error.message;
+                        feedback.style.color = '#f97316';
+                    } finally {
+                        button.disabled = false;
+                        button.textContent = originalLabel;
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="/js/main.min.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="ui/assets/favicon/favicon-32x32.png">
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Bortex AI">
+    <link rel="apple-touch-icon" href="/pwa-icons/android/android-launchericon-192-192-new.png">
+    <script src="/pwa-redirect.js"></script>
+    <title>Contatti BORTEX | Demo, supporto e partnership</title>
+    <meta name="description"
+        content="Contatta BORTEX per demo, supporto tecnico, piani enterprise e partnership. Risposte rapide dal team.">
+    <meta name="keywords" content="assistenza bortex, contatti, supporto clienti, demo live chat, email supporto">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bortex.site/contact.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bortex.site/contact.html">
+    <meta property="og:title" content="Contatti BORTEX | Demo, supporto e partnership">
+    <meta property="og:description"
+        content="Richiedi una demo, supporto tecnico o una proposta enterprise per BORTEX.">
+    <meta property="og:image" content="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.bortex.site/contact.html">
+    <meta property="twitter:title" content="Contatti BORTEX | Demo, supporto e partnership">
+    <meta property="twitter:description"
+        content="Richiedi una demo, supporto tecnico o una proposta enterprise per BORTEX.">
+    <meta property="twitter:image" content="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.bortex.site/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contatti",
+        "item": "https://www.bortex.site/contact.html"
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "BORTEX IA",
+        "email": "info@bortex.site",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Support",
+          "availableLanguage": "Italian"
+        }
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.min.css">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="https://www.bortex.site/" class="logo">
+                <img id="theme-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg"
+                    alt="BORTEX Logo" style="height: 40px;">
+            </a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="https://www.bortex.site/" class="nav-link">Home</a></li>
+                    <li><a href="features.html" class="nav-link">Funzionalità</a></li>
+                    <li><a href="pricing.html" class="nav-link">Prezzi</a></li>
+                    <li><a href="index.html#waitlist" class="nav-link">Lista Attesa</a></li>
+                    <li><a href="blog.html" class="nav-link" style="color: var(--primary-color);">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+
+                <button class="lang-toggle" id="lang-toggle" aria-label="Cambia lingua">
+                    <span class="lang-code">IT</span>
+                </button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambia tema">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="https://www.bortex.site/login" class="btn btn-text">Login</a>
+                <button class="mobile-menu-btn"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Menu Sidebar -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <img id="sidebar-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg"
+                alt="BORTEX Logo">
+        </div>
+        <ul class="mobile-menu-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Funzionalità</a></li>
+            <li><a href="pricing.html">Prezzi</a></li>
+            <li><a href="about.html">Chi Siamo</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+        </ul>
+        <div class="mobile-menu-divider"></div>
+        <div class="mobile-menu-cta">
+            <a href="index.html#waitlist" class="btn btn-primary">Iscriviti in lista</a>
+            <a href="https://www.bortex.site/login" class="btn btn-outline">Login</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero"
+            style="min-height: 40vh; padding-bottom: 3rem; background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="badge">Contattaci</span>
+                    <h1 class="hero-title">Siamo Qui per <span class="text-gradient">Aiutarti</span></h1>
+                    <p class="hero-description">Hai domande? Vuoi una demo? Il nostro team è pronto a risponderti.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+                    <div class="feature-card glass-card" style="text-align: center;">
+                        <div class="feature-icon icon-glow-purple" style="margin: 0 auto 1.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Email</h3>
+                        <p style="margin-bottom: 1rem;">Per richieste generali e supporto</p>
+                        <a href="mailto:info@bortex.site"
+                            style="color: var(--primary-color); font-weight: 600;">info@bortex.site</a>
+                    </div>
+                    <div class="feature-card glass-card" style="text-align: center;">
+                        <div class="feature-icon icon-glow-blue" style="margin: 0 auto 1.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3>Live Chat</h3>
+                        <p style="margin-bottom: 1rem;">Chatta con noi in tempo reale</p>
+                        <a href="https://www.bortex.site/login" style="color: var(--primary-color); font-weight: 600;">Apri Dashboard</a>
+                    </div>
+                    <div class="feature-card glass-card" style="text-align: center;">
+                        <div class="feature-icon icon-glow-green" style="margin: 0 auto 1.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Supporto 24/7</h3>
+                        <p style="margin-bottom: 1rem;">Per clienti Professional ed Enterprise</p>
+                        <span style="color: var(--primary-color); font-weight: 600;">Sempre disponibile</span>
+                    </div>
+                </div>
+                <section aria-labelledby="contact-benefits-it" style="margin: 0 0 3rem;">
+                    <div class="glass-card" style="padding: 2rem;">
+                        <h2 id="contact-benefits-it" style="margin: 0 0 1rem; color: var(--heading-color);">Come possiamo aiutarti</h2>
+                        <p style="margin: 0 0 1rem; color: var(--text-color); line-height: 1.85;">BORTEX lavora su tre aree principali: assistenza clienti con widget AI, automazioni operative per team e strumenti di produttività collegati a chat, calendario, documenti e notifiche. Se ci contatti, possiamo indirizzarti rapidamente sul flusso giusto.</p>
+                        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                            <div class="glass-panel" style="padding:1rem;">
+                                <h3 style="margin:0 0 0.45rem; color:var(--heading-color);">Demo prodotto</h3>
+                                <p style="margin:0; color:var(--text-color); line-height:1.75;">Per capire come impostare widget, dashboard e casi d'uso reali.</p>
+                            </div>
+                            <div class="glass-panel" style="padding:1rem;">
+                                <h3 style="margin:0 0 0.45rem; color:var(--heading-color);">Supporto tecnico</h3>
+                                <p style="margin:0; color:var(--text-color); line-height:1.75;">Per problemi su setup, integrazioni, login, notifiche e piattaforme collegate.</p>
+                            </div>
+                            <div class="glass-panel" style="padding:1rem;">
+                                <h3 style="margin:0 0 0.45rem; color:var(--heading-color);">Enterprise e partnership</h3>
+                                <p style="margin:0; color:var(--text-color); line-height:1.75;">Per rollout su team, white label, processi interni e valutazioni personalizzate.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div style="max-width: 700px; margin: 0 auto;">
+                    <div class="glass-panel">
+                        <h2 style="color: var(--heading-color); margin-bottom: 1.5rem; text-align: center;">Richiedi
+                            Informazioni</h2>
+                        <form id="contact-form-it" class="contact-form" data-lang="it" action="https://www.bortex.site/api/contact" method="post" novalidate style="display: grid; gap: 1.5rem;">
+                            <input type="text" name="website" tabindex="-1" autocomplete="off" style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;" aria-hidden="true">
+                            <div>
+                                <label
+                                    for="contact-name-it" style="display: block; color: var(--text-color); margin-bottom: 0.5rem; font-weight: 500;">Nome
+                                    Completo</label>
+                                <input id="contact-name-it" type="text" name="name" required placeholder="Mario Rossi"
+                                    style="width: 100%; padding: 0.875rem; background: var(--bg-alt); border: 1px solid var(--border-color); border-radius: 0.5rem; color: var(--text-color); font-family: var(--font-sans);">
+                            </div>
+                            <div>
+                                <label
+                                    for="contact-email-it" style="display: block; color: var(--text-color); margin-bottom: 0.5rem; font-weight: 500;">Email</label>
+                                <input id="contact-email-it" type="email" name="email" required placeholder="mario@esempio.it"
+                                    style="width: 100%; padding: 0.875rem; background: var(--bg-alt); border: 1px solid var(--border-color); border-radius: 0.5rem; color: var(--text-color); font-family: var(--font-sans);">
+                            </div>
+                            <div>
+                                <label
+                                    for="contact-company-it" style="display: block; color: var(--text-color); margin-bottom: 0.5rem; font-weight: 500;">Azienda
+                                    (opzionale)</label>
+                                <input id="contact-company-it" type="text" name="company" placeholder="La Tua Azienda"
+                                    style="width: 100%; padding: 0.875rem; background: var(--bg-alt); border: 1px solid var(--border-color); border-radius: 0.5rem; color: var(--text-color); font-family: var(--font-sans);">
+                            </div>
+                            <div>
+                                <label
+                                    for="contact-topic-it" style="display: block; color: var(--text-color); margin-bottom: 0.5rem; font-weight: 500;">Tipo
+                                    di Richiesta</label>
+                                <select id="contact-topic-it" name="topic" required
+                                    style="width: 100%; padding: 0.875rem; background: var(--bg-alt); border: 1px solid var(--border-color); border-radius: 0.5rem; color: var(--text-color); font-family: var(--font-sans);">
+                                    <option value="Informazioni Generali">Informazioni Generali</option>
+                                    <option value="Richiesta Demo">Richiesta Demo</option>
+                                    <option value="Supporto Tecnico">Supporto Tecnico</option>
+                                    <option value="Piano Enterprise">Piano Enterprise</option>
+                                    <option value="Partnership">Partnership</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label
+                                    for="contact-message-it" style="display: block; color: var(--text-color); margin-bottom: 0.5rem; font-weight: 500;">Messaggio</label>
+                                <textarea id="contact-message-it" name="message" rows="5" required placeholder="Descrivici la tua richiesta..."
+                                    style="width: 100%; padding: 0.875rem; background: var(--bg-alt); border: 1px solid var(--border-color); border-radius: 0.5rem; color: var(--text-color); font-family: var(--font-sans); resize: vertical;"></textarea>
+                            </div>
+                            <label style="display: flex; gap: 0.75rem; align-items: flex-start; color: var(--text-color); font-size: 0.95rem; line-height: 1.5;">
+                                <input type="checkbox" name="privacy" required style="margin-top: 0.25rem;">
+                                <span>Autorizzo il trattamento dei dati per essere ricontattato in merito alla mia richiesta.</span>
+                            </label>
+                            <div class="contact-form-status" aria-live="polite" style="display: none; padding: 0.875rem 1rem; border-radius: 0.75rem; font-size: 0.95rem;"></div>
+                            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Invia
+                                Richiesta</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <!-- Footer Main Content -->
+            <div class="footer-content">
+                <!-- Brand Column -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img id="footer-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg"
+                            alt="BORTEX Logo" style="height: 38px;" loading="lazy" width="1366" height="768" decoding="async">
+                    </a>
+                    <p class="footer-description">L'intelligenza artificiale al servizio delle persone. Chat in tempo
+                        reale, assistente AI e analisi avanzate.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/alessandro-f-119b83270/" aria-label="LinkedIn" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61574265030730" aria-label="Facebook" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <span class="sr-only">Facebook</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"></path></svg>
+                        </a>
+                        <a href="https://x.com/BortexAssistant" aria-label="X" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <span class="sr-only">X</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.26l-4.9-6.99L5.93 22H2.8l7.24-8.27L.8 2h6.42l4.43 6.32L18.9 2zm-1.1 18h1.73L6.29 3.9H4.43L17.8 20z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links Columns -->
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Prodotto</h4>
+                        <ul class="footer-links">
+                            <li><a href="/features.html">Funzionalita</a></li>
+                            <li><a href="/pricing.html">Prezzi</a></li>
+                            <li><a href="https://www.bortex.site/login">Dashboard</a></li>
+                            <li><a href="/#waitlist">Early Access</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-title">Azienda</h4>
+                        <ul class="footer-links">
+                            <li><a href="/about.html">Chi Siamo</a></li>
+                            <li><a href="/blog.html">Blog</a></li>
+                            <li><a href="/register.html">Registrazione</a></li>
+                            <li><a href="/">Home</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-title">Supporto</h4>
+                        <ul class="footer-links">
+                            <li><a href="/contact.html">Contatti</a></li>
+                            <li><a href="/blog.html">Centro Risorse</a></li>
+                            <li><a href="/register.html">Richiedi una Demo</a></li>
+                            <li><a href="/privacy.html">Privacy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-title">Legale</h4>
+                        <ul class="footer-links">
+                            <li><a href="/cookies.html">Cookie Policy</a></li>
+                            <li><a href="/privacy.html">Privacy Policy</a></li>
+                            <li><a href="/terms.html">Termini</a></li>
+                            <li><a href="/gdpr.html">GDPR</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; <span id="current-year"></span> BORTEX. Tutti i diritti riservati.</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <p>BORTEX Platform</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        (function () {
+            const form = document.querySelector('.contact-form');
+            if (!form) return;
+
+            const lang = form.dataset.lang === 'en' ? 'en' : 'it';
+            const statusBox = form.querySelector('.contact-form-status');
+            const submitButton = form.querySelector('button[type="submit"]');
+            const labels = {
+                it: {
+                    sending: 'Invio in corso...',
+                    success: 'Richiesta inviata. Ti ricontatteremo al piu presto.',
+                    error: 'Invio non riuscito. Riprova tra qualche minuto.',
+                    invalid: 'Compila tutti i campi obbligatori e accetta il consenso privacy.'
+                },
+                en: {
+                    sending: 'Sending...',
+                    success: 'Request sent. We will get back to you shortly.',
+                    error: 'Unable to send your request. Please try again in a few minutes.',
+                    invalid: 'Please complete all required fields and accept the privacy consent.'
+                }
+            };
+
+            function showStatus(type, message) {
+                statusBox.style.display = 'block';
+                statusBox.textContent = message;
+                statusBox.style.background = type === 'success' ? 'rgba(34, 197, 94, 0.12)' : 'rgba(239, 68, 68, 0.12)';
+                statusBox.style.border = '1px solid ' + (type === 'success' ? 'rgba(34, 197, 94, 0.35)' : 'rgba(239, 68, 68, 0.35)');
+                statusBox.style.color = type === 'success' ? '#bbf7d0' : '#fecaca';
+            }
+
+            form.addEventListener('submit', async function (event) {
+                event.preventDefault();
+
+                const data = new FormData(form);
+                if (!form.reportValidity() || !data.get('privacy')) {
+                    showStatus('error', labels[lang].invalid);
+                    return;
+                }
+
+                submitButton.disabled = true;
+                showStatus('success', labels[lang].sending);
+
+                try {
+                    const response = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            lang,
+                            name: String(data.get('name') || '').trim(),
+                            email: String(data.get('email') || '').trim(),
+                            company: String(data.get('company') || '').trim(),
+                            topic: String(data.get('topic') || '').trim(),
+                            message: String(data.get('message') || '').trim(),
+                            privacy: data.get('privacy') === 'on',
+                            website: String(data.get('website') || '').trim(),
+                            sourcePage: window.location.pathname
+                        })
+                    });
+
+                    const payload = await response.json().catch(function () { return {}; });
+                    if (!response.ok || !payload.success) {
+                        throw new Error(payload.message || 'request_failed');
+                    }
+
+                    form.reset();
+                    showStatus('success', labels[lang].success);
+                } catch (error) {
+                    showStatus('error', labels[lang].error);
+                } finally {
+                    submitButton.disabled = false;
+                }
+            });
+        })();
+    </script>
+    <script src="/js/main.min.js" defer></script>
+</body>
+
+</html>

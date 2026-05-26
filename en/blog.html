@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/ui/assets/favicon/favicon-32x32.png">
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Bortex AI">
+    <link rel="apple-touch-icon" href="/pwa-icons/android/android-launchericon-192-192-new.png">
+    <script src="/pwa-redirect.js"></script>
+    <title>BORTEX Blog | AI, widgets and operational automation</title>
+    <meta name="description" content="BORTEX articles about AI, website widgets, operational automation, product updates and customer engagement.">
+    <meta name="keywords"
+        content="bortex blog, live chat guides, ai tutorial, customer care resources, artificial intelligence articles">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bortex.site/en/blog.html">
+    <link rel="alternate" hreflang="it" href="https://www.bortex.site/blog.html">
+    <link rel="alternate" hreflang="en" href="https://www.bortex.site/en/blog.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.bortex.site/blog.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bortex.site/en/blog.html">
+    <meta property="og:title" content="BORTEX Blog | AI, widgets and operational automation">
+    <meta property="og:description" content="Guides and product insights on AI, BORTEX widgets, automation and customer engagement.">
+    <meta property="og:image" content="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.bortex.site/en/blog.html">
+    <meta property="twitter:title" content="BORTEX Blog | AI, widgets and operational automation">
+    <meta property="twitter:description"
+        content="Guides and product insights on AI, BORTEX widgets, automation and customer engagement.">
+    <meta property="twitter:image" content="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Blog - BORTEX",
+            "url": "https://www.bortex.site/en/blog.html",
+            "description": "Guides, tutorials and resources on AI, customer engagement and Bortex technologies.",
+            "inLanguage": "en",
+            "mainEntity": {
+                "@type": "ItemList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "url": "https://www.bortex.site/en/blog-bortex-workflow-operational-automations.html",
+                        "name": "Inside the Bortex Desktop Agents tab: workflow, export and agents ready to work"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "url": "https://www.bortex.site/en/blog-article.html",
+                        "name": "BORTEX: the new revolution of artificial intelligence"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "url": "https://www.bortex.site/en/blog-widget-chat.html",
+                        "name": "Bortex chat widget: how to integrate it into your site and turn visitors into customers"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "url": "https://www.bortex.site/en/blog-virtual-try-on.html",
+                        "name": "Virtual Try-On inside the Bortex widget"
+                    }
+                ]
+            }
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <style>
+        /* ── Blog index layout ── */
+        .blog-hero {
+            position: relative;
+            padding: 5rem 0 4rem;
+            overflow: hidden;
+        }
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 15% 50%, rgba(249,115,22,.12) 0%, transparent 40%),
+                radial-gradient(circle at 85% 20%, rgba(139,92,246,.10) 0%, transparent 38%);
+            pointer-events: none;
+        }
+        .blog-hero-inner {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: end;
+            gap: 2rem;
+        }
+        .blog-hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            margin-bottom: 1.25rem;
+        }
+        .blog-hero-eyebrow span {
+            font-size: .75rem;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .blog-hero-eyebrow .dot {
+            width: 4px; height: 4px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.25);
+        }
+        .blog-counter {
+            font-family: 'Courier New', monospace;
+            font-size: .75rem;
+            color: rgba(255,255,255,.3);
+            letter-spacing: .1em;
+        }
+
+        /* ── Category filters ── */
+        .blog-filters {
+            display: flex;
+            gap: .5rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        .filter-btn {
+            padding: .35rem .9rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,.1);
+            background: transparent;
+            color: var(--text-muted);
+            font-size: .82rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all .2s;
+            font-family: inherit;
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background: rgba(249,115,22,.07);
+        }
+
+        /* ── Featured article ── */
+        .article-featured {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.08);
+            background: rgba(255,255,255,.03);
+            margin-bottom: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color .25s, box-shadow .25s;
+            position: relative;
+        }
+        .article-featured:hover {
+            border-color: rgba(249,115,22,.35);
+            box-shadow: 0 0 0 1px rgba(249,115,22,.15), 0 24px 48px rgba(0,0,0,.2);
+        }
+        .article-featured-visual {
+            position: relative;
+            background: linear-gradient(135deg, rgba(249,115,22,.18) 0%, rgba(139,92,246,.12) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 340px;
+            overflow: hidden;
+        }
+        .article-featured-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,.03) 39px, rgba(255,255,255,.03) 40px),
+                repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,.03) 39px, rgba(255,255,255,.03) 40px);
+        }
+        .article-featured-logo {
+            position: relative;
+            z-index: 1;
+            width: 96px; height: 96px;
+            border-radius: 22px;
+            background: rgba(255,255,255,.97);
+            display: flex; align-items: center; justify-content: center;
+            padding: .9rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,.22);
+        }
+        .article-featured-badge {
+            position: absolute;
+            top: 1.25rem; left: 1.25rem;
+            z-index: 2;
+            padding: .3rem .75rem;
+            border-radius: 999px;
+            background: rgba(249,115,22,.18);
+            border: 1px solid rgba(249,115,22,.3);
+            color: #f97316;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+        .article-featured-num {
+            position: absolute;
+            bottom: 1.25rem; right: 1.25rem;
+            z-index: 2;
+            font-family: 'Courier New', monospace;
+            font-size: .72rem;
+            color: rgba(255,255,255,.25);
+            letter-spacing: .1em;
+        }
+        .article-featured-body {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .article-featured-meta {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            margin-bottom: 1.25rem;
+        }
+        .article-featured-meta .tag {
+            padding: .2rem .65rem;
+            border-radius: 999px;
+            background: var(--badge-bg);
+            color: var(--primary-color);
+            font-size: .75rem;
+            font-weight: 700;
+        }
+        .article-featured-meta .read-time {
+            font-size: .82rem;
+            color: var(--text-muted);
+        }
+        .article-featured-meta .date {
+            font-size: .82rem;
+            color: var(--text-muted);
+            margin-left: auto;
+            font-family: 'Courier New', monospace;
+        }
+        .article-featured-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            line-height: 1.25;
+            margin-bottom: 1rem;
+            letter-spacing: -.02em;
+        }
+        .article-featured-desc {
+            color: var(--text-color);
+            line-height: 1.75;
+            font-size: .95rem;
+            margin-bottom: 2rem;
+            flex: 1;
+        }
+        .article-featured-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: .95rem;
+            text-decoration: none;
+        }
+        .article-featured-cta svg {
+            transition: transform .2s;
+        }
+        .article-featured:hover .article-featured-cta svg {
+            transform: translateX(4px);
+        }
+
+        /* ── Secondary grid ── */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+        .article-card {
+            display: flex;
+            flex-direction: column;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,.07);
+            background: rgba(255,255,255,.025);
+            padding: 1.75rem;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color .25s, background .25s, box-shadow .25s;
+            position: relative;
+            overflow: hidden;
+        }
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--card-accent-from, rgba(249,115,22,.5)), var(--card-accent-to, rgba(139,92,246,.3)));
+            opacity: 0;
+            transition: opacity .25s;
+        }
+        .article-card:hover {
+            border-color: rgba(255,255,255,.14);
+            background: rgba(255,255,255,.045);
+            box-shadow: 0 12px 32px rgba(0,0,0,.18);
+        }
+        .article-card:hover::before {
+            opacity: 1;
+        }
+        .article-card-num {
+            font-family: 'Courier New', monospace;
+            font-size: .7rem;
+            color: rgba(255,255,255,.2);
+            letter-spacing: .12em;
+            margin-bottom: 1.25rem;
+        }
+        .article-card-meta {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            margin-bottom: 1rem;
+        }
+        .article-card-meta .tag {
+            padding: .18rem .6rem;
+            border-radius: 999px;
+            background: var(--badge-bg);
+            color: var(--primary-color);
+            font-size: .72rem;
+            font-weight: 700;
+        }
+        .article-card-meta .read-time {
+            font-size: .8rem;
+            color: var(--text-muted);
+        }
+        .article-card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            line-height: 1.35;
+            margin-bottom: .75rem;
+            letter-spacing: -.015em;
+        }
+        .article-card-desc {
+            font-size: .875rem;
+            color: var(--text-color);
+            line-height: 1.7;
+            flex: 1;
+            margin-bottom: 1.25rem;
+        }
+        .article-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            color: var(--primary-color);
+            font-size: .85rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .article-card-link svg {
+            transition: transform .2s;
+        }
+        .article-card:hover .article-card-link svg {
+            transform: translateX(3px);
+        }
+
+        /* ── Layout toggle button ── */
+        .blog-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .blog-filters {
+            margin-bottom: 0;
+        }
+        .layout-toggle {
+            display: flex;
+            gap: 2px;
+            background: var(--bg-alt, rgba(0,0,0,.06));
+            border: 1px solid rgba(128,128,128,.2);
+            border-radius: 10px;
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        .layout-btn {
+            width: 32px; height: 32px;
+            border-radius: 7px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted, #888);
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: background .18s, color .18s;
+        }
+        .layout-btn:hover {
+            color: var(--heading-color, #111);
+            background: rgba(128,128,128,.12);
+        }
+        .layout-btn.active {
+            background: rgba(249,115,22,.18);
+            color: #f97316;
+        }
+
+        /* ── Grid mode: container ── */
+        #blog-articles-container.layout-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ── Grid mode: ogni articolo → card compatta verticale ── */
+        .article-featured.compact-card {
+            display: flex !important;
+            flex-direction: column !important;
+            border-radius: 16px !important;
+            margin-bottom: 0 !important;
+        }
+        .article-featured.compact-card .article-featured-visual {
+            min-height: 120px !important;
+            height: 120px !important;
+        }
+        .article-featured.compact-card .article-featured-body {
+            padding: 1.1rem 1.25rem !important;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .article-featured.compact-card .article-featured-title {
+            font-size: .98rem !important;
+            margin-bottom: .55rem !important;
+            line-height: 1.3 !important;
+        }
+        .article-featured.compact-card .article-featured-desc {
+            font-size: .82rem !important;
+            line-height: 1.6 !important;
+            margin-bottom: .9rem !important;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .article-featured.compact-card .article-featured-meta {
+            margin-bottom: .7rem !important;
+        }
+        .article-featured.compact-card .article-featured-cta {
+            font-size: .83rem !important;
+        }
+        .article-featured.compact-card .article-featured-logo {
+            width: 56px !important;
+            height: 56px !important;
+            border-radius: 12px !important;
+        }
+        .article-featured.compact-card .article-featured-badge {
+            font-size: .64rem !important;
+            padding: .18rem .5rem !important;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 960px) {
+            #blog-articles-container.layout-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 860px) {
+            .article-featured {
+                grid-template-columns: 1fr;
+            }
+            .article-featured-visual {
+                min-height: 200px;
+            }
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            .blog-hero-inner {
+                grid-template-columns: 1fr;
+            }
+            .blog-toolbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        @media (max-width: 640px) {
+            .article-featured-body {
+                padding: 1.35rem;
+            }
+            .article-featured-title {
+                font-size: 1.25rem;
+            }
+            #blog-articles-container.layout-grid {
+                grid-template-columns: 1fr;
+            }
+            .blog-hero {
+                padding: 3.5rem 0 2.5rem;
+            }
+        }
+        /* Touch: rimuovi hover su mobile */
+        @media (hover: none) {
+            .article-featured:hover {
+                border-color: rgba(255,255,255,.08);
+                box-shadow: none;
+            }
+            .article-card:hover {
+                border-color: rgba(255,255,255,.07);
+                background: rgba(255,255,255,.025);
+                box-shadow: none;
+            }
+            .article-card:hover::before {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="https://www.bortex.site/" class="logo"><img id="theme-logo"
+                    src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo"
+                    style="height: 40px;"></a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="https://www.bortex.site/en/" class="nav-link">Home</a></li>
+                    <li><a href="/en/features.html" class="nav-link">Features</a></li>
+                    <li><a href="/en/pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="/en/#waitlist" class="nav-link">Join Waitlist</a></li>
+                    <li><a href="/en/blog.html" class="nav-link" style="color: var(--primary-color);">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+<button class="lang-toggle" id="lang-toggle" aria-label="Cambia lingua">
+                    <span class="lang-code">EN</span>
+                </button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="https://www.bortex.site/en/login" class="btn btn-text">Login</a>
+                <a href="/en/#waitlist" class="btn btn-primary">Join waitlist</a>
+                <button class="mobile-menu-btn">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Menu Sidebar -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <img id="sidebar-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg"
+                alt="BORTEX Logo">
+        </div>
+        <ul class="mobile-menu-list">
+            <li><a href="/en/">Home</a></li>
+            <li><a href="/en/features.html">Features</a></li>
+            <li><a href="/en/pricing.html">Pricing</a></li>
+            <li><a href="/en/about.html">About</a></li>
+            <li><a href="/en/blog.html" class="active">Blog</a></li>
+        </ul>
+        <div class="mobile-menu-divider"></div>
+        <div class="mobile-menu-cta">
+            <a href="/en/#waitlist" class="btn btn-primary">Join Waitlist</a>
+            <a href="https://www.bortex.site/en/login" class="btn btn-outline">Login</a>
+        </div>
+    </div>
+
+    <main>
+
+        <!-- ══ HERO ══════════════════════════════════════════════ -->
+        <section class="blog-hero">
+            <div class="container">
+                <div class="blog-hero-inner">
+                    <div>
+                        <div class="blog-hero-eyebrow">
+                            <span>BORTEX</span>
+                            <span class="dot"></span>
+                            <span>Journal</span>
+                            <span class="dot"></span>
+                            <span>2026</span>
+                        </div>
+                        <h1 class="hero-title" style="max-width: 680px; margin-bottom: 1rem;">Insights on <span class="text-gradient">AI, product</span> and the digital future</h1>
+                        <p class="hero-description" style="max-width: 560px; margin: 0;">Articles, guides and reflections from the Bortex team on artificial intelligence, ecosystem and innovation.</p>
+                    </div>
+                    <div style="text-align: right; padding-bottom: .5rem;">
+                        <div class="blog-counter">04 articles</div>
+                        <div style="font-family: 'Courier New', monospace; font-size: 3rem; font-weight: 700; color: rgba(255,255,255,.07); line-height: 1; letter-spacing: -.04em;">04</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ ARTICOLI ══════════════════════════════════════════ -->
+        <section class="section-padding" style="padding-top: 0;">
+            <div class="container">
+
+                <!-- Toolbar: filtri + toggle layout -->
+                <div class="blog-toolbar">
+                    <div class="blog-filters">
+                        <button class="filter-btn active">All</button>
+                        <button class="filter-btn">AI</button>
+                        <button class="filter-btn">Product</button>
+                        <button class="filter-btn">Guides</button>
+                        <button class="filter-btn">Ecosystem</button>
+                    </div>
+                    <div class="layout-toggle" role="group" aria-label="Display mode">
+                        <button class="layout-btn active" id="btn-layout-featured" aria-label="Featured view" title="Vista Featured">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="8" rx="2"/>
+                                <rect x="3" y="13" width="8" height="8" rx="2"/>
+                                <rect x="13" y="13" width="8" height="8" rx="2"/>
+                            </svg>
+                        </button>
+                        <button class="layout-btn" id="btn-layout-grid" aria-label="Vista griglia" title="Grid view">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+                                <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+                                <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+                                <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Contenitore articoli — data-layout gestito da JS + localStorage -->
+                <div id="blog-articles-container" data-layout="featured">
+
+                <!-- Featured: new workflow article -->
+                <a href="/en/blog-bortex-workflow-operational-automations.html" class="article-featured" data-category="Product">
+                    <div class="article-featured-visual" style="background: linear-gradient(135deg, rgba(139,92,246,.16) 0%, rgba(249,115,22,.14) 100%);">
+                        <span class="article-featured-badge" style="background: rgba(139,92,246,.18); border-color: rgba(139,92,246,.3); color: #a78bfa;">Updated</span>
+                        <div class="article-featured-logo">
+                            <img src="https://www.bortex.site/ui/assets/image/logo/single-logo-black-BORTEX.svg" alt="BORTEX" style="width: 100%; height: auto; object-fit: contain;" width="1366" height="768" decoding="async">
+                        </div>
+                        <span class="article-featured-num">ART_002</span>
+                    </div>
+                    <div class="article-featured-body">
+                        <div>
+                            <div class="article-featured-meta">
+                                <span class="tag">Agents</span>
+                                <span class="read-time">7 min read</span>
+                                <span class="date">APR 2026</span>
+                            </div>
+                            <h2 class="article-featured-title">Inside Bortex Desktop's Agents Tab</h2>
+                            <p class="article-featured-desc">A closer look at the operational heart of Bortex Desktop: the Agents tab, where mission, documents, task runner, export, packaging and runtime come together to turn a request into an executable agent.</p>
+                        </div>
+                        <span class="article-featured-cta">
+                            Read the article
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </span>
+                    </div>
+                </a>
+                <!-- Featured: primo articolo in grande orizzontale -->
+                <a href="/en/blog-article.html" class="article-featured">
+                    <div class="article-featured-visual">
+                        <span class="article-featured-badge">Featured</span>
+                        <div class="article-featured-logo">
+                            <img src="https://www.bortex.site/ui/assets/image/logo/single-logo-black-BORTEX.svg" alt="BORTEX" style="width: 100%; height: auto; object-fit: contain;" width="1366" height="768" decoding="async">
+                        </div>
+                        <span class="article-featured-num">ART_001</span>
+                    </div>
+                    <div class="article-featured-body">
+                        <div>
+                            <div class="article-featured-meta">
+                                <span class="tag">AI</span>
+                                <span class="read-time">5 min read</span>
+                                <span class="date">MAR 2026</span>
+                            </div>
+                            <h2 class="article-featured-title">BORTEX: the new revolution in artificial intelligence</h2>
+                            <p class="article-featured-desc">A deep dive into BORTEX's vision: intelligent assistant, agent mode, widgets, analytics, notifications, integrations and operational automations in a single platform. How AI stops just responding and starts acting.</p>
+                        </div>
+                        <span class="article-featured-cta">
+                            Read the article
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Article 3: Widget Chat -->
+                <a href="/en/blog-widget-chat.html" class="article-featured" data-category="Guide" style="--card-accent-from: rgba(249,115,22,.5); --card-accent-to: rgba(139,92,246,.3);">
+                    <div class="article-featured-visual" style="background: linear-gradient(135deg, rgba(249,115,22,.18) 0%, rgba(139,92,246,.12) 100%);">
+                        <span class="article-featured-badge" style="background: rgba(249,115,22,.18); border-color: rgba(249,115,22,.3); color: #f97316;">Practical Guide</span>
+                        <div class="article-featured-logo">
+                            <img src="https://www.bortex.site/ui/assets/image/logo/single-logo-black-BORTEX.svg" alt="BORTEX" style="width: 100%; height: auto; object-fit: contain;" width="1366" height="768" decoding="async">
+                        </div>
+                        <span class="article-featured-num">ART_003</span>
+                    </div>
+                    <div class="article-featured-body">
+                        <div>
+                            <div class="article-featured-meta">
+                                <span class="tag">Widget</span>
+                                <span class="read-time">8 min read</span>
+                                <span class="date">APR 2026</span>
+                            </div>
+                            <h2 class="article-featured-title">Bortex chat widget for websites</h2>
+                            <p class="article-featured-desc">Complete guide to installing and configuring the Bortex widget: automatic AI, live chat, video calls to visitors, Shopify integration and personalised invite bubbles. From the JS snippet to real conversions.</p>
+                        </div>
+                        <span class="article-featured-cta">
+                            Read the article
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <a href="/en/blog-virtual-try-on.html" class="article-featured" data-category="Product" style="--card-accent-from: rgba(14,165,233,.52); --card-accent-to: rgba(249,115,22,.28);">
+                    <div class="article-featured-visual" style="background: linear-gradient(135deg, rgba(14,165,233,.18) 0%, rgba(249,115,22,.14) 100%);">
+                        <span class="article-featured-badge" style="background: rgba(14,165,233,.18); border-color: rgba(14,165,233,.3); color: #38bdf8;">Coming soon</span>
+                        <div class="article-featured-logo">
+                            <img src="https://www.bortex.site/ui/assets/image/logo/single-logo-black-BORTEX.svg" alt="BORTEX" style="width: 100%; height: auto; object-fit: contain;" width="1366" height="768" decoding="async">
+                        </div>
+                        <span class="article-featured-num">ART_004</span>
+                    </div>
+                    <div class="article-featured-body">
+                        <div>
+                            <div class="article-featured-meta">
+                                <span class="tag">Try-On</span>
+                                <span class="read-time">6 min read</span>
+                                <span class="date">APR 2026</span>
+                            </div>
+                            <h2 class="article-featured-title">Virtual Try-On for ecommerce: product preview moves inside the Bortex widget</h2>
+                            <p class="article-featured-desc">Discover the new Bortex flow: visitors choose a product, upload a clear front-facing photo and generate a personal preview directly inside the widget without leaving the site.</p>
+                        </div>
+                        <span class="article-featured-cta">
+                            Read the article
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Article 2 — hidden, uncomment when ready -->
+                <!--
+                <a href="blog-remote-control.html" class="article-featured" data-category="Prodotto" style="--card-accent-from: rgba(139,92,246,.5); --card-accent-to: rgba(249,115,22,.3);">
+                    <div class="article-featured-visual" style="background: linear-gradient(135deg, rgba(139,92,246,.18) 0%, rgba(249,115,22,.12) 100%);">
+                        <span class="article-featured-badge" style="background: rgba(139,92,246,.18); border-color: rgba(139,92,246,.3); color: #8b5cf6;">Prodotto</span>
+                        <div class="article-featured-logo">
+                            <img src="https://www.bortex.site/ui/assets/image/logo/single-logo-black-BORTEX.svg" alt="BORTEX" style="width: 100%; height: auto; object-fit: contain;" width="1366" height="768" decoding="async">
+                        </div>
+                        <span class="article-featured-num">ART_002</span>
+                    </div>
+                    <div class="article-featured-body">
+                        <div>
+                            <div class="article-featured-meta">
+                                <span class="tag">Prodotto</span>
+                                <span class="read-time">7 min di lettura</span>
+                                <span class="date">MAR 2026</span>
+                            </div>
+                            <h2 class="article-featured-title">Il tuo PC sempre con te: controlla tutto da remoto con Bortex</h2>
+                            <p class="article-featured-desc">Scopri come l'ecosistema Bortex — app iOS, piattaforma web ed Electron — ti permette di controllare il tuo computer da qualsiasi posto, guidato dall'intelligenza artificiale.</p>
+                        </div>
+                        <span class="article-featured-cta">
+                            Leggi l'articolo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </span>
+                    </div>
+                </a>
+                -->
+
+                </div><!-- /blog-articles-container -->
+</section>
+
+        <!-- ══ CTA ═══════════════════════════════════════════════ -->
+        <section class="cta-section section-padding">
+            <div class="container">
+                <div class="cta-box glass-panel-strong">
+                    <div class="cta-content">
+                        <h2>Want to Contribute to the Blog?</h2>
+                        <p>If you have case studies, tutorials or insights to share, we'd love to publish them.</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                            <a href="/en/register.html" class="btn btn-primary btn-lg glow-effect">Request a demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <!-- Footer Main Content -->
+            <div class="footer-content">
+                <!-- Brand Column -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img id="footer-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg"
+                            alt="BORTEX Logo" style="height: 38px;" loading="lazy" width="1366" height="768" decoding="async">
+                    </a>
+                    <p class="footer-description">Artificial intelligence at the service of people. Real-time chat, AI assistant and advanced analytics.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/alessandro-f-119b83270/" aria-label="LinkedIn" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61574265030730" aria-label="Facebook" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <span class="sr-only">Facebook</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"></path></svg>
+                        </a>
+                        <a href="https://x.com/BortexAssistant" aria-label="X" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <span class="sr-only">X</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.26l-4.9-6.99L5.93 22H2.8l7.24-8.27L.8 2h6.42l4.43 6.32L18.9 2zm-1.1 18h1.73L6.29 3.9H4.43L17.8 20z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links Columns -->
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Product</h4>
+                        <ul class="footer-links">
+                            <li><a href="/en/features.html">Features</a></li>
+                            <li><a href="/en/pricing.html">Pricing</a></li>
+                            <li><a href="https://www.bortex.site/en/login">Dashboard</a></li>
+                            <li><a href="/en/#waitlist">Early Access</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-title">Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="/en/about.html">About</a></li>
+                            <li><a href="/en/blog.html">Blog</a></li>
+                            <li><a href="/en/register.html">Sign Up</a></li>
+                            <li><a href="/en/">Home</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-title">Support</h4>
+                        <ul class="footer-links">
+                            <li><a href="/en/contact.html">Contact</a></li>
+                            <li><a href="/en/blog.html">Resources</a></li>
+                            <li><a href="/en/register.html">Request a Demo</a></li>
+                            <li><a href="/en/privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-title">Legal</h4>
+                        <ul class="footer-links">
+                            <li><a href="/en/cookies.html">Cookie Policy</a></li>
+                            <li><a href="/en/privacy.html">Privacy Policy</a></li>
+                            <li><a href="/en/terms.html">Terms</a></li>
+                            <li><a href="/en/gdpr.html">GDPR</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; <span id="current-year"></span> BORTEX. All rights reserved.</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <p>Powered by <a href="https://www.quarkdev.agency" target="_blank" rel="noopener noreferrer">Quark
+                            Digital Agency</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.min.js" defer></script>
+
+    <script>
+    (function () {
+        var LS_KEY = 'bortex_blog_layout';
+        var container = document.getElementById('blog-articles-container');
+        var btnFeatured = document.getElementById('btn-layout-featured');
+        var btnGrid = document.getElementById('btn-layout-grid');
+
+        function applyLayout(layout) {
+            if (layout !== 'featured' && layout !== 'grid') layout = 'featured';
+
+            var articles = container.querySelectorAll('.article-featured');
+
+            if (layout === 'grid') {
+                // Container: griglia
+                container.classList.add('layout-grid');
+                // Ogni articolo: compact card verticale
+                articles.forEach(function (a) { a.classList.add('compact-card'); });
+                btnGrid.classList.add('active');
+                btnFeatured.classList.remove('active');
+            } else {
+                // Torna alla vista featured
+                container.classList.remove('layout-grid');
+                articles.forEach(function (a) { a.classList.remove('compact-card'); });
+                btnFeatured.classList.add('active');
+                btnGrid.classList.remove('active');
+            }
+
+            try { localStorage.setItem(LS_KEY, layout); } catch (e) {}
+        }
+
+        // Ripristina preferenza salvata (su mobile < 640px forza sempre featured)
+        var saved;
+        try { saved = localStorage.getItem(LS_KEY); } catch (e) {}
+        applyLayout(window.innerWidth < 640 ? 'featured' : (saved || 'featured'));
+
+        btnFeatured.addEventListener('click', function () { applyLayout('featured'); });
+        btnGrid.addEventListener('click', function () { applyLayout('grid'); });
+
+        // Filtri categoria (toggle visivo)
+        document.querySelectorAll('.filter-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+            });
+        });
+    })();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/ui/assets/favicon/favicon-32x32.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Bortex AI">
+  <link rel="apple-touch-icon" href="/pwa-icons/android/android-launchericon-192-192-new.png">
+  <script src="/pwa-redirect.js"></script>
+  <title>Widget AI per siti con chat live e chiamate | Bortex</title>
+  <meta name="description" content="Aggiungi al tuo sito un widget AI con chat live, assistente automatico, videochiamate, notifiche push, tracking visitatori e integrazione Shopify.">
+  <meta name="keywords" content="widget AI sito web, widget chat sito, live chat con intelligenza artificiale, chatbot AI sito web, videochiamate visitatori sito, tracking visitatori sito, widget Shopify AI">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.bortex.site/features/widget-ai-siti-web.html">
+  <link rel="alternate" hreflang="it" href="https://www.bortex.site/features/widget-ai-siti-web.html">
+  <link rel="alternate" hreflang="en" href="https://www.bortex.site/en/features/widget-ai-siti-web.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.bortex.site/features/widget-ai-siti-web.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.bortex.site/features/widget-ai-siti-web.html">
+  <meta property="og:title" content="Widget AI per siti web con chat live, chiamate e tracking">
+  <meta property="og:description" content="Trasforma il traffico del sito in conversazioni: AI automatica, operatori live, chiamate ai visitatori, FAQ, notifiche push e analytics.">
+  <meta property="og:image" content="https://www.bortex.site/ui/assets/blog/chat-aperta-su-area-di-anteprima.webp">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Widget AI per siti web con chat live, chiamate e tracking">
+  <meta property="twitter:description" content="Un unico widget per rispondere, chiamare, tracciare e convertire i visitatori del tuo sito.">
+  <meta property="twitter:image" content="https://www.bortex.site/ui/assets/blog/chat-aperta-su-area-di-anteprima.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.min.css">
+  <style>
+    :root {
+      --widget-bg: var(--bg-color);
+      --widget-alt: var(--bg-alt);
+      --widget-surface: var(--card-bg);
+      --widget-ink: var(--heading-color);
+      --widget-muted: var(--text-color);
+      --widget-line: var(--border-color);
+      --widget-green: var(--accent-color);
+      --widget-blue: var(--secondary-color);
+      --widget-orange: var(--primary-color);
+      --widget-red: #ef4444;
+    }
+
+    body {
+      background: var(--widget-bg);
+      color: var(--widget-ink);
+    }
+
+    .widget-page {
+      background: var(--widget-bg);
+      color: var(--widget-ink);
+      font-family: "Outfit", sans-serif;
+    }
+
+    .widget-page .btn,
+    .widget-page button,
+    .widget-page input,
+    .widget-page textarea {
+      border-radius: 8px !important;
+    }
+
+    .widget-hero {
+      min-height: min(680px, calc(100vh - 120px));
+      display: flex;
+      align-items: center;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background-image:
+        linear-gradient(90deg, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.76) 44%, rgba(15, 23, 42, 0.34) 100%),
+        linear-gradient(135deg, rgba(249, 115, 22, 0.26), rgba(139, 92, 246, 0.22), rgba(16, 185, 129, 0.12)),
+        url("/ui/assets/blog/immagine-snippet-di-integrazione.webp");
+      background-size: cover;
+      background-position: center top;
+      color: #fff;
+      padding: 7rem 0 5rem;
+    }
+
+    .widget-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0) 64%, var(--widget-bg) 100%);
+    }
+
+    .widget-hero-inner {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .widget-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.45rem 0.75rem;
+      border: 1px solid var(--badge-border);
+      color: var(--primary-light);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      background: var(--badge-bg);
+      border-radius: 8px;
+    }
+
+    .widget-hero h1 {
+      max-width: 880px;
+      margin: 1.2rem 0 1rem;
+      font-size: clamp(2.55rem, 7vw, 5.15rem);
+      line-height: 1;
+      letter-spacing: 0;
+      color: #fff;
+    }
+
+    .widget-hero p {
+      max-width: 760px;
+      margin: 0 0 1.6rem;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      line-height: 1.72;
+    }
+
+    .widget-hero-actions,
+    .widget-inline-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .widget-primary,
+    .widget-secondary {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.05rem;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 8px;
+    }
+
+    .widget-primary {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 12px 28px rgba(249, 115, 22, 0.24);
+    }
+
+    .widget-secondary {
+      color: #ffffff;
+      border: 1px solid var(--glass-border);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .widget-quick-strip {
+      transform: translateY(-50%);
+      position: relative;
+      z-index: 3;
+    }
+
+    .widget-quick-grid {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      background: var(--widget-surface);
+      border: 1px solid var(--widget-line);
+      box-shadow: var(--shadow-lg);
+      border-radius: 8px;
+      overflow: hidden;
+      backdrop-filter: blur(18px);
+    }
+
+    .widget-quick-item {
+      padding: 1.1rem;
+      border-right: 1px solid var(--widget-line);
+      min-height: 118px;
+      display: grid;
+      align-content: start;
+      gap: 0.25rem;
+    }
+
+    .widget-quick-item:last-child {
+      border-right: 0;
+    }
+
+    .widget-quick-item strong {
+      color: var(--widget-ink);
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .widget-quick-item span {
+      color: var(--widget-muted);
+      line-height: 1.45;
+      font-size: 0.94rem;
+    }
+
+    .widget-section {
+      padding: 4.4rem 0;
+    }
+
+    .widget-section.tight {
+      padding-top: 1.7rem;
+    }
+
+    .widget-container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .widget-section-head {
+      max-width: 820px;
+      margin-bottom: 2rem;
+    }
+
+    .widget-kicker {
+      color: var(--widget-green);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0;
+      margin-bottom: 0.65rem;
+    }
+
+    .widget-section h2 {
+      color: var(--widget-ink);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+      margin: 0 0 0.85rem;
+    }
+
+    .widget-section p {
+      color: var(--widget-muted);
+      line-height: 1.78;
+      font-size: 1.02rem;
+    }
+
+    .widget-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .widget-feature {
+      background: var(--widget-surface);
+      border: 1px solid var(--widget-line);
+      border-radius: 8px;
+      padding: 1.25rem;
+      min-height: 214px;
+      display: grid;
+      gap: 0.7rem;
+      align-content: start;
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(16px);
+    }
+
+    .widget-feature-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #fff;
+      background: linear-gradient(135deg, var(--widget-orange), var(--widget-blue));
+    }
+
+    .widget-feature:nth-child(3n + 2) .widget-feature-icon {
+      background: linear-gradient(135deg, var(--widget-blue), var(--widget-green));
+    }
+
+    .widget-feature:nth-child(3n + 3) .widget-feature-icon {
+      background: linear-gradient(135deg, var(--widget-orange), var(--widget-green));
+    }
+
+    .widget-feature h3 {
+      margin: 0;
+      color: var(--widget-ink);
+      font-size: 1.12rem;
+      letter-spacing: 0;
+    }
+
+    .widget-feature p {
+      margin: 0;
+      font-size: 0.96rem;
+    }
+
+    .widget-split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .widget-image {
+      margin: 0;
+      border: 1px solid var(--widget-line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--widget-surface);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .widget-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .widget-image figcaption {
+      padding: 0.8rem 1rem;
+      color: var(--widget-muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+      background: var(--widget-surface);
+    }
+
+    .widget-steps {
+      display: grid;
+      gap: 0.75rem;
+      counter-reset: step;
+    }
+
+    .widget-step {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 46px minmax(0, 1fr);
+      gap: 0.9rem;
+      align-items: start;
+      padding: 1rem;
+      background: var(--widget-surface);
+      border: 1px solid var(--widget-line);
+      border-radius: 8px;
+    }
+
+    .widget-step::before {
+      content: counter(step);
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--widget-orange), var(--widget-blue));
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .widget-step h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.05rem;
+      color: var(--widget-ink);
+    }
+
+    .widget-step p {
+      margin: 0;
+      font-size: 0.96rem;
+    }
+
+    .widget-band {
+      background:
+        linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(139, 92, 246, 0.12)),
+        var(--widget-alt);
+      color: var(--widget-ink);
+    }
+
+    .widget-band h2,
+    .widget-band h3 {
+      color: var(--widget-ink);
+    }
+
+    .widget-band p {
+      color: var(--widget-muted);
+    }
+
+    .widget-band .widget-kicker {
+      color: var(--primary-light);
+    }
+
+    .widget-band .widget-feature {
+      background: var(--glass-bg);
+      border-color: var(--glass-border);
+    }
+
+    .widget-band .widget-feature h3 {
+      color: var(--widget-ink);
+    }
+
+    .widget-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.1rem;
+    }
+
+    .widget-tags span {
+      display: inline-flex;
+      padding: 0.5rem 0.7rem;
+      border-radius: 8px;
+      background: var(--badge-bg);
+      color: var(--widget-ink);
+      border: 1px solid var(--badge-border);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .widget-band .widget-tags span {
+      background: rgba(249, 115, 22, 0.12);
+      color: var(--primary-light);
+      border-color: rgba(249, 115, 22, 0.18);
+    }
+
+    .widget-commerce-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .commerce-demo {
+      background: var(--widget-surface);
+      border: 1px solid var(--widget-line);
+      border-radius: 8px;
+      overflow: hidden;
+      min-height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .commerce-demo-copy {
+      padding: 1.1rem;
+      border-top: 1px solid var(--widget-line);
+    }
+
+    .commerce-demo-copy h3 {
+      margin: 0 0 0.45rem;
+      color: var(--widget-ink);
+      font-size: 1.1rem;
+    }
+
+    .commerce-demo-copy p {
+      margin: 0;
+      font-size: 0.94rem;
+    }
+
+    .commerce-phone {
+      min-height: 430px;
+      background:
+        linear-gradient(135deg, rgba(249, 115, 22, 0.14), rgba(139, 92, 246, 0.14)),
+        var(--widget-alt);
+      padding: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .commerce-screen {
+      width: min(100%, 290px);
+      height: 396px;
+      background: var(--widget-bg);
+      border: 6px solid var(--widget-line);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .commerce-topbar {
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0 0.7rem;
+      background: var(--widget-surface);
+      border-bottom: 1px solid var(--widget-line);
+      color: var(--widget-ink);
+      font-weight: 800;
+      font-size: 0.85rem;
+    }
+
+    .commerce-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--widget-green);
+    }
+
+    .commerce-chat {
+      flex: 1;
+      padding: 0.75rem;
+      overflow: hidden;
+      display: grid;
+      align-content: end;
+      gap: 0.65rem;
+    }
+
+    .commerce-bubble {
+      max-width: 86%;
+      padding: 0.65rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .commerce-bubble.bot {
+      background: var(--widget-surface);
+      color: var(--widget-ink);
+      border: 1px solid var(--widget-line);
+    }
+
+    .commerce-bubble.user {
+      justify-self: end;
+      background: linear-gradient(135deg, var(--widget-orange), var(--widget-blue));
+      color: #ffffff;
+    }
+
+    .commerce-products {
+      display: flex;
+      gap: 0.5rem;
+      overflow: hidden;
+      padding-bottom: 0.15rem;
+    }
+
+    .commerce-product {
+      min-width: 118px;
+      background: var(--widget-surface);
+      border: 1px solid var(--widget-line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .commerce-product img {
+      width: 100%;
+      height: 96px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .commerce-product-body {
+      padding: 0.55rem;
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    .commerce-product-name {
+      color: var(--widget-ink);
+      font-weight: 800;
+      font-size: 0.78rem;
+      line-height: 1.2;
+    }
+
+    .commerce-product-price {
+      color: var(--widget-green);
+      font-weight: 800;
+      font-size: 0.82rem;
+    }
+
+    .commerce-product-button {
+      border: 0;
+      background: linear-gradient(135deg, var(--widget-orange), var(--widget-blue));
+      color: #ffffff;
+      min-height: 28px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .commerce-call-card {
+      background: var(--widget-surface);
+      border: 1px solid var(--widget-line);
+      border-radius: 8px;
+      padding: 0.9rem;
+      display: grid;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .commerce-call-head {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--widget-ink);
+      font-weight: 800;
+    }
+
+    .commerce-call-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: var(--widget-green);
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    .commerce-call-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .commerce-call-actions button {
+      min-height: 36px;
+      border: 1px solid var(--widget-line);
+      background: var(--badge-bg);
+      color: var(--widget-ink);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .commerce-call-actions button:first-child {
+      border-color: var(--widget-green);
+      background: var(--widget-green);
+      color: #ffffff;
+    }
+
+    .commerce-operator {
+      margin-top: 0.4rem;
+      border: 1px solid var(--widget-line);
+      background: var(--widget-surface);
+      border-radius: 8px;
+      padding: 0.75rem;
+      display: grid;
+      gap: 0.35rem;
+      color: var(--widget-ink);
+    }
+
+    .commerce-operator strong {
+      font-size: 0.86rem;
+    }
+
+    .commerce-operator span {
+      color: var(--widget-muted);
+      font-size: 0.8rem;
+      line-height: 1.35;
+    }
+
+    .commerce-store-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(15, 23, 42, 0.08), rgba(15, 23, 42, 0.82)),
+        url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=760&q=80");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .commerce-invite-popup {
+      position: absolute;
+      left: 0.8rem;
+      right: 0.8rem;
+      bottom: 4.3rem;
+      background: var(--widget-surface);
+      border: 1px solid var(--widget-line);
+      border-radius: 8px;
+      padding: 0.85rem;
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .commerce-invite-popup strong {
+      color: var(--widget-ink);
+      font-size: 0.98rem;
+      line-height: 1.25;
+    }
+
+    .commerce-invite-popup span {
+      color: var(--widget-muted);
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
+
+    .commerce-invite-popup button {
+      min-height: 34px;
+      border: 0;
+      background: linear-gradient(135deg, var(--widget-orange), var(--widget-blue));
+      color: #ffffff;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .commerce-widget-button {
+      position: absolute;
+      right: 0.9rem;
+      bottom: 0.9rem;
+      width: 54px;
+      height: 54px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--widget-orange), var(--widget-blue));
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      box-shadow: 0 12px 28px rgba(249, 115, 22, 0.26);
+    }
+
+    .commerce-soon {
+      display: inline-flex;
+      width: fit-content;
+      padding: 0.35rem 0.55rem;
+      border-radius: 8px;
+      background: rgba(249, 115, 22, 0.12);
+      color: var(--widget-orange);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .commerce-premium {
+      background: rgba(139, 92, 246, 0.12);
+      color: var(--widget-blue);
+    }
+
+    .commerce-photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.55rem;
+    }
+
+    .commerce-photo-card {
+      background: var(--widget-surface);
+      border: 1px solid var(--widget-line);
+      border-radius: 8px;
+      overflow: hidden;
+      min-height: 156px;
+      display: grid;
+      grid-template-rows: 116px auto;
+    }
+
+    .commerce-photo-card img {
+      width: 100%;
+      height: 116px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .commerce-photo-card span {
+      padding: 0.45rem;
+      color: var(--widget-ink);
+      font-size: 0.72rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .commerce-generate-panel {
+      background: var(--widget-surface);
+      border: 1px solid var(--widget-line);
+      border-radius: 8px;
+      padding: 0.7rem;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .commerce-generate-panel strong {
+      color: var(--widget-ink);
+      font-size: 0.86rem;
+      line-height: 1.25;
+    }
+
+    .commerce-generate-panel small {
+      color: var(--widget-muted);
+      line-height: 1.35;
+    }
+
+    .commerce-generate-panel button {
+      min-height: 34px;
+      border: 0;
+      background: linear-gradient(135deg, var(--widget-blue), var(--widget-green));
+      color: #ffffff;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .widget-pricing {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--widget-surface);
+      border: 1px solid var(--widget-line);
+      border-radius: 8px;
+      overflow: hidden;
+      display: table;
+    }
+
+    .widget-pricing th,
+    .widget-pricing td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--widget-line);
+      color: var(--widget-ink);
+      text-align: left;
+    }
+
+    .widget-pricing th {
+      background: var(--badge-bg);
+      font-weight: 800;
+    }
+
+    .widget-pricing tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .widget-cta {
+      background:
+        linear-gradient(90deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.78)),
+        linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(139, 92, 246, 0.18)),
+        url("/image/png/image-dashboard.webp");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 4rem 0;
+    }
+
+    .widget-cta-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 390px;
+      gap: 1.4rem;
+      align-items: start;
+    }
+
+    .widget-form {
+      background: var(--widget-surface);
+      border: 1px solid var(--widget-line);
+      border-radius: 8px;
+      padding: 1.15rem;
+      display: grid;
+      gap: 0.85rem;
+      color: var(--widget-ink);
+    }
+
+    .widget-form label {
+      color: var(--widget-ink);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .widget-form input[type="email"] {
+      min-height: 50px;
+      border: 1px solid var(--widget-line);
+      padding: 0 0.85rem;
+      color: var(--widget-ink);
+      background: var(--widget-bg);
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .widget-form .consent-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      font-weight: 400;
+      cursor: pointer;
+    }
+
+    .widget-form .consent-checkbox {
+      margin-top: 0.22rem;
+      min-width: 15px;
+      width: 15px;
+      height: 15px;
+      accent-color: var(--widget-orange);
+    }
+
+    .widget-form .consent-text {
+      color: var(--widget-muted);
+      font-size: 0.78rem;
+      line-height: 1.48;
+      font-weight: 400;
+    }
+
+    .widget-form .widget-submit {
+      min-height: 50px;
+      border: 0;
+      background: linear-gradient(135deg, var(--widget-orange), var(--widget-blue));
+      color: #fff;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .waitlist-feedback {
+      color: var(--widget-green);
+      min-height: 1.4rem;
+      margin: 0;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .widget-quick-grid,
+      .widget-grid,
+      .widget-commerce-showcase,
+      .widget-split,
+      .widget-cta-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .widget-quick-strip {
+        transform: none;
+        padding: 1rem 0 0;
+      }
+
+      .widget-quick-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--widget-line);
+      }
+
+      .widget-quick-item:last-child {
+        border-bottom: 0;
+      }
+
+      .widget-hero {
+        min-height: min(620px, calc(100vh - 110px));
+        padding: 6.5rem 0 4rem;
+        background-position: 58% top;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .widget-hero {
+        min-height: auto;
+        padding: 6.25rem 0 3rem;
+        background-position: 62% top;
+      }
+
+      .widget-hero h1 {
+        font-size: 2.45rem;
+      }
+
+      .widget-section {
+        padding: 3rem 0;
+      }
+
+      .widget-pricing {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Bortex Widget AI",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://www.bortex.site/features/widget-ai-siti-web.html",
+    "description": "Widget AI per siti web con chat live, assistente automatico, videochiamate, notifiche push, tracking visitatori e integrazione Shopify.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Che cosa puo fare il widget AI Bortex su un sito web?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Il widget AI Bortex permette di chattare con i visitatori, rispondere automaticamente con l'assistente AI, inviare inviti alla chiamata, ricevere notifiche, mostrare FAQ e tracciare eventi come pageview, click, form e sessioni."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "L'admin puo vedere i visitatori online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Si. Dalla dashboard Bortex l'admin vede i visitatori attivi, il dominio o la pagina corrente, la provenienza geografica, lo stato online e il tempo dall'ultima attivita."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Il widget funziona con Shopify?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Si. Bortex supporta la creazione di widget collegati a Shopify, il rilevamento dello store, l'attivazione del tracking e-commerce e risposte AI contestuali per lo store."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="widget-page">
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="https://www.bortex.site/" class="logo">
+        <img id="theme-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo" style="height: 40px;" loading="eager">
+      </a>
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="https://www.bortex.site/" class="nav-link">Home</a></li>
+          <li><a href="/features.html" class="nav-link" style="color: var(--primary-color);">Funzionalita</a></li>
+          <li><a href="/pricing.html" class="nav-link">Prezzi</a></li>
+          <li><a href="/#waitlist" class="nav-link">Lista Attesa</a></li>
+          <li><a href="/blog.html" class="nav-link">Blog</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="lang-toggle" id="lang-toggle" aria-label="Cambia lingua">
+          <span class="lang-code">IT</span>
+        </button>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambia tema">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a href="https://www.bortex.site/login" class="btn btn-text">Login</a>
+        <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <img id="sidebar-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo">
+    </div>
+    <ul class="mobile-menu-list">
+      <li><a href="https://www.bortex.site/">Home</a></li>
+      <li><a href="/features.html" class="active">Funzionalita</a></li>
+      <li><a href="/pricing.html">Prezzi</a></li>
+      <li><a href="/about.html">Chi Siamo</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+    </ul>
+    <div class="mobile-menu-divider"></div>
+    <div class="mobile-menu-cta">
+      <a href="/#waitlist" class="btn btn-primary">Iscriviti in lista</a>
+      <a href="https://www.bortex.site/login" class="btn btn-outline">Login</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="widget-hero">
+      <div class="widget-hero-inner">
+        <span class="widget-eyebrow">Widget AI per siti web</span>
+        <h1>Chat live, AI, chiamate e tracking in un solo widget.</h1>
+        <p>Bortex trasforma il traffico del sito in conversazioni reali: il visitatore apre la chat, l'assistente AI risponde subito, l'admin interviene dalla dashboard e puo anche invitare il cliente in chiamata.</p>
+        <div class="widget-hero-actions">
+          <a class="widget-primary" href="#contatto">Attiva il widget</a>
+          <a class="widget-secondary" href="/blog-widget-chat.html">Leggi la guida completa</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="widget-quick-strip" aria-label="Punti chiave">
+      <div class="widget-quick-grid">
+        <div class="widget-quick-item">
+          <strong>1</strong>
+          <span>snippet JavaScript da installare sul sito</span>
+        </div>
+        <div class="widget-quick-item">
+          <strong>Live</strong>
+          <span>visitatori online visibili in dashboard</span>
+        </div>
+        <div class="widget-quick-item">
+          <strong>AI</strong>
+          <span>risposte automatiche, FAQ e contesto business</span>
+        </div>
+        <div class="widget-quick-item">
+          <strong>Call</strong>
+          <span>inviti a chiamata e supporto diretto dal browser</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="widget-section tight">
+      <div class="widget-container widget-split">
+        <div>
+          <div class="widget-kicker">Dal traffico al contatto</div>
+          <h2>Ogni visitatore diventa una conversazione gestibile.</h2>
+          <p>Il widget Bortex non si limita a mostrare una finestra chat. Collega sito, dashboard, AI, notifiche, chiamate e tracking in un flusso unico: vedi chi e online, capisci da dove arriva, rispondi, salvi il lead e misuri gli eventi che contano.</p>
+          <div class="widget-tags">
+            <span>Chat live</span>
+            <span>AI automatica</span>
+            <span>Videochiamate</span>
+            <span>Notifiche push</span>
+            <span>Tracking eventi</span>
+            <span>Shopify</span>
+          </div>
+        </div>
+        <figure class="widget-image">
+          <img src="/ui/assets/blog/esempi-di-personalizzazione-widget.webp" alt="Personalizzazione del widget Bortex con colori, posizione e messaggi" loading="lazy" width="1545" height="909" decoding="async">
+          <figcaption>Il widget puo essere adattato al brand: posizione, colori, icona, avatar, messaggi iniziali e comportamento della chat.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="widget-section widget-band">
+      <div class="widget-container">
+        <div class="widget-section-head">
+          <div class="widget-kicker">Funzioni admin</div>
+          <h2>Cosa puo fare un admin con un visitatore online.</h2>
+          <p>Dalla dashboard Bortex l'admin non aspetta un report a fine giornata. Lavora sul visitatore mentre e ancora sul sito.</p>
+        </div>
+        <div class="widget-grid">
+          <div class="widget-feature">
+            <div class="widget-feature-icon">01</div>
+            <h3>Vedere i visitatori live</h3>
+            <p>La tabella mostra visitatore, token, dominio o pagina corrente, paese, citta, stato online e tempo dall'ultima attivita.</p>
+          </div>
+          <div class="widget-feature">
+            <div class="widget-feature-icon">02</div>
+            <h3>Aprire la chat del visitatore</h3>
+            <p>Un click sulla riga apre una finestra conversazione con storico, input messaggi e aggiornamento in tempo reale.</p>
+          </div>
+          <div class="widget-feature">
+            <div class="widget-feature-icon">03</div>
+            <h3>Gestire piu chat insieme</h3>
+            <p>Le finestre possono restare aperte, essere portate in primo piano, minimizzate, ripristinate o chiuse.</p>
+          </div>
+          <div class="widget-feature">
+            <div class="widget-feature-icon">04</div>
+            <h3>Vedere quando il visitatore scrive</h3>
+            <p>L'indicatore di digitazione mostra che il cliente sta rispondendo, con aggiornamento live nella chat admin.</p>
+          </div>
+          <div class="widget-feature">
+            <div class="widget-feature-icon">05</div>
+            <h3>Invitare in chiamata</h3>
+            <p>L'admin puo generare un link call, inviarlo al visitatore, aprire la sala e copiare il link di partecipazione.</p>
+          </div>
+          <div class="widget-feature">
+            <div class="widget-feature-icon">06</div>
+            <h3>Abilitare le chiamate dal widget</h3>
+            <p>Il visitatore puo vedere l'opzione "Chiama operatore" solo quando l'admin la consente per quella conversazione.</p>
+          </div>
+          <div class="widget-feature">
+            <div class="widget-feature-icon">07</div>
+            <h3>Rispondere a chiamate in arrivo</h3>
+            <p>Quando il visitatore chiama, l'admin riceve un popup con suoneria, puo rispondere, rifiutare o lasciare scadere la richiesta.</p>
+          </div>
+          <div class="widget-feature">
+            <div class="widget-feature-icon">08</div>
+            <h3>Salvare il lead</h3>
+            <p>Dal menu della chat l'admin puo salvare nome, email e note del visitatore per ritrovarlo tra gli utenti salvati.</p>
+          </div>
+          <div class="widget-feature">
+            <div class="widget-feature-icon">09</div>
+            <h3>Ricevere notifiche</h3>
+            <p>Nuovi messaggi, chiamate perse, stanze call e comunicazioni offline entrano nel sistema notifiche della dashboard.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="widget-section">
+      <div class="widget-container widget-split">
+        <div>
+          <div class="widget-kicker">Installazione e configurazione</div>
+          <h2>Un widget per ogni sito, dominio o store.</h2>
+          <p>Dalla pagina Widget puoi creare piu widget, assegnare un nome, collegare il dominio autorizzato, copiare lo snippet e vedere l'anteprima desktop o mobile prima di pubblicare.</p>
+          <div class="widget-steps">
+            <div class="widget-step">
+              <div>
+                <h3>Crei il widget</h3>
+                <p>Imposti nome, dominio e, se disponibile, il collegamento Shopify automatico.</p>
+              </div>
+            </div>
+            <div class="widget-step">
+              <div>
+                <h3>Copi lo snippet</h3>
+                <p>Il codice usa `loader.js` con API key e widget ID, cosi il sito carica la configurazione corretta.</p>
+              </div>
+            </div>
+            <div class="widget-step">
+              <div>
+                <h3>Personalizzi esperienza e AI</h3>
+                <p>Configuri stile, messaggi, FAQ, notifiche, pulsanti rapidi e comportamento mobile.</p>
+              </div>
+            </div>
+            <div class="widget-step">
+              <div>
+                <h3>Misuri e intervieni</h3>
+                <p>Vedi visitatori live, eventi tracciati, conversioni e conversazioni direttamente nella dashboard.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figure class="widget-image">
+          <img src="/ui/assets/blog/immagine-snippet-di-integrazione.webp" alt="Snippet JavaScript per installare il widget Bortex sul sito" loading="lazy" width="1585" height="903" decoding="async">
+          <figcaption>Lo snippet collega il sito alla dashboard Bortex senza installazioni complesse o plugin obbligatori.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="widget-section" style="background: var(--widget-alt);">
+      <div class="widget-container">
+        <div class="widget-section-head">
+          <div class="widget-kicker">Widget e conversione</div>
+          <h2>Non aspettare che il visitatore cerchi il contatto.</h2>
+          <p>Il widget puo invitare, guidare e rispondere anche prima dell'intervento umano. Le funzioni sono pensate per ridurre l'abbandono e aumentare i contatti qualificati.</p>
+        </div>
+        <div class="widget-grid">
+          <div class="widget-feature">
+            <div class="widget-feature-icon">AI</div>
+            <h3>Risposte automatiche</h3>
+            <p>L'assistente risponde nella chat con nome, tono, colori e messaggi configurati dal brand.</p>
+          </div>
+          <div class="widget-feature">
+            <div class="widget-feature-icon">FAQ</div>
+            <h3>Domande frequenti cliccabili</h3>
+            <p>L'admin crea domande e risposte predefinite: il visitatore le apre come pulsanti rapidi nella chat.</p>
+          </div>
+          <div class="widget-feature">
+            <div class="widget-feature-icon">IN</div>
+            <h3>Messaggi di invito</h3>
+            <p>Una nuvoletta accanto al widget puo apparire dopo un ritardo configurato per spingere l'apertura della chat.</p>
+          </div>
+          <div class="widget-feature">
+            <div class="widget-feature-icon">WB</div>
+            <h3>Welcome e follow-up</h3>
+            <p>La chat puo aprirsi con un messaggio iniziale, un mittente personalizzato e domande rapide.</p>
+          </div>
+          <div class="widget-feature">
+            <div class="widget-feature-icon">P</div>
+            <h3>Push web</h3>
+            <p>Il widget puo chiedere il permesso notifiche e l'admin puo ricevere alert su nuovi visitatori o messaggi.</p>
+          </div>
+          <div class="widget-feature">
+            <div class="widget-feature-icon">M</div>
+            <h3>Mobile fullscreen</h3>
+            <p>Su smartphone la conversazione puo occupare tutto lo schermo, con input e azioni ottimizzate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="widget-section">
+      <div class="widget-container widget-split">
+        <figure class="widget-image">
+          <img src="/image/png/image-dashboard-graphic.webp" alt="Dashboard Bortex con statistiche, analytics e pannelli operativi" loading="lazy" width="1628" height="792" decoding="async">
+          <figcaption>La dashboard unisce chat, visitatori online, statistiche, tracking eventi, grafici e pannelli filtrabili per dominio.</figcaption>
+        </figure>
+        <div>
+          <div class="widget-kicker">Tracking e analytics</div>
+          <h2>Capisci cosa succede prima della richiesta.</h2>
+          <p>Il widget carica anche il tracking remoto. La dashboard usa questi eventi per mostrare contatori, breakdown e dettagli per dominio, tracker, pagine e paesi.</p>
+          <div class="widget-tags">
+            <span>Page load</span>
+            <span>Click</span>
+            <span>CTA click</span>
+            <span>Link click</span>
+            <span>Download</span>
+            <span>Scroll depth</span>
+            <span>Form submit</span>
+            <span>Form abandonment</span>
+            <span>Session duration</span>
+            <span>Exit intent</span>
+            <span>Returning user</span>
+            <span>Network status</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="widget-section widget-band">
+      <div class="widget-container">
+        <div class="widget-section-head">
+          <div class="widget-kicker">Shopify ed e-commerce</div>
+          <h2>Il widget puo diventare un venditore sullo store.</h2>
+          <p>Per Shopify, Bortex riconosce lo store, collega il widget al dominio, abilita il tracking e-commerce e puo mostrare risposte AI contestuali. Quando il cliente ha un dubbio su prodotto, spedizione o ordine, la chat diventa un punto vendita assistito.</p>
+        </div>
+        <div class="widget-grid">
+          <div class="widget-feature">
+            <div class="widget-feature-icon">S1</div>
+            <h3>Creazione widget Shopify</h3>
+            <p>La pagina Widget rileva installazioni Shopify e puo compilare automaticamente dominio e sorgente.</p>
+          </div>
+          <div class="widget-feature">
+            <div class="widget-feature-icon">S2</div>
+            <h3>Tracking collegato</h3>
+            <p>Il collegamento Shopify puo attivare il tracking dello store e mostrare badge dedicati in dashboard.</p>
+          </div>
+          <div class="widget-feature">
+            <div class="widget-feature-icon">S3</div>
+            <h3>Risposte e schede</h3>
+            <p>Il runtime chat supporta schede prodotto, schede servizio e disponibilita quando l'AI restituisce dati strutturati.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="widget-section" style="background: var(--widget-alt);">
+      <div class="widget-container">
+        <div class="widget-section-head">
+          <div class="widget-kicker">Esperienze in chat</div>
+          <h2>Prodotti, chiamate e inviti contestuali dentro il widget.</h2>
+          <p>Per e-commerce, consulenti e attivita locali, la chat puo diventare il punto in cui il visitatore vede prodotti, chiede supporto e viene guidato nel momento giusto. Questa sezione mostra tre casi d'uso visivi da inserire nella comunicazione commerciale.</p>
+        </div>
+        <div class="widget-commerce-showcase">
+          <article class="commerce-demo">
+            <div class="commerce-phone">
+              <div class="commerce-screen">
+                <div class="commerce-topbar"><span class="commerce-dot"></span> Bortex Moda</div>
+                <div class="commerce-chat">
+                  <div class="commerce-bubble user">Cerco un abito elegante per una cena.</div>
+                  <div class="commerce-bubble bot">Ho trovato tre proposte in linea con quello che stai cercando.</div>
+                  <div class="commerce-products" aria-label="Carosello prodotti nella chat">
+                    <div class="commerce-product">
+                      <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=420&q=80" alt="Abito elegante mostrato nel carosello prodotti" width="420" height="560" decoding="async">
+                      <div class="commerce-product-body">
+                        <span class="commerce-product-name">Abito satin</span>
+                        <span class="commerce-product-price">EUR 89</span>
+                        <button type="button" class="commerce-product-button">Vedi</button>
+                      </div>
+                    </div>
+                    <div class="commerce-product">
+                      <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=420&q=80" alt="Look moda mostrato nel carosello prodotti" width="420" height="560" decoding="async">
+                      <div class="commerce-product-body">
+                        <span class="commerce-product-name">Blazer nero</span>
+                        <span class="commerce-product-price">EUR 119</span>
+                        <button type="button" class="commerce-product-button">Vedi</button>
+                      </div>
+                    </div>
+                    <div class="commerce-product">
+                      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=420&q=80" alt="Accessorio moda mostrato nel carosello prodotti" width="420" height="560" decoding="async">
+                      <div class="commerce-product-body">
+                        <span class="commerce-product-name">Pochette</span>
+                        <span class="commerce-product-price">EUR 49</span>
+                        <button type="button" class="commerce-product-button">Vedi</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="commerce-demo-copy">
+              <h3>Carosello prodotti nella risposta AI</h3>
+              <p>La chat puo mostrare schede prodotto con immagine, nome, prezzo e azione. Utile per Shopify e negozi online che vogliono consigliare articoli senza far uscire il cliente dalla conversazione.</p>
+            </div>
+          </article>
+
+          <article class="commerce-demo">
+            <div class="commerce-phone">
+              <div class="commerce-screen">
+                <div class="commerce-topbar"><span class="commerce-dot"></span> Assistenza live</div>
+                <div class="commerce-chat">
+                  <div class="commerce-bubble user">Vorrei parlare con qualcuno prima di ordinare.</div>
+                  <div class="commerce-call-card">
+                    <div class="commerce-call-head">
+                      <span class="commerce-call-icon">Call</span>
+                      <span>Invito a una chiamata</span>
+                    </div>
+                    <p style="margin:0;color:var(--widget-muted);font-size:0.86rem;line-height:1.45;">L'operatore ti sta invitando a partecipare direttamente dal browser.</p>
+                    <div class="commerce-call-actions">
+                      <button type="button">Accetta</button>
+                      <button type="button">Copia link</button>
+                    </div>
+                  </div>
+                  <div class="commerce-operator">
+                    <strong>Dashboard admin</strong>
+                    <span>Apri chat, invia messaggi, genera link chiamata, salva nome, email e note del visitatore.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="commerce-demo-copy">
+              <h3>Chiamata e contatto diretto</h3>
+              <p>L'admin puo invitare il visitatore in chiamata, rispondere a richieste in arrivo e salvare il contatto come lead. La chat diventa un canale di vendita assistita.</p>
+            </div>
+          </article>
+
+          <article class="commerce-demo">
+            <div class="commerce-phone">
+              <div class="commerce-screen">
+                <div class="commerce-store-bg"></div>
+                <div class="commerce-invite-popup">
+                  <span class="commerce-soon">In arrivo</span>
+                  <strong>Abbiamo l'abito che stai cercando.</strong>
+                  <span>Apri la chat e guarda le proposte selezionate per te.</span>
+                  <button type="button">Mostrami gli abiti</button>
+                </div>
+                <div class="commerce-widget-button">AI</div>
+              </div>
+            </div>
+            <div class="commerce-demo-copy">
+              <h3>Popup di invito contestuale</h3>
+              <p>La prossima evoluzione puo mostrare messaggi proattivi legati al contesto del visitatore: categoria vista, prodotto cercato, tempo sulla pagina o intento d'acquisto.</p>
+            </div>
+          </article>
+
+          <article class="commerce-demo">
+            <div class="commerce-phone">
+              <div class="commerce-screen">
+                <div class="commerce-topbar"><span class="commerce-dot"></span> Prova outfit AI</div>
+                <div class="commerce-chat">
+                  <div class="commerce-bubble user">Posso vedere come mi starebbe questo abito?</div>
+                  <div class="commerce-bubble bot">Carica una foto e ti preparo un'anteprima realistica.</div>
+                  <div class="commerce-photo-grid">
+                    <div class="commerce-photo-card">
+                      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=420&q=80" alt="Foto caricata dal cliente per prova outfit AI" width="420" height="560" decoding="async">
+                      <span>Foto cliente</span>
+                    </div>
+                    <div class="commerce-photo-card">
+                      <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=420&q=80" alt="Abito selezionato per generare anteprima indossata" width="420" height="560" decoding="async">
+                      <span>Abito scelto</span>
+                    </div>
+                  </div>
+                  <div class="commerce-generate-panel">
+                    <span class="commerce-soon commerce-premium">Premium in arrivo</span>
+                    <strong>Genera l'anteprima con l'abito indossato</strong>
+                    <small>Funzione pensata per moda e retail: il cliente carica una foto, sceglie l'articolo e riceve una simulazione visiva.</small>
+                    <button type="button">Genera anteprima</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="commerce-demo-copy">
+              <h3>Foto cliente e outfit generato</h3>
+              <p>Feature Premium in arrivo: il visitatore potra caricare una foto e vedere una preview generata con l'abito selezionato. Utile per aumentare fiducia e desiderio prima dell'acquisto.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="widget-section">
+      <div class="widget-container">
+        <div class="widget-section-head">
+          <div class="widget-kicker">Piani</div>
+          <h2>Parti gratis, scala quando il sito cresce.</h2>
+          <p>Il piano free serve per testare il widget su traffico reale. Il Premium sblocca volumi piu alti, piu widget e funzioni senza limiti operativi.</p>
+        </div>
+        <table class="widget-pricing">
+          <thead>
+            <tr>
+              <th>Funzione</th>
+              <th>Free</th>
+              <th>Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Visitatori e chat</td>
+              <td>Per iniziare su siti piccoli</td>
+              <td>Per traffico e team operativi</td>
+            </tr>
+            <tr>
+              <td>AI automatica</td>
+              <td>Budget mensile base</td>
+              <td>Messaggi e provider avanzati</td>
+            </tr>
+            <tr>
+              <td>Chiamate</td>
+              <td>Minuti inclusi</td>
+              <td>Uso intensivo per vendita e supporto</td>
+            </tr>
+            <tr>
+              <td>Push notification</td>
+              <td>Campagne limitate</td>
+              <td>Campagne illimitate e segmentazione</td>
+            </tr>
+            <tr>
+              <td>Multi-widget</td>
+              <td>Configurazione essenziale</td>
+              <td>Widget per piu siti e domini</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="widget-cta" id="contatto">
+      <div class="widget-container widget-cta-layout">
+        <div>
+          <div class="widget-kicker">Accesso anticipato</div>
+          <h2 style="color:#fff;">Porta il widget AI sul tuo sito.</h2>
+          <p>Richiedi accesso a Bortex Widget per attivare chat live, assistente AI, chiamate, notifiche push e tracking visitatori sul tuo sito o store Shopify.</p>
+          <div class="widget-inline-actions">
+            <a class="widget-secondary" href="/blog-widget-chat.html">Guida di installazione</a>
+            <a class="widget-secondary" href="/pricing.html">Vedi prezzi</a>
+          </div>
+        </div>
+        <form class="widget-form waitlist-signup-form" data-lang="it" data-feature-code="bortex_widget_ai_siti_web" data-feature-name="Bortex Widget AI per siti web" data-source-page="/features/widget-ai-siti-web.html">
+          <label for="widget-email">Email aziendale</label>
+          <input id="widget-email" type="email" name="email" required placeholder="nome@azienda.com">
+          <label class="consent-label">
+            <input type="checkbox" name="gdpr_consent" class="consent-checkbox" required>
+            <span class="consent-text">Ho letto e acconsento al trattamento dei miei dati personali per la gestione della richiesta, ai sensi del Reg. UE 2016/679. <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> *</span>
+          </label>
+          <label class="consent-label">
+            <input type="checkbox" name="marketing_consent" class="consent-checkbox">
+            <span class="consent-text">Desidero ricevere aggiornamenti e comunicazioni commerciali da Bortex.</span>
+          </label>
+          <button type="submit" class="widget-submit">Richiedi accesso al widget</button>
+          <p class="waitlist-feedback"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <img id="footer-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo" style="height: 38px;" loading="lazy" width="1366" height="768" decoding="async">
+          </a>
+          <p class="footer-description">L'intelligenza artificiale al servizio delle persone. Chat in tempo reale, assistente AI e analisi avanzate.</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/alessandro-f-119b83270/" aria-label="LinkedIn" class="social-icon" target="_blank" rel="noopener noreferrer">
+              <span class="sr-only">LinkedIn</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61574265030730" aria-label="Facebook" class="social-icon" target="_blank" rel="noopener noreferrer">
+              <span class="sr-only">Facebook</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"></path></svg>
+            </a>
+            <a href="https://x.com/BortexAssistant" aria-label="X" class="social-icon" target="_blank" rel="noopener noreferrer">
+              <span class="sr-only">X</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.26l-4.9-6.99L5.93 22H2.8l7.24-8.27L.8 2h6.42l4.43 6.32L18.9 2zm-1.1 18h1.73L6.29 3.9H4.43L17.8 20z"></path></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h4 class="footer-title">Prodotto</h4>
+            <ul class="footer-links">
+              <li><a href="/features.html">Funzionalita</a></li>
+              <li><a href="/pricing.html">Prezzi</a></li>
+              <li><a href="https://www.bortex.site/login">Dashboard</a></li>
+              <li><a href="/#waitlist">Early Access</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4 class="footer-title">Azienda</h4>
+            <ul class="footer-links">
+              <li><a href="/about.html">Chi Siamo</a></li>
+              <li><a href="/blog.html">Blog</a></li>
+              <li><a href="/register.html">Registrazione</a></li>
+              <li><a href="/">Home</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4 class="footer-title">Supporto</h4>
+            <ul class="footer-links">
+              <li><a href="/contact.html">Contatti</a></li>
+              <li><a href="/blog.html">Centro Risorse</a></li>
+              <li><a href="/register.html">Richiedi una Demo</a></li>
+              <li><a href="/privacy.html">Privacy</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4 class="footer-title">Legale</h4>
+            <ul class="footer-links">
+              <li><a href="/cookies.html">Cookie Policy</a></li>
+              <li><a href="/privacy.html">Privacy Policy</a></li>
+              <li><a href="/terms.html">Termini</a></li>
+              <li><a href="/gdpr.html">GDPR</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom-left"><p>&copy; <span id="current-year"></span> BORTEX. Tutti i diritti riservati.</p></div>
+          <div class="footer-bottom-right"><p>BORTEX Platform</p></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.waitlist-signup-form').forEach((form) => {
+        const feedback = form.querySelector('.waitlist-feedback') || form.parentElement.querySelector('.waitlist-feedback');
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          const button = form.querySelector('button[type="submit"]');
+          const emailInput = form.querySelector('input[name="email"]');
+          const originalLabel = button.textContent;
+          feedback.textContent = '';
+          button.disabled = true;
+          button.textContent = 'Invio...';
+
+          try {
+            const response = await fetch('/api/waitlist/signup', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                email: emailInput.value,
+                lang: form.dataset.lang,
+                feature_code: form.dataset.featureCode,
+                feature_name: form.dataset.featureName,
+                source_page: form.dataset.sourcePage,
+                gdpr_consent: !!(form.querySelector('[name="gdpr_consent"]') && form.querySelector('[name="gdpr_consent"]').checked),
+                marketing_consent: !!(form.querySelector('[name="marketing_consent"]') && form.querySelector('[name="marketing_consent"]').checked)
+              })
+            });
+
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok || !data.success) {
+              throw new Error(data.message || "Impossibile completare l'iscrizione.");
+            }
+
+            feedback.textContent = data.message;
+            feedback.style.color = 'var(--widget-green)';
+            form.reset();
+          } catch (error) {
+            feedback.textContent = error.message;
+            feedback.style.color = 'var(--widget-red)';
+          } finally {
+            button.disabled = false;
+            button.textContent = originalLabel;
+          }
+        });
+      });
+    });
+  </script>
+  <script src="/js/main.min.js" defer></script>
+</body>
+</html>

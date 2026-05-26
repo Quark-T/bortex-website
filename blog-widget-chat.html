@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="ui/assets/favicon/favicon-32x32.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Bortex AI">
+    <link rel="apple-touch-icon" href="/pwa-icons/android/android-launchericon-192-192-new.png">
+    <script src="/pwa-redirect.js"></script>
+    <title>Widget di chat Bortex per siti web | Guida pratica</title>
+    <meta name="description" content="Scopri come integrare il widget di chat Bortex nel tuo sito con AI, chat live, Shopify, chiamate e notifiche push." />
+    <meta name="keywords" content="widget chat sito web, live chat sito, aggiungere chat al sito, Bortex widget, chat visitatori sito, AI chat sito web, integrazione Shopify chat, chiamata video visitatori, widget chat gratis, widget chat premium" />
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bortex.site/blog-widget-chat.html">
+    <link rel="alternate" hreflang="it" href="https://www.bortex.site/blog-widget-chat.html">
+    <link rel="alternate" hreflang="en" href="https://www.bortex.site/en/blog-widget-chat.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.bortex.site/blog-widget-chat.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.bortex.site/blog-widget-chat.html">
+    <meta property="og:title" content="Widget di chat Bortex per siti web">
+    <meta property="og:description" content="Integra il widget Bortex nel tuo sito con AI, chat live, Shopify, chiamate e notifiche push.">
+    <meta property="og:image" content="https://www.bortex.site/ui/assets/blog/chat-aperta-su-area-di-anteprima.webp">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.bortex.site/blog-widget-chat.html">
+    <meta property="twitter:title" content="Widget di chat Bortex per siti web">
+    <meta property="twitter:description" content="Integra il widget Bortex nel tuo sito con AI, chat live, Shopify, chiamate e notifiche push.">
+    <meta property="twitter:image" content="https://www.bortex.site/ui/assets/blog/chat-aperta-su-area-di-anteprima.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <style>
+        .article-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 320px;
+            gap: 2rem;
+            align-items: start;
+        }
+        .article-sidebar {
+            display: grid;
+            gap: 1.25rem;
+            position: sticky;
+            top: 110px;
+        }
+        .article-card {
+            padding: 2.5rem;
+        }
+        @media (max-width: 960px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .article-sidebar {
+                position: static;
+                top: auto;
+                order: 2;
+            }
+            .article-card {
+                padding: 1.35rem;
+            }
+        }
+        @media (max-width: 640px) {
+            .article-layout {
+                gap: 1rem;
+            }
+            .article-card {
+                padding: 1.1rem;
+            }
+        }
+
+        .code-block {
+            background: #0f172a;
+            border: 1px solid rgba(249,115,22,0.25);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.88rem;
+            color: #f97316;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-all;
+            margin: 1rem 0 1.5rem;
+            line-height: 1.7;
+        }
+
+        .plan-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+        .plan-table th {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            color: var(--heading-color);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-weight: 600;
+        }
+        .plan-table td {
+            padding: 0.7rem 1rem;
+            color: var(--text-color);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            vertical-align: middle;
+        }
+        .plan-table tr:last-child td { border-bottom: none; }
+        .plan-table .badge-free {
+            display: inline-block; padding: 0.2rem 0.55rem; border-radius: 999px;
+            background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.65); font-size: 0.78rem;
+        }
+        .plan-table .badge-premium {
+            display: inline-block; padding: 0.2rem 0.55rem; border-radius: 999px;
+            background: rgba(249,115,22,0.15); color: #f97316; font-size: 0.78rem; font-weight: 600;
+        }
+        .article-figure {
+            margin: 1.6rem 0 2rem;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.03);
+        }
+        .article-figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .article-figure figcaption {
+            padding: 0.9rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        /* ── Waitlist GDPR consent ── */
+        .waitlist-consents { display: grid; gap: 0.55rem; }
+        .consent-label { display: flex; align-items: flex-start; gap: 0.55rem; cursor: pointer; }
+        .consent-checkbox {
+            width: 15px; height: 15px; min-width: 15px;
+            border-radius: 4px; margin-top: 2px; cursor: pointer;
+            accent-color: #f97316;
+        }
+        .consent-text {
+            font-size: 0.77rem; color: rgba(255,255,255,.58); line-height: 1.55;
+        }
+        .consent-text a { color: #f97316; text-decoration: none; }
+        .consent-text a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="https://www.bortex.site/" class="logo">
+                <img id="theme-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo" style="height: 40px;" loading="eager">
+            </a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="https://www.bortex.site/" class="nav-link">Home</a></li>
+                    <li><a href="features.html" class="nav-link">Funzionalità</a></li>
+                    <li><a href="pricing.html" class="nav-link">Prezzi</a></li>
+                    <li><a href="index.html#waitlist" class="nav-link">Lista Attesa</a></li>
+                    <li><a href="blog.html" class="nav-link" style="color: var(--primary-color);">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="lang-toggle" id="lang-toggle" aria-label="Cambia lingua"><span class="lang-code">IT</span></button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambia tema">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="https://www.bortex.site/login" class="btn btn-text">Login</a>
+                <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header"><img id="sidebar-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo"></div>
+        <ul class="mobile-menu-list">
+            <li><a href="https://www.bortex.site/">Home</a></li>
+            <li><a href="features.html">Funzionalità</a></li>
+            <li><a href="pricing.html">Prezzi</a></li>
+            <li><a href="about.html">Chi Siamo</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+        </ul>
+        <div class="mobile-menu-divider"></div>
+        <div class="mobile-menu-cta">
+            <a href="index.html#waitlist" class="btn btn-primary">Iscriviti in lista</a>
+            <a href="https://www.bortex.site/login" class="btn btn-outline">Login</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero" style="min-height: 60vh; padding-bottom: 4rem; background:
+            radial-gradient(circle at top left, rgba(249, 115, 22, 0.18), transparent 34%),
+            radial-gradient(circle at top right, rgba(139, 92, 246, 0.14), transparent 32%),
+            linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);">
+            <div class="container hero-container">
+                <div class="hero-content" style="max-width: 980px;">
+                    <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                        <span style="letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); font-size: 0.82rem;">BORTEX Journal</span>
+                        <span style="width: 56px; height: 1px; background: rgba(255,255,255,0.16);"></span>
+                        <span style="letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); font-size: 0.82rem;">Guida Pratica</span>
+                    </div>
+                    <h1 class="hero-title" style="max-width: 920px; margin-bottom: 1rem;">Widget di chat Bortex per il tuo <span class="text-gradient">sito web</span></h1>
+                    <p class="hero-description" style="max-width: 860px; margin-bottom: 2.25rem;">Un widget di chat non è solo un pulsante sul sito. Con Bortex diventa un sistema completo: risposta AI automatica, conversazione live, chiamate video ai visitatori, integrazione Shopify e messaggi di invito personalizzati.</p>
+                    <div style="max-width: 760px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.25rem; color: var(--text-muted); font-size: 0.95rem; line-height: 1.8;">
+                        Guida completa all'installazione, alla configurazione e alle funzionalità del widget Bortex: dalla copia del codice JS alla gestione delle chiamate vocali con i tuoi visitatori.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container article-layout" style="max-width: 1180px;">
+                <article class="glass-card article-card">
+
+                    <div style="padding-bottom: 1.5rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                        <p style="font-size: 1.1rem; line-height: 1.9; color: var(--text-color); margin: 0;">Hai un sito web e vuoi che i tuoi visitatori possano contattarti in tempo reale, ricevere risposte automatiche dall'AI o persino avviare una chiamata video con te? Il widget di chat Bortex fa tutto questo — e si installa in meno di cinque minuti, con una singola riga di codice.</p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.4rem; margin: 0 0 2rem; background: rgba(249,115,22,0.08); border: 1px solid rgba(249,115,22,0.18);">
+                        <h2 style="margin: 0 0 0.75rem; color: var(--heading-color); font-size: 1.35rem;">Cerchi la pagina commerciale del widget?</h2>
+                        <p style="margin: 0 0 1rem; color: var(--text-color); line-height: 1.8;">Questa guida spiega l'installazione. Per una panoramica completa delle funzioni per aziende, visitatori online, AI, chiamate e tracking, vai alla nuova pagina dedicata al widget Bortex.</p>
+                        <a href="/features/widget-ai-siti-web.html" class="btn btn-primary">Scopri il widget AI per siti web</a>
+                    </div>
+
+                    <figure class="article-figure">
+                        <img src="ui/assets/blog/chat-aperta-su-area-di-anteprima.webp" alt="Widget di chat Bortex aperto su un sito in area di anteprima" loading="eager" width="1051" height="712" decoding="async">
+                        <figcaption>Anteprima del widget Bortex su una pagina reale: una chat sempre visibile, pronta a rispondere ai visitatori e a trasformare il sito in un punto di contatto attivo.</figcaption>
+                    </figure>
+
+                    <h2 style="margin-bottom: 1rem; color: var(--heading-color);">Cos'è il widget di chat Bortex</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Il widget Bortex è un bottone di chat interattivo che puoi aggiungere a qualsiasi sito web: vetrina, e-commerce, landing page, portfolio o portale aziendale. Una volta installato, appare nell'angolo del tuo sito e permette ai visitatori di aprire una finestra di conversazione in tempo reale.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Dietro al widget c'è l'intera infrastruttura Bortex: l'AI risponde automaticamente quando non sei disponibile, tu puoi intervenire in live dalla dashboard, e i visitatori possono anche richiedere una chiamata vocale o video direttamente dalla chat. Tutto in un'unica soluzione, senza installare plugin aggiuntivi.</p>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Come installare il widget sul tuo sito web</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 0.75rem;">L'installazione è progettata per essere rapida anche per chi non è sviluppatore. Dalla dashboard Bortex, nella sezione <strong>Widget</strong>, trovi il tuo snippet JavaScript personalizzato. Basta copiarlo e incollarlo prima del tag <code style="background: rgba(255,255,255,0.07); padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.9em;">&lt;/body&gt;</code> di ogni pagina del tuo sito:</p>
+
+                    <div class="code-block">&lt;script src="https://www.bortex.site/loader.js?apikey=LA_TUA_API_KEY" defer&gt;&lt;/script&gt;</div>
+
+                    <figure class="article-figure">
+                        <img src="ui/assets/blog/immagine-snippet-di-integrazione.webp" alt="Snippet JavaScript di integrazione del widget Bortex copiato dalla dashboard" loading="lazy" width="1585" height="903" decoding="async">
+                        <figcaption>Lo snippet di integrazione mostrato nella dashboard Bortex: una riga di codice per attivare il widget nel tuo sito.</figcaption>
+                    </figure>
+
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Se usi un CMS come WordPress, Webflow o Shopify, puoi incollare lo snippet nell'area "Custom Code" o tramite un plugin che inietta codice nell'header/footer. Con Shopify l'integrazione è ancora più diretta: Bortex offre una app nativa che installa il widget automaticamente sul tuo store senza toccare il codice.</p>
+
+                    <div class="glass-card" style="padding: 1.5rem; margin: 2rem 0; background: linear-gradient(135deg, rgba(249, 115, 22, 0.09), rgba(139, 92, 246, 0.06)); border: 1px solid rgba(255,255,255,0.08);">
+                        <h3 style="margin: 0 0 0.75rem; color: var(--heading-color);">Compatibilità</h3>
+                        <p style="margin: 0; color: var(--text-color); line-height: 1.8;">Il widget Bortex funziona su qualsiasi sito HTML, WordPress, Webflow, Wix, Squarespace e Shopify. Non richiede librerie esterne, non rallenta il caricamento della pagina e si adatta automaticamente a desktop e mobile.</p>
+                    </div>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Personalizza il widget per il tuo brand</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Dalla dashboard Bortex puoi modificare ogni aspetto visivo del widget: il colore del bottone, l'icona, l'avatar dell'assistente, il nome visualizzato nella chat e la posizione sullo schermo (angolo in basso a destra, sinistra o centro). La chat si apre con un messaggio di benvenuto personalizzato e può mostrare i suggerimenti delle domande frequenti già configurate.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Una funzione particolarmente efficace è il <strong>messaggio di invito</strong>: una piccola nuvoletta testuale che appare accanto al widget dopo alcuni secondi dall'arrivo del visitatore. Puoi impostare il testo ("Ciao, posso aiutarti?"), il ritardo prima che compaia, la durata e il colore. Questo tipo di interazione proattiva aumenta in modo significativo il tasso di apertura della chat.</p>
+
+                    <figure class="article-figure">
+                        <img src="ui/assets/blog/esempi-di-personalizzazione-widget.webp" alt="Esempi di personalizzazione del widget Bortex con colori, messaggi e posizione" loading="lazy" width="1545" height="909" decoding="async">
+                        <figcaption>Colori, messaggio iniziale, posizione del bottone e stile della chat: il widget può essere adattato al tuo brand e al tono con cui vuoi presentarti online.</figcaption>
+                    </figure>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Chat live: rispondi ai visitatori in tempo reale</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Quando un visitatore apre la chat e scrive un messaggio, ricevi una notifica in tempo reale sulla dashboard Bortex. Da lì puoi rispondere direttamente, vedere il profilo del visitatore (pagina in cui si trova, sistema operativo, lingua) e gestire più conversazioni simultanee in modo organizzato.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Se non sei online, l'assistente AI di Bortex risponde automaticamente al posto tuo, mantenendo il tono e le informazioni che hai configurato in fase di setup. Questo significa che il tuo sito non smette mai di essere "presente" per i visitatori, anche fuori orario lavorativo.</p>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">L'AI risponde per te: configurazione e limiti</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">L'assistente AI di Bortex è addestrato sulle informazioni che fornisci: i tuoi prodotti, servizi, orari, politiche di reso, FAQ. Ogni risposta automatica rispecchia la voce del tuo brand e può essere rafffinata nel tempo grazie al feedback delle conversazioni reali.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Il piano gratuito include <strong>100 messaggi AI al mese</strong>: sufficienti per iniziare e testare il funzionamento. Con il piano Premium i messaggi diventano illimitati, con routing verso provider cloud avanzati per risposte più precise e veloci.</p>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Bortex non è solo un widget: è un assistente che lavora con te</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">L'idea dietro Bortex è più ampia di una semplice chat per siti web. Bortex nasce come assistente capace di aiutarti nella gestione quotidiana: organizzare impegni, seguire attività, supportare la pianificazione e dare continuità ai tuoi eventi e alle tue priorità. Il widget è l'estensione pubblica di questa stessa intelligenza operativa.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Questo significa che la stessa logica con cui Bortex ti aiuta a organizzare il tuo lavoro può essere applicata anche verso l'esterno: rispondere ai visitatori del tuo sito, accogliere richieste, guidare utenti e clienti e trasformare il traffico in conversazioni utili. Non è un blocco separato: è il tuo assistente che diventa visibile anche online.</p>
+
+                    <div class="glass-card" style="padding: 1.5rem; margin: 2rem 0; background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(139, 92, 246, 0.08)); border: 1px solid rgba(255,255,255,0.08);">
+                        <h3 style="margin: 0 0 0.75rem; color: var(--heading-color);">Vuoi fare il passo business?</h3>
+                        <p style="margin: 0 0 1rem; color: var(--text-color); line-height: 1.8;">Se usi già Bortex come assistente personale, puoi trasformarlo in uno strumento business attivando un widget personale per il tuo sito. In questo modo Bortex non solo ti aiuta a gestire agenda, attività ed eventi, ma rappresenta anche la tua presenza digitale verso clienti e visitatori.</p>
+                        <p style="margin: 0; color: var(--text-color); line-height: 1.8;">Il passaggio è naturale: da assistente che organizza il tuo lavoro, a assistente che comunica, risponde e converte anche sul web.</p>
+                    </div>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Integrazione con Shopify: il widget che vende</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Se gestisci un e-commerce su Shopify, Bortex si integra nativamente con il tuo store. Il widget può rispondere a domande sui prodotti, sulle spedizioni, sui resi e sullo stato degli ordini — direttamente dalla chat, senza che il cliente debba navigare tra le pagine o aspettare una email.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">L'integrazione Shopify consente anche di collegare l'AI ai dati del catalogo, rendendo le risposte contestuali e precise. Il risultato è un assistente che conosce il tuo negozio come un venditore esperto, disponibile 24 ore su 24.</p>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Chiamate video e contatto telefonico con i visitatori</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Una delle funzionalità più potenti e distintive di Bortex è la possibilità di avviare una <strong>chiamata video direttamente dalla chat</strong>. Quando un visitatore ha bisogno di un supporto più personale — per esempio durante un acquisto importante, una consulenza o la risoluzione di un problema complesso — può richiedere di parlare con te in video in pochi secondi.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Ricevi la notifica sulla dashboard, accetti la chiamata e in pochi secondi sei faccia a faccia con il tuo cliente direttamente dal browser, senza installare nulla. Questo livello di contatto diretto trasforma la chat in uno strumento di vendita e assistenza di altissimo livello.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Il piano gratuito include <strong>60 minuti di video chiamate al mese</strong>. Con il piano Premium le video chiamate sono illimitate — ideale per agenzie, consulenti, negozi online ad alto valore medio dell'ordine e chiunque voglia offrire un supporto veramente personalizzato.</p>
+
+                    <div class="glass-card" style="padding: 1.5rem; margin: 2rem 0; background: linear-gradient(135deg, rgba(249, 115, 22, 0.09), rgba(139, 92, 246, 0.06)); border: 1px solid rgba(255,255,255,0.08);">
+                        <h3 style="margin: 0 0 0.75rem; color: var(--heading-color);">Perché le chiamate video cambiano le conversioni</h3>
+                        <p style="margin: 0; color: var(--text-color); line-height: 1.8;">Il contatto diretto — voce e volto — abbatte le barriere psicologiche della diffidenza online. I clienti che parlano direttamente con un operatore prima dell'acquisto convertono a tassi molto più alti rispetto a chi interagisce solo via chat testuale o email. Bortex porta questa dinamica direttamente nel tuo sito.</p>
+                    </div>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Piano Free vs Premium: cosa cambia</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1rem;">Bortex è disponibile con un piano gratuito pensato per iniziare subito, e un piano Premium per chi ha bisogno di volumi e funzionalità senza limiti.</p>
+
+                    <table class="plan-table">
+                        <thead>
+                            <tr>
+                                <th>Funzionalità</th>
+                                <th><span class="badge-free">Free</span></th>
+                                <th><span class="badge-premium">Premium</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Visitatori/utenti in chat al mese</td>
+                                <td>Max 100</td>
+                                <td>Illimitati</td>
+                            </tr>
+                            <tr>
+                                <td>Messaggi AI al mese</td>
+                                <td>Max 100</td>
+                                <td>Illimitati</td>
+                            </tr>
+                            <tr>
+                                <td>Minuti video chiamate al mese</td>
+                                <td>60 min</td>
+                                <td>Illimitati</td>
+                            </tr>
+                            <tr>
+                                <td>Campagne push notification</td>
+                                <td>Max 4</td>
+                                <td>Illimitate</td>
+                            </tr>
+                            <tr>
+                                <td>Allegati in chat</td>
+                                <td>3 file</td>
+                                <td>10 file</td>
+                            </tr>
+                            <tr>
+                                <td>Integrazione Shopify AI</td>
+                                <td>Budget base</td>
+                                <td>Budget premium</td>
+                            </tr>
+                            <tr>
+                                <td>Supporto</td>
+                                <td>Community / Email</td>
+                                <td>Prioritario</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2 style="margin: 2rem 0 1rem; color: var(--heading-color);">Notifiche push: resta in contatto dopo la visita</h2>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 1.2rem;">Bortex integra anche un sistema di notifiche push web: puoi chiedere ai visitatori il permesso di ricevere notifiche e poi raggiungerli direttamente sul browser — anche quando non sono sul tuo sito — con aggiornamenti, offerte o messaggi personalizzati.</p>
+                    <p style="color: var(--text-color); line-height: 1.9; margin-bottom: 0;">Con il piano gratuito puoi inviare fino a 4 campagne push al mese. Con il Premium le campagne sono illimitate, con strumenti avanzati di segmentazione e programmazione degli invii.</p>
+
+                </article>
+
+                <aside class="article-sidebar">
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h3 style="margin: 0 0 1rem; color: var(--heading-color);">In questo articolo</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.85rem;">
+                            <li><span style="color: var(--primary-color); font-weight: 700;">01</span> <span style="color: var(--text-color);">Cos'è il widget Bortex</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">02</span> <span style="color: var(--text-color);">Come installarlo</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">03</span> <span style="color: var(--text-color);">Personalizzazione</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">04</span> <span style="color: var(--text-color);">Chat live in tempo reale</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">05</span> <span style="color: var(--text-color);">AI automatica</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">06</span> <span style="color: var(--text-color);">Integrazione Shopify</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">07</span> <span style="color: var(--text-color);">Video chiamate ai visitatori</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">08</span> <span style="color: var(--text-color);">Free vs Premium</span></li>
+                            <li><span style="color: var(--primary-color); font-weight: 700;">09</span> <span style="color: var(--text-color);">Push notification</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h3 style="margin: 0 0 1rem; color: var(--heading-color);">In sintesi</h3>
+                        <p style="margin: 0; color: var(--text-color); line-height: 1.8;">Il widget Bortex trasforma il tuo sito in un punto di contatto reale: AI sempre attiva, chat live, video chiamate e integrazione Shopify. Il piano gratuito permette di iniziare subito senza costi.</p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem; background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(139, 92, 246, 0.08)); border: 1px solid rgba(255,255,255,0.08);">
+                        <h3 style="margin: 0 0 0.85rem; color: var(--heading-color);">Inizia gratis</h3>
+                        <p style="margin: 0 0 1rem; color: var(--text-color); line-height: 1.8;">Aggiungi il widget Bortex al tuo sito oggi. Il piano gratuito include AI, chat live e video chiamate — nessuna carta di credito richiesta.</p>
+                        <div style="display: grid; gap: 0.75rem;">
+                            <a href="index.html#waitlist" class="btn btn-primary">Iscriviti in lista</a>
+                            <a href="blog.html" class="btn btn-outline">Torna al blog</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section-padding" style="padding-top: 0;">
+            <div class="container" style="max-width: 1180px;">
+                <div style="position: relative; overflow: hidden; border-radius: clamp(20px, 4vw, 28px); border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(135deg, rgba(10, 14, 24, 0.96) 0%, rgba(20, 27, 45, 0.94) 60%, rgba(39, 17, 10, 0.92) 100%); box-shadow: 0 24px 60px rgba(0,0,0,0.22);">
+                    <div style="position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(249, 115, 22, 0.26), transparent 28%), radial-gradient(circle at bottom right, rgba(251, 146, 60, 0.18), transparent 34%);"></div>
+                    <div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center; padding: clamp(1.2rem, 3vw, 2.4rem);">
+                        <div style="display: grid; gap: 0.9rem; max-width: 720px;">
+                            <span style="display: inline-flex; width: fit-content; align-items: center; gap: 0.55rem; padding: 0.5rem 0.9rem; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.72); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;">BORTEX Widget</span>
+                            <h2 style="margin: 0; color: #ffffff; font-size: clamp(1.9rem, 3vw, 2.6rem); line-height: 1.08; letter-spacing: -0.03em;">Aggiungi il widget al tuo sito e inizia a convertire</h2>
+                            <p style="margin: 0; color: rgba(255,255,255,0.74); line-height: 1.9; font-size: 1rem; max-width: 640px;">Iscriviti alla lista di attesa per ottenere accesso anticipato al widget Bortex, all'AI automatica, alle video chiamate e all'integrazione Shopify.</p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.35rem;">
+                                <span style="padding: 0.5rem 0.78rem; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); color: rgba(255,255,255,0.78); font-size: 0.88rem;">AI automatica</span>
+                                <span style="padding: 0.5rem 0.78rem; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); color: rgba(255,255,255,0.78); font-size: 0.88rem;">Video chiamate</span>
+                                <span style="padding: 0.5rem 0.78rem; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); color: rgba(255,255,255,0.78); font-size: 0.88rem;">Shopify nativo</span>
+                            </div>
+                        </div>
+                        <div style="position: relative; border-radius: 22px; padding: clamp(1rem, 2.8vw, 1.2rem); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px);">
+                            <form class="waitlist-signup-form" data-lang="it" data-feature-code="bortex_widget" data-feature-name="BORTEX Widget Chat" data-source-page="/blog-widget-chat" style="display: grid; gap: 0.95rem;">
+                                <div style="display: grid; gap: 0.5rem;">
+                                    <label for="waitlist-email-it" style="font-size: 0.9rem; color: rgba(255,255,255,0.72);">Indirizzo email</label>
+                                    <input id="waitlist-email-it" type="email" name="email" required placeholder="nome@azienda.com" style="width: 100%; min-height: 58px; border-radius: 16px; border: 1px solid rgba(249, 115, 22, 0.42); background: rgba(255,255,255,0.97); color: #111827; padding: 0 1rem; font-size: 1rem; outline: none; box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);">
+                                </div>
+                                <div class="waitlist-consents">
+                                    <label class="consent-label">
+                                        <input type="checkbox" name="gdpr_consent" class="consent-checkbox" required>
+                                        <span class="consent-text">Ho letto e acconsento al trattamento dei miei dati personali per la gestione della lista di attesa, ai sensi del Reg. UE 2016/679 (GDPR). <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> *</span>
+                                    </label>
+                                    <label class="consent-label">
+                                        <input type="checkbox" name="marketing_consent" class="consent-checkbox">
+                                        <span class="consent-text">Desidero ricevere aggiornamenti, novità e comunicazioni commerciali da BORTEX (facoltativo).</span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="min-height: 56px; justify-content: center; font-size: 0.98rem;">Iscriviti alla lista di attesa</button>
+                                <p style="margin: 0; color: rgba(255,255,255,0.54); font-size: 0.83rem; line-height: 1.6;">Ti scriveremo solo per aggiornamenti rilevanti su BORTEX e nuove funzionalita.</p>
+                            </form>
+                            <p class="waitlist-feedback" style="margin: 0.85rem 0 0; color: rgba(255,255,255,0.72); font-size: 0.95rem; min-height: 1.5rem;"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="https://www.bortex.site/" class="logo"><img id="footer-logo" src="https://www.bortex.site/ui/assets/image/logo/bortex-logo-white-ai.svg" alt="BORTEX Logo" style="height: 38px;" loading="lazy" width="1366" height="768" decoding="async"></a>
+                    <p class="footer-description">L'intelligenza artificiale al servizio delle persone. Chat in tempo reale, assistente AI e analisi avanzate.</p>
+                </div>
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Prodotto</h4>
+                        <ul class="footer-links">
+                            <li><a href="/features.html">Funzionalita</a></li>
+                            <li><a href="/pricing.html">Prezzi</a></li>
+                            <li><a href="https://www.bortex.site/login">Dashboard</a></li>
+                            <li><a href="/#waitlist">Early Access</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Azienda</h4>
+                        <ul class="footer-links">
+                            <li><a href="/about.html">Chi Siamo</a></li>
+                            <li><a href="/blog.html">Blog</a></li>
+                            <li><a href="/register.html">Registrazione</a></li>
+                            <li><a href="/">Home</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Supporto</h4>
+                        <ul class="footer-links">
+                            <li><a href="/contact.html">Contatti</a></li>
+                            <li><a href="/blog.html">Centro Risorse</a></li>
+                            <li><a href="/register.html">Richiedi una Demo</a></li>
+                            <li><a href="/privacy.html">Privacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Legale</h4>
+                        <ul class="footer-links">
+                            <li><a href="/cookies.html">Cookie Policy</a></li>
+                            <li><a href="/privacy.html">Privacy Policy</a></li>
+                            <li><a href="/terms.html">Termini</a></li>
+                            <li><a href="/gdpr.html">GDPR</a></li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="footer-bottom"><div class="footer-bottom-left"><p>&copy; <span id="current-year"></span> BORTEX. Tutti i diritti riservati.</p></div></div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.waitlist-signup-form').forEach((form) => {
+                const feedback = form.parentElement.querySelector('.waitlist-feedback');
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    const button = form.querySelector('button[type="submit"]');
+                    const emailInput = form.querySelector('input[name="email"]');
+                    const originalLabel = button.textContent;
+                    const isEnglish = form.dataset.lang === 'en';
+                    feedback.textContent = '';
+                    button.disabled = true;
+                    button.textContent = isEnglish ? 'Sending...' : 'Invio...';
+
+                    try {
+                        const response = await fetch('/api/waitlist/signup', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                email: emailInput.value,
+                                lang: form.dataset.lang,
+                                feature_code: form.dataset.featureCode,
+                                feature_name: form.dataset.featureName,
+                                source_page: form.dataset.sourcePage,
+                                gdpr_consent: !!(form.querySelector('[name="gdpr_consent"]') && form.querySelector('[name="gdpr_consent"]').checked),
+                                marketing_consent: !!(form.querySelector('[name="marketing_consent"]') && form.querySelector('[name="marketing_consent"]').checked)
+                            })
+                        });
+
+                        const data = await response.json().catch(() => ({}));
+                        if (!response.ok || !data.success) {
+                            throw new Error(data.message || (isEnglish ? "Unable to complete your signup." : "Impossibile completare l'iscrizione."));
+                        }
+
+                        feedback.textContent = data.message;
+                        feedback.style.color = 'var(--primary-color)';
+                        form.reset();
+                    } catch (error) {
+                        feedback.textContent = error.message;
+                        feedback.style.color = '#f97316';
+                    } finally {
+                        button.disabled = false;
+                        button.textContent = originalLabel;
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script src="/js/main.min.js" defer></script>
+</body>
+</html>
